@@ -56,4 +56,10 @@
 Планирование и ведение проекта - **YouGile**
 
 Связь - **Telegram**
- 
+
+----
+
+**Пользовательские истории:**
+<img width="821" alt="Снимок экрана 2023-01-19 в 11 37 02" src="https://user-images.githubusercontent.com/26378652/213394151-245a9054-ca0f-4f4c-a91c-7dbbdb9db76d.png">
+
+<img width="965" alt="Снимок экрана 2023-01-19 в 11 37 21" src="https://user-images.githubusercontent.com/26378652/213394175-a1221cfd-fe53-46a3-9da7-c0c13c975c3b.png">
