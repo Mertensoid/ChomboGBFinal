@@ -9,17 +9,21 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - Private properties
+    
     private let scrollView = UIScrollView()
     private let loginTextField = UITextField()
     private let passwordTextField = UITextField()
     private let joinButton = UIButton()
     private let registrationButton = UIButton()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
-        layoutViews()
-        configure()
+        configureConstraints()
+        configureViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +40,11 @@ final class LoginViewController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
     }
-}
-
-extension LoginViewController {
     
-    func addViews() {
+    //MARK: - Private functions
+    
+    private func addViews() {
+        
         view.addSubview(scrollView)
         scrollView.addSubview(loginTextField)
         scrollView.addSubview(passwordTextField)
@@ -48,7 +52,7 @@ extension LoginViewController {
         scrollView.addSubview(registrationButton)
     }
     
-    func layoutViews() {
+    private func configureConstraints() {
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -80,7 +84,7 @@ extension LoginViewController {
         ])
     }
     
-    func configure() {
+    private func configureViews() {
         
         view.backgroundColor = ColorConstants.baseWhite
         
@@ -114,6 +118,7 @@ extension LoginViewController {
     }
 }
 
+//перенести в presenter
 @objc extension LoginViewController {
     
     // Когда клавиатура появляется
