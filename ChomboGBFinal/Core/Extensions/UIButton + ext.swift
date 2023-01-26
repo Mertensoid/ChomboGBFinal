@@ -33,19 +33,8 @@ extension UIButton {
         )
     }
     
-    @objc func handleIn() {
-        UIView.animate(withDuration: 0.2) {
-            self.removeOpacity()
-        }
-    }
-    
-    @objc func handleOut() {
-        UIView.animate(withDuration: 0.2) {
-            self.setOpacity()
-        }
-    }
-    
     func setOpacity() {
+        
         self.layer.shadowColor = ColorConstants.opacityBlack.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.layer.shadowOpacity = 1.0
@@ -54,10 +43,25 @@ extension UIButton {
     }
     
     func removeOpacity() {
+        
         self.layer.shadowColor = .none
         self.layer.shadowOffset = .zero
         self.layer.shadowOpacity = .zero
         self.layer.shadowRadius = .zero
         self.layer.masksToBounds = true
+    }
+    
+    @objc func handleIn() {
+        
+        UIView.animate(withDuration: 0.2) {
+            self.removeOpacity()
+        }
+    }
+    
+    @objc func handleOut() {
+        
+        UIView.animate(withDuration: 0.2) {
+            self.setOpacity()
+        }
     }
 }

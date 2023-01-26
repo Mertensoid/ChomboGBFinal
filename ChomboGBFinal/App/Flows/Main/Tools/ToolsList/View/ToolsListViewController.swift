@@ -32,11 +32,12 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 25
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ToolsListTableViewCell()
+        cell.configureData(name: "Название", picture: "wrench.adjustable", mainProperty: "Свойство 1", secondaryProperty: "Свойство 2")
         return cell
     }
     
@@ -46,7 +47,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 135
+        return 120
     }
     
     // MARK: - Private functions

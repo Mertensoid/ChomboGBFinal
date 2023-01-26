@@ -22,7 +22,7 @@ final class MainTabBarController: UITabBarController {
     private func configure() {
         
         tabBar.tintColor = ColorConstants.darkYellow
-        tabBar.backgroundColor = ColorConstants.baseWhite
+        tabBar.backgroundColor = ColorConstants.backgroundGray
         tabBar.layer.borderColor = ColorConstants.borderGray.cgColor
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
