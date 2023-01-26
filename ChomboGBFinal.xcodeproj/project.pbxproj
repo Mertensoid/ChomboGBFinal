@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		8431305A29828375006EC00F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305929828375006EC00F /* MainTabBarController.swift */; };
+		8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305D298292B3006EC00F /* ProfileViewController.swift */; };
+		84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305F298292C4006EC00F /* ProfilePresenter.swift */; };
+		84313062298292D2006EC00F /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313061298292D2006EC00F /* ProfileBuilder.swift */; };
+		84313064298292F5006EC00F /* ToolsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313063298292F5006EC00F /* ToolsListViewController.swift */; };
+		843130662982930A006EC00F /* ToolsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130652982930A006EC00F /* ToolsListPresenter.swift */; };
+		843130682982931C006EC00F /* ToolsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130672982931C006EC00F /* ToolsListBuilder.swift */; };
+		8431306A29829345006EC00F /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431306929829345006EC00F /* CatalogViewController.swift */; };
+		8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431306B29829353006EC00F /* CatalogPresenter.swift */; };
+		8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431306D29829369006EC00F /* CatalogBuilder.swift */; };
+		8431307029829376006EC00F /* NewToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431306F29829376006EC00F /* NewToolViewController.swift */; };
+		8431307229829384006EC00F /* NewToolPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431307129829384006EC00F /* NewToolPresenter.swift */; };
+		8431307429829395006EC00F /* NewToolBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431307329829395006EC00F /* NewToolBuilder.swift */; };
+		84313076298293B5006EC00F /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313075298293B5006EC00F /* TransactionsViewController.swift */; };
+		84313078298293CA006EC00F /* TransactionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313077298293CA006EC00F /* TransactionsPresenter.swift */; };
+		8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313079298293DD006EC00F /* TransactionsBuilder.swift */; };
+		8431307C2982947A006EC00F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431307B2982947A006EC00F /* RegistrationViewController.swift */; };
+		8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431307D2982948C006EC00F /* RegistrationPresenter.swift */; };
+		843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431307F2982949D006EC00F /* RegistrationBuilder.swift */; };
+		843130872982959D006EC00F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130862982959D006EC00F /* SettingsViewController.swift */; };
+		84313089298295AA006EC00F /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313088298295AA006EC00F /* SettingsPresenter.swift */; };
+		8431308B298295B6006EC00F /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431308A298295B6006EC00F /* SettingsBuilder.swift */; };
+		8431309229829659006EC00F /* ToolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309129829659006EC00F /* ToolDetailsViewController.swift */; };
+		8431309529829673006EC00F /* ToolDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309429829673006EC00F /* ToolDetailsPresenter.swift */; };
+		8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309629829689006EC00F /* ToolDetailsBuilder.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -41,6 +65,30 @@
 
 /* Begin PBXFileReference section */
 		8431305929828375006EC00F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8431305D298292B3006EC00F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8431305F298292C4006EC00F /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		84313061298292D2006EC00F /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
+		84313063298292F5006EC00F /* ToolsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsListViewController.swift; sourceTree = "<group>"; };
+		843130652982930A006EC00F /* ToolsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsListPresenter.swift; sourceTree = "<group>"; };
+		843130672982931C006EC00F /* ToolsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsListBuilder.swift; sourceTree = "<group>"; };
+		8431306929829345006EC00F /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		8431306B29829353006EC00F /* CatalogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPresenter.swift; sourceTree = "<group>"; };
+		8431306D29829369006EC00F /* CatalogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogBuilder.swift; sourceTree = "<group>"; };
+		8431306F29829376006EC00F /* NewToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolViewController.swift; sourceTree = "<group>"; };
+		8431307129829384006EC00F /* NewToolPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPresenter.swift; sourceTree = "<group>"; };
+		8431307329829395006EC00F /* NewToolBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolBuilder.swift; sourceTree = "<group>"; };
+		84313075298293B5006EC00F /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		84313077298293CA006EC00F /* TransactionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenter.swift; sourceTree = "<group>"; };
+		84313079298293DD006EC00F /* TransactionsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsBuilder.swift; sourceTree = "<group>"; };
+		8431307B2982947A006EC00F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		8431307D2982948C006EC00F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		8431307F2982949D006EC00F /* RegistrationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBuilder.swift; sourceTree = "<group>"; };
+		843130862982959D006EC00F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84313088298295AA006EC00F /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		8431308A298295B6006EC00F /* SettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
+		8431309129829659006EC00F /* ToolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsViewController.swift; sourceTree = "<group>"; };
+		8431309429829673006EC00F /* ToolDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsPresenter.swift; sourceTree = "<group>"; };
+		8431309629829689006EC00F /* ToolDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsBuilder.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -84,6 +132,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		843130812982954D006EC00F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8431308529829584006EC00F /* View */,
+				843130842982957C006EC00F /* Presenter */,
+				8431308329829573006EC00F /* Builder */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8431308229829559006EC00F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				845485C2298010F4004657A3 /* View */,
+				845485C1298010E7004657A3 /* Presenter */,
+				845485C0298010D4004657A3 /* Builder */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8431308329829573006EC00F /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8431308A298295B6006EC00F /* SettingsBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		843130842982957C006EC00F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84313088298295AA006EC00F /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8431308529829584006EC00F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				843130862982959D006EC00F /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8431308C298295D0006EC00F /* ToolsList */ = {
+			isa = PBXGroup;
+			children = (
+				845485C529801110004657A3 /* View */,
+				845485C429801105004657A3 /* Presenter */,
+				845485C3298010FD004657A3 /* Builder */,
+			);
+			path = ToolsList;
+			sourceTree = "<group>";
+		};
+		8431308D298295E5006EC00F /* ToolDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8431309029829626006EC00F /* View */,
+				8431308F2982961F006EC00F /* Presenter */,
+				8431308E29829615006EC00F /* Builder */,
+			);
+			path = ToolDetails;
+			sourceTree = "<group>";
+		};
+		8431308E29829615006EC00F /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8431309629829689006EC00F /* ToolDetailsBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		8431308F2982961F006EC00F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8431309429829673006EC00F /* ToolDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8431309029829626006EC00F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8431309129829659006EC00F /* ToolDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		845485AD298006AE004657A3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +275,7 @@
 		845485B529800EA5004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				8431307F2982949D006EC00F /* RegistrationBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -146,6 +283,7 @@
 		845485B629800EAD004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8431307D2982948C006EC00F /* RegistrationPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -153,6 +291,7 @@
 		845485B729800EB5004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8431307B2982947A006EC00F /* RegistrationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,9 +319,8 @@
 		845485BA29800EE2004657A3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				845485C2298010F4004657A3 /* View */,
-				845485C1298010E7004657A3 /* Presenter */,
-				845485C0298010D4004657A3 /* Builder */,
+				8431308229829559006EC00F /* Profile */,
+				843130812982954D006EC00F /* Settings */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -190,9 +328,8 @@
 		845485BB29800EF1004657A3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				845485C529801110004657A3 /* View */,
-				845485C429801105004657A3 /* Presenter */,
-				845485C3298010FD004657A3 /* Builder */,
+				8431308C298295D0006EC00F /* ToolsList */,
+				8431308D298295E5006EC00F /* ToolDetails */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -239,6 +376,7 @@
 		845485C0298010D4004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				84313061298292D2006EC00F /* ProfileBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -246,6 +384,7 @@
 		845485C1298010E7004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8431305F298292C4006EC00F /* ProfilePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -253,6 +392,7 @@
 		845485C2298010F4004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8431305D298292B3006EC00F /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +400,7 @@
 		845485C3298010FD004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				843130672982931C006EC00F /* ToolsListBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -267,6 +408,7 @@
 		845485C429801105004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				843130652982930A006EC00F /* ToolsListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -274,6 +416,7 @@
 		845485C529801110004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84313063298292F5006EC00F /* ToolsListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +424,7 @@
 		845485C629801118004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				8431306D29829369006EC00F /* CatalogBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -288,6 +432,7 @@
 		845485C729801120004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8431306B29829353006EC00F /* CatalogPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -295,6 +440,7 @@
 		845485C829801127004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8431306929829345006EC00F /* CatalogViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +448,7 @@
 		845485C92980112D004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				8431307329829395006EC00F /* NewToolBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -309,6 +456,7 @@
 		845485CA29801133004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8431307129829384006EC00F /* NewToolPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -316,6 +464,7 @@
 		845485CB2980113B004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8431306F29829376006EC00F /* NewToolViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +472,7 @@
 		845485CC29801141004657A3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				84313079298293DD006EC00F /* TransactionsBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -330,6 +480,7 @@
 		845485CD29801148004657A3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				84313077298293CA006EC00F /* TransactionsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -337,6 +488,7 @@
 		845485CE29801150004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84313075298293B5006EC00F /* TransactionsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,12 +772,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
+				8431306A29829345006EC00F /* CatalogViewController.swift in Sources */,
+				84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */,
+				8431307029829376006EC00F /* NewToolViewController.swift in Sources */,
 				845485D029801244004657A3 /* LoginViewController.swift in Sources */,
+				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
+				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
+				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
+				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
+				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
+				8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */,
+				843130682982931C006EC00F /* ToolsListBuilder.swift in Sources */,
 				845485D22980125D004657A3 /* LoginPresenter.swift in Sources */,
+				84313089298295AA006EC00F /* SettingsPresenter.swift in Sources */,
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
+				8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */,
+				84313078298293CA006EC00F /* TransactionsPresenter.swift in Sources */,
+				8431309529829673006EC00F /* ToolDetailsPresenter.swift in Sources */,
+				8431309229829659006EC00F /* ToolDetailsViewController.swift in Sources */,
+				8431307C2982947A006EC00F /* RegistrationViewController.swift in Sources */,
+				8431307429829395006EC00F /* NewToolBuilder.swift in Sources */,
+				843130662982930A006EC00F /* ToolsListPresenter.swift in Sources */,
+				84313076298293B5006EC00F /* TransactionsViewController.swift in Sources */,
 				84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */,
+				84313064298292F5006EC00F /* ToolsListViewController.swift in Sources */,
+				84313062298292D2006EC00F /* ProfileBuilder.swift in Sources */,
+				843130872982959D006EC00F /* SettingsViewController.swift in Sources */,
 				845485AF298006DD004657A3 /* ColorConstants.swift in Sources */,
+				8431308B298295B6006EC00F /* SettingsBuilder.swift in Sources */,
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
