@@ -7,13 +7,6 @@
 
 import UIKit
 
-enum Tabs: Int {
-    case profile
-    case tools
-    case storage
-    case transactions
-}
-
 final class MainTabBarController: UITabBarController {
     
     // MARK: - Lifecycle
@@ -34,10 +27,10 @@ final class MainTabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let profileController = UIViewController()
-        let toolsController = UIViewController()
-        let storageController = UIViewController()
-        let transactionsController = UIViewController()
+        let profileController = ProfileViewController()
+        let toolsController = ToolsListViewController()
+        let storageController = CatalogViewController()
+        let transactionsController = TransactionsViewController()
         
         let profileNavigationController = UINavigationController(rootViewController: profileController)
         profileNavigationController.navigationBar.isHidden = true
@@ -49,20 +42,20 @@ final class MainTabBarController: UITabBarController {
         transactionsNavigationController.navigationBar.isHidden = true
         
         profileController.tabBarItem = UITabBarItem(
-            title: "Profile",
-            image: UIImage(systemName: "person.circle"),
+            title: TabBarLabels.profile.rawValue,
+            image: UIImage(systemName: TabBarIcons.profile),
             tag: Tabs.profile.rawValue)
         toolsController.tabBarItem = UITabBarItem(
-            title: "Tools",
-            image: UIImage(systemName: "hammer.circle"),
+            title: TabBarLabels.tools.rawValue,
+            image: UIImage(systemName: TabBarIcons.tools),
             tag: Tabs.tools.rawValue)
         storageController.tabBarItem = UITabBarItem(
-            title: "Storage",
-            image: UIImage(systemName: "tray.circle"),
+            title: TabBarLabels.storage.rawValue,
+            image: UIImage(systemName: TabBarIcons.storage),
             tag: Tabs.storage.rawValue)
         transactionsController.tabBarItem = UITabBarItem(
-            title: "Transactions",
-            image: UIImage(systemName: "doc.circle"),
+            title: TabBarLabels.transactions.rawValue,
+            image: UIImage(systemName: TabBarIcons.transactions),
             tag: Tabs.storage.rawValue)
         
         setViewControllers([
