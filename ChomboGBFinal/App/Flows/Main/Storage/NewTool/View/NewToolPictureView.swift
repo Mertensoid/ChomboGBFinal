@@ -56,6 +56,7 @@ class NewToolPictureView: UIView {
         picturePickerButton.tintColor = ColorConstants.baseBlack
         picturePickerButton.setImage(UIImage(systemName: "photo"), for: .normal)
         picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
+        picturePickerButton.imageView?.contentMode = .scaleAspectFill
     }
     
     @objc private func setPhoto() {

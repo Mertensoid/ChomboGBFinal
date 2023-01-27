@@ -90,6 +90,6 @@ class NewToolPickerView: UIView {
     }
     
     @objc private func setPhoto() {
-        picturePickerButton.setImage(UIImage(named: "test_pic_730x520px"), for: .normal)
+        
     }
 }

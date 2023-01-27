@@ -40,6 +40,7 @@
 		843130A32983C431006EC00F /* NewToolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A22983C431006EC00F /* NewToolHeaderView.swift */; };
 		843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A62983C4DD006EC00F /* NewToolPictureView.swift */; };
 		843130A92983D2FA006EC00F /* NewToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A82983D2FA006EC00F /* NewToolPickerView.swift */; };
+		843130AB2983DC70006EC00F /* NewToolTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130AA2983DC70006EC00F /* NewToolTextView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -105,6 +106,7 @@
 		843130A22983C431006EC00F /* NewToolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolHeaderView.swift; sourceTree = "<group>"; };
 		843130A62983C4DD006EC00F /* NewToolPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPictureView.swift; sourceTree = "<group>"; };
 		843130A82983D2FA006EC00F /* NewToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPickerView.swift; sourceTree = "<group>"; };
+		843130AA2983DC70006EC00F /* NewToolTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolTextView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				843130A22983C431006EC00F /* NewToolHeaderView.swift */,
 				843130A62983C4DD006EC00F /* NewToolPictureView.swift */,
 				843130A82983D2FA006EC00F /* NewToolPickerView.swift */,
+				843130AA2983DC70006EC00F /* NewToolTextView.swift */,
 				8431306F29829376006EC00F /* NewToolViewController.swift */,
 			);
 			path = View;
@@ -834,6 +837,7 @@
 				843130872982959D006EC00F /* SettingsViewController.swift in Sources */,
 				845485AF298006DD004657A3 /* ColorConstants.swift in Sources */,
 				8431308B298295B6006EC00F /* SettingsBuilder.swift in Sources */,
+				843130AB2983DC70006EC00F /* NewToolTextView.swift in Sources */,
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
