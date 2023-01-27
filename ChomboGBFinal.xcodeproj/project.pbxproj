@@ -35,6 +35,8 @@
 		84313099298298CB006EC00F /* TabBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313098298298CB006EC00F /* TabBarConstants.swift */; };
 		8431309B2982A2E4006EC00F /* ToolsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309A2982A2E4006EC00F /* ToolsListHeaderView.swift */; };
 		8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309C2982AC63006EC00F /* ToolsListTableViewCell.swift */; };
+		8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309E2983C08E006EC00F /* CatalogTableViewCell.swift */; };
+		843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A02983C0A0006EC00F /* CatalogHeaderView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -95,6 +97,8 @@
 		84313098298298CB006EC00F /* TabBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConstants.swift; sourceTree = "<group>"; };
 		8431309A2982A2E4006EC00F /* ToolsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsListHeaderView.swift; sourceTree = "<group>"; };
 		8431309C2982AC63006EC00F /* ToolsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsListTableViewCell.swift; sourceTree = "<group>"; };
+		8431309E2983C08E006EC00F /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
+		843130A02983C0A0006EC00F /* CatalogHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogHeaderView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 		845485C829801127004657A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				843130A02983C0A0006EC00F /* CatalogHeaderView.swift */,
+				8431309E2983C08E006EC00F /* CatalogTableViewCell.swift */,
 				8431306929829345006EC00F /* CatalogViewController.swift */,
 			);
 			path = View;
@@ -782,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
+				8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */,
 				8431306A29829345006EC00F /* CatalogViewController.swift in Sources */,
 				84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */,
 				8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */,
@@ -789,6 +796,7 @@
 				845485D029801244004657A3 /* LoginViewController.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
+				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
