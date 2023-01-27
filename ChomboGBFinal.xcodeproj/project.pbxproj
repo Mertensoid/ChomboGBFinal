@@ -39,6 +39,7 @@
 		843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A02983C0A0006EC00F /* CatalogHeaderView.swift */; };
 		843130A32983C431006EC00F /* NewToolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A22983C431006EC00F /* NewToolHeaderView.swift */; };
 		843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A62983C4DD006EC00F /* NewToolPictureView.swift */; };
+		843130A92983D2FA006EC00F /* NewToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A82983D2FA006EC00F /* NewToolPickerView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -103,6 +104,7 @@
 		843130A02983C0A0006EC00F /* CatalogHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogHeaderView.swift; sourceTree = "<group>"; };
 		843130A22983C431006EC00F /* NewToolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolHeaderView.swift; sourceTree = "<group>"; };
 		843130A62983C4DD006EC00F /* NewToolPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPictureView.swift; sourceTree = "<group>"; };
+		843130A82983D2FA006EC00F /* NewToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPickerView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 			children = (
 				843130A22983C431006EC00F /* NewToolHeaderView.swift */,
 				843130A62983C4DD006EC00F /* NewToolPictureView.swift */,
+				843130A82983D2FA006EC00F /* NewToolPickerView.swift */,
 				8431306F29829376006EC00F /* NewToolViewController.swift */,
 			);
 			path = View;
@@ -793,6 +796,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843130A92983D2FA006EC00F /* NewToolPickerView.swift in Sources */,
 				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
 				8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */,
 				843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */,

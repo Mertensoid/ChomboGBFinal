@@ -13,6 +13,7 @@ final class NewToolViewController: UIViewController {
     
     private let headerView = NewToolHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
     private let pictureView = NewToolPictureView()
+    private let categoryPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Category")
     
     // MARK: - Lifecycle
     
@@ -29,6 +30,7 @@ final class NewToolViewController: UIViewController {
     private func addViews() {
         view.addSubview(headerView)
         view.addSubview(pictureView)
+        view.addSubview(categoryPickerView)
     }
     
     private func configureConstraints() {
@@ -42,7 +44,12 @@ final class NewToolViewController: UIViewController {
             pictureView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
             pictureView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             pictureView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            pictureView.heightAnchor.constraint(equalToConstant: 200)
+            pictureView.heightAnchor.constraint(equalToConstant: 200),
+            
+            categoryPickerView.topAnchor.constraint(equalTo: pictureView.bottomAnchor, constant: 10),
+            categoryPickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            categoryPickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            categoryPickerView.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -54,6 +61,8 @@ final class NewToolViewController: UIViewController {
         headerView.leftHeaderButton.addTarget(self, action: #selector(goToCatalogScreen), for: .touchUpInside)
         
         pictureView.translatesAutoresizingMaskIntoConstraints = false
+        
+        categoryPickerView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     @objc private func goToCatalogScreen() {
