@@ -75,6 +75,13 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     private func configureViews() {
 
         headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    @objc func goToNewToolScreen(_ sender: UIButton) {
+        let newToolVC = NewToolViewController()
+        navigationController?.pushViewController(newToolVC, animated: true)
     }
 }

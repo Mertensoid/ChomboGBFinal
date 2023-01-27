@@ -13,7 +13,7 @@ class CatalogHeaderView: UIView {
     
     private let headerTitle = UILabel()
     private let leftHeaderButton = UIButton()
-    private let rightHeaderButton = UIButton()
+    var rightHeaderButton = UIButton()
     
     // MARK: - Construction
     
@@ -73,5 +73,8 @@ class CatalogHeaderView: UIView {
         rightHeaderButton.translatesAutoresizingMaskIntoConstraints = false
         rightHeaderButton.tintColor = ColorConstants.baseWhite
         rightHeaderButton.setTitle("New", for: .normal)
+        
     }
+    
+    
 }

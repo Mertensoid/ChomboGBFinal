@@ -12,7 +12,7 @@ class NewToolHeaderView: UIView {
     // MARK: - Private properties
     
     private let headerTitle = UILabel()
-    private let leftHeaderButton = UIButton()
+    var leftHeaderButton = UIButton()
     
     // MARK: - Construction
     
@@ -58,10 +58,10 @@ class NewToolHeaderView: UIView {
         headerTitle.minimumScaleFactor = 0.5
         headerTitle.adjustsFontSizeToFitWidth = true
         headerTitle.textColor = ColorConstants.baseWhite
-        headerTitle.text = "Tools"
+        headerTitle.text = "New tool"
         
         leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
         leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
+        leftHeaderButton.setTitle("Back", for: .normal)
     }
 }

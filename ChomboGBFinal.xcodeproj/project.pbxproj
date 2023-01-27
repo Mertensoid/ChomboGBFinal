@@ -38,6 +38,7 @@
 		8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431309E2983C08E006EC00F /* CatalogTableViewCell.swift */; };
 		843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A02983C0A0006EC00F /* CatalogHeaderView.swift */; };
 		843130A32983C431006EC00F /* NewToolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A22983C431006EC00F /* NewToolHeaderView.swift */; };
+		843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A62983C4DD006EC00F /* NewToolPictureView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -101,6 +102,7 @@
 		8431309E2983C08E006EC00F /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
 		843130A02983C0A0006EC00F /* CatalogHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogHeaderView.swift; sourceTree = "<group>"; };
 		843130A22983C431006EC00F /* NewToolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolHeaderView.swift; sourceTree = "<group>"; };
+		843130A62983C4DD006EC00F /* NewToolPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPictureView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				843130A22983C431006EC00F /* NewToolHeaderView.swift */,
+				843130A62983C4DD006EC00F /* NewToolPictureView.swift */,
 				8431306F29829376006EC00F /* NewToolViewController.swift */,
 			);
 			path = View;
@@ -792,6 +795,7 @@
 			files = (
 				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
 				8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */,
+				843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */,
 				8431306A29829345006EC00F /* CatalogViewController.swift in Sources */,
 				84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */,
 				8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */,
