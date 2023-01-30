@@ -9,10 +9,13 @@ import UIKit
 
 class NewToolHeaderView: UIView {
     
+    // MARK: - Public properties
+    
+    var leftHeaderButton = UIButton()
+    
     // MARK: - Private properties
     
     private let headerTitle = UILabel()
-    var leftHeaderButton = UIButton()
     
     // MARK: - Construction
     

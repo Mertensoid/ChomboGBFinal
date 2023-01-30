@@ -80,6 +80,7 @@ final class ToolsListTableViewCell: UITableViewCell {
         mainCellView.backgroundColor = ColorConstants.baseWhite
 
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.tintColor = ColorConstants.baseBlack
         
         productNameTitle.translatesAutoresizingMaskIntoConstraints = false
         productNameTitle.font = UIFont(name: "Helvetica-Bold", size: 16)
