@@ -9,11 +9,14 @@ import UIKit
 
 class CatalogHeaderView: UIView {
     
+    // MARK: - Public properties
+    
+    var rightHeaderButton = UIButton()
+    
     // MARK: - Private properties
     
     private let headerTitle = UILabel()
     private let leftHeaderButton = UIButton()
-    var rightHeaderButton = UIButton()
     
     // MARK: - Construction
     
