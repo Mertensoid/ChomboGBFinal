@@ -1,5 +1,5 @@
 //
-//  CatalogHeaderView.swift
+//  NewToolHeaderView.swift
 //  ChomboGBFinal
 //
 //  Created by admin on 27.01.2023.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class CatalogHeaderView: UIView {
+class NewToolHeaderView: UIView {
     
     // MARK: - Private properties
     
     private let headerTitle = UILabel()
-    private let leftHeaderButton = UIButton()
-    var rightHeaderButton = UIButton()
+    var leftHeaderButton = UIButton()
     
     // MARK: - Construction
     
@@ -33,7 +32,6 @@ class CatalogHeaderView: UIView {
     private func addViews() {
         addSubview(headerTitle)
         addSubview(leftHeaderButton)
-        addSubview(rightHeaderButton)
     }
     
     private func configureConstraints() {
@@ -45,11 +43,7 @@ class CatalogHeaderView: UIView {
             
             leftHeaderButton.centerYAnchor.constraint(equalTo: topAnchor, constant: 72),
             leftHeaderButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            leftHeaderButton.heightAnchor.constraint(equalToConstant: 30),
-            
-            rightHeaderButton.centerYAnchor.constraint(equalTo: topAnchor, constant: 72),
-            rightHeaderButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            rightHeaderButton.heightAnchor.constraint(equalToConstant: 30)
+            leftHeaderButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -64,17 +58,10 @@ class CatalogHeaderView: UIView {
         headerTitle.minimumScaleFactor = 0.5
         headerTitle.adjustsFontSizeToFitWidth = true
         headerTitle.textColor = ColorConstants.baseWhite
-        headerTitle.text = "Tools"
+        headerTitle.text = "New tool"
         
         leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
         leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
-        
-        rightHeaderButton.translatesAutoresizingMaskIntoConstraints = false
-        rightHeaderButton.tintColor = ColorConstants.baseWhite
-        rightHeaderButton.setTitle("New", for: .normal)
-        
+        leftHeaderButton.setTitle("Back", for: .normal)
     }
-    
-    
 }
