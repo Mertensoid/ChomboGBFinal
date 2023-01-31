@@ -11,11 +11,47 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private let scrollView = UIScrollView()
-    private let loginTextField = UITextField()
-    private let passwordTextField = UITextField()
-    private let joinButton = UIButton()
-    private let registrationButton = UIButton()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.activateConstraints()
+        return scrollView
+    }()
+    private let loginTextField: UITextField = {
+        let loginTextField = UITextField()
+        loginTextField.activateConstraints()
+        loginTextField.placeholder = "E-mail"
+        loginTextField.backgroundColor = ColorConstants.backgroundGray
+        loginTextField.borderStyle = .roundedRect
+        return loginTextField
+    }()
+    private let passwordTextField: UITextField = {
+        let passwordTextField = UITextField()
+        passwordTextField.activateConstraints()
+        passwordTextField.placeholder = "Password"
+        passwordTextField.backgroundColor = ColorConstants.backgroundGray
+        passwordTextField.borderStyle = .roundedRect
+        return passwordTextField
+    }()
+    private let joinButton: UIButton = {
+        let joinButton = UIButton()
+        joinButton.activateConstraints()
+        joinButton.setTitle("Join", for: .normal)
+        joinButton.backgroundColor = ColorConstants.darkYellow
+        joinButton.layer.cornerRadius = 25
+        joinButton.setOpacity()
+        joinButton.makeTapWithButtonShadow()
+        return joinButton
+    }()
+    private let registrationButton: UIButton = {
+        let registrationButton = UIButton()
+        registrationButton.activateConstraints()
+        registrationButton.setTitle("Registration", for: .normal)
+        registrationButton.backgroundColor = ColorConstants.darkYellow
+        registrationButton.layer.cornerRadius = 25
+        registrationButton.setOpacity()
+        registrationButton.makeTapWithButtonShadow()
+        return registrationButton
+    }()
     
     // MARK: - Lifecycle
     
@@ -88,33 +124,9 @@ final class LoginViewController: UIViewController {
         
         view.backgroundColor = ColorConstants.baseWhite
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
-        loginTextField.translatesAutoresizingMaskIntoConstraints = false
-        loginTextField.placeholder = "E-mail"
-        loginTextField.backgroundColor = ColorConstants.backgroundGray
-        loginTextField.borderStyle = .roundedRect
-
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder = "Password"
-        passwordTextField.backgroundColor = ColorConstants.backgroundGray
-        passwordTextField.borderStyle = .roundedRect
-
-        joinButton.translatesAutoresizingMaskIntoConstraints = false
-        joinButton.setTitle("Join", for: .normal)
         joinButton.addTarget(self, action: #selector(joinButtonPressed), for: .touchUpInside)
-        joinButton.backgroundColor = ColorConstants.darkYellow
-        joinButton.layer.cornerRadius = 25
-        joinButton.setOpacity()
-        joinButton.makeTapWithButtonShadow()
-
-        registrationButton.translatesAutoresizingMaskIntoConstraints = false
-        registrationButton.setTitle("Registration", for: .normal)
+        
         registrationButton.addTarget(self, action: #selector(registrationButtonPressed), for: .touchUpInside)
-        registrationButton.backgroundColor = ColorConstants.darkYellow
-        registrationButton.layer.cornerRadius = 25
-        registrationButton.setOpacity()
-        registrationButton.makeTapWithButtonShadow()
     }
 }
 
