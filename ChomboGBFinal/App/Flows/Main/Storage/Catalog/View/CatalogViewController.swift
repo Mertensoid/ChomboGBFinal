@@ -11,8 +11,16 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Private properties
     
-    private let headerView = CatalogHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-    private let tableView = UITableView()
+    private let headerView: CatalogHeaderView = {
+        let headerView = CatalogHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        headerView.activateConstraints()
+        return headerView
+    }()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.activateConstraints()
+        return tableView
+    }()
     
     // MARK: - Lifecycle
     
@@ -73,11 +81,8 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func configureViews() {
-
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
     }
     
     @objc func goToNewToolScreen(_ sender: UIButton) {
