@@ -11,8 +11,16 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     
     // MARK: - Private properties
     
-    private let headerView = ToolsListHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-    private let tableView = UITableView()
+    private let headerView: ToolsListHeaderView = {
+        let headerView = ToolsListHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        headerView.activateConstraints()
+        return headerView
+    }()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.activateConstraints()
+        return tableView
+    }()
     
     // MARK: - Lifecycle
     
@@ -22,7 +30,6 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
         tableView.dataSource = self
         addViews()
         configureConstraints()
-        configureViews()
     }
     
     // MARK: - Functions
@@ -70,12 +77,6 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-    
-    private func configureViews() {
-
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
