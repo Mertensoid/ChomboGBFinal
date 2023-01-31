@@ -11,15 +11,56 @@ final class NewToolViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private let headerView = NewToolHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-    private let pictureView = NewToolPictureView()
-    private let categoryPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Category")
-    private let brandTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Brand")
-    private let modelTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Model")
-    private let serialTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Serial")
-    private let datePickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Date")
-    private let conditionPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Condition")
-    private let addButton = UIButton()
+    private let headerView: NewToolHeaderView = {
+        let headerView = NewToolHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        headerView.activateConstraints()
+        return headerView
+    }()
+    private let pictureView: NewToolPictureView = {
+        let pictureView = NewToolPictureView()
+        pictureView.activateConstraints()
+        return pictureView
+    }()
+    private let categoryPickerView: NewToolPickerView = {
+        let categoryPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Category")
+        categoryPickerView.activateConstraints()
+        return categoryPickerView
+    }()
+    private let brandTextView: NewToolTextView = {
+        let brandTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Brand")
+        brandTextView.activateConstraints()
+        return brandTextView
+    }()
+    private let modelTextView: NewToolTextView = {
+        let modelTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Model")
+        modelTextView.activateConstraints()
+        return modelTextView
+    }()
+    private let serialTextView: NewToolTextView = {
+        let serialTextView = NewToolTextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), textLabelText: "Serial")
+        serialTextView.activateConstraints()
+        return serialTextView
+    }()
+    private let datePickerView: NewToolPickerView = {
+        let datePickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Date")
+        datePickerView.activateConstraints()
+        return datePickerView
+    }()
+    private let conditionPickerView: NewToolPickerView = {
+        let conditionPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Condition")
+        conditionPickerView.activateConstraints()
+        return conditionPickerView
+    }()
+    private let addButton: UIButton = {
+        let addButton = UIButton()
+        addButton.activateConstraints()
+        addButton.setTitle("Add", for: .normal)
+        addButton.backgroundColor = ColorConstants.darkYellow
+        addButton.layer.cornerRadius = 25
+        addButton.setOpacity()
+        addButton.makeTapWithButtonShadow()
+        return addButton
+    }()
     
     // MARK: - Lifecycle
     
@@ -99,24 +140,9 @@ final class NewToolViewController: UIViewController {
 
         view.backgroundColor = ColorConstants.baseWhite
         
-        headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.leftHeaderButton.addTarget(self, action: #selector(goToCatalogScreen), for: .touchUpInside)
-        
-        pictureView.translatesAutoresizingMaskIntoConstraints = false
-        categoryPickerView.translatesAutoresizingMaskIntoConstraints = false
-        brandTextView.translatesAutoresizingMaskIntoConstraints = false
-        modelTextView.translatesAutoresizingMaskIntoConstraints = false
-        serialTextView.translatesAutoresizingMaskIntoConstraints = false
-        datePickerView.translatesAutoresizingMaskIntoConstraints = false
-        conditionPickerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.setTitle("Add", for: .normal)
+
         addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
-        addButton.backgroundColor = ColorConstants.darkYellow
-        addButton.layer.cornerRadius = 25
-        addButton.setOpacity()
-        addButton.makeTapWithButtonShadow()
     }
     
     @objc private func goToCatalogScreen() {
