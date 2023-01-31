@@ -61,6 +61,8 @@ final class NewToolViewController: UIViewController {
         addButton.makeTapWithButtonShadow()
         return addButton
     }()
+    private let presenter = NewToolPresenter()
+    weak private var viewOutputDelegate: NewToolViewOutputDelegate? 
     
     // MARK: - Lifecycle
     
@@ -70,6 +72,9 @@ final class NewToolViewController: UIViewController {
         addViews()
         configureConstraints()
         configureViews()
+        
+        presenter.setViewInputDelegate(viewInputDelegate: self)
+        self.viewOutputDelegate = presenter
     }
     
     // MARK: - Private functions
@@ -152,4 +157,21 @@ final class NewToolViewController: UIViewController {
     @objc private func addButtonPressed() {
         
     }
+}
+
+extension NewToolViewController: NewToolViewInputDelegate {
+    
+    func setupInitialState() {
+        
+    }
+    
+    func setupData(with mockData: ([MockTool])) {
+        
+    }
+    
+    func displayData(index: Int) {
+        
+    }
+    
+    
 }
