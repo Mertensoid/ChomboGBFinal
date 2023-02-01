@@ -8,6 +8,11 @@
 import Foundation
 
 protocol NewToolViewOutputDelegate: AnyObject {
-    func getData()
-    func saveData()
+    
+    init(view: NewToolViewInputDelegate)
+    
+    func saveNewTool()
+    func setCategory(row: Int)
+    func setDate()
+    func setCondition(row: Int)
 }

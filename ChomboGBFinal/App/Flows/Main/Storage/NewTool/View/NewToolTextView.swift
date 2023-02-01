@@ -51,7 +51,17 @@ final class NewToolTextView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Private functions
+    // MARK: - Public functions
+    
+    func getData() -> String {
+        if let data = textField.text {
+            return data
+        } else {
+            return ""
+        }
+    }
+    
+    // MARK: - Private functions
     
     private func addViews() {
         

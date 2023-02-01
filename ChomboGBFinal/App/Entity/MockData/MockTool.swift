@@ -47,15 +47,16 @@ class MockTool {
 }
 
 enum MockCategory: String {
-    case handTools = "Ручной инструмент"
-    case electroTools = "Электроинструмент"
-    case gasolineTools = "Бензиновый инструмент"
+    case handTools = "Hand tools"
+    case electroTools = "Electro tools"
+    case gasolineTools = "Gasoline tools"
+    case miscellaneous = "Miscellaneous"
 }
 
 enum MockStatus: String {
-    case free = "Доступен"
-    case inUse = "В работе"
-    case broken = "Неисправен"
+    case free = "Free"
+    case inUse = "In use"
+    case broken = "Broken"
 }
 
 class MockUser {
@@ -76,10 +77,10 @@ enum MockAccessType: String {
 }
 
 enum MockCondition: String {
-    case excellent = "Отличное"
-    case good = "Хорошее"
-    case normal = "Удовлетворительное"
-    case broken = "Неудовлетворительное"
+    case excellent = "Excellent"
+    case good = "Good"
+    case normal = "Normal"
+    case broken = "Broken"
 }
 
 class MockLocation {
@@ -110,7 +111,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 2,
@@ -128,7 +129,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 3,
@@ -146,7 +147,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 4,
@@ -164,7 +165,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 5,
@@ -182,7 +183,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 6,
@@ -200,7 +201,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 7,
@@ -218,7 +219,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 8,
@@ -236,7 +237,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
         MockTool(
             id: 9,
@@ -254,7 +255,7 @@ extension MockTool {
             location: MockLocation(
                 latitude: 31.0005434,
                 longitude: 65.4643721),
-            picture: UIImage(systemName: "tool")!
+            picture: UIImage(systemName: "hammer")!
         ),
     ]
 }

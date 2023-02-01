@@ -9,13 +9,16 @@ import UIKit
 
 class NewToolPickerView: UIView {
     
+    // MARK: - Public properties
+    
+    let pickerButton: UIButton = {
+        let pickerButton = UIButton()
+        pickerButton.activateConstraints()
+        return pickerButton
+    }()
+    
     // MARK: - Private properties
     
-    private let picturePickerButton: UIButton = {
-        let picturePickerButton = UIButton()
-        picturePickerButton.activateConstraints()
-        return picturePickerButton
-    }()
     private let pickerLabel: UILabel = {
         let pickerLabel = UILabel()
         pickerLabel.activateConstraints()
@@ -34,6 +37,7 @@ class NewToolPickerView: UIView {
         dataLabel.numberOfLines = 1
         dataLabel.minimumScaleFactor = 0.5
         dataLabel.adjustsFontSizeToFitWidth = true
+        dataLabel.text = ">"
         return dataLabel
     }()
     
@@ -53,15 +57,23 @@ class NewToolPickerView: UIView {
     
     // MARK: - Functions
     
-    func setDataLabelText() -> String {
-        return "Some Data >"
+    func getData() -> String {
+        if let data = dataLabel.text {
+            return data
+        } else {
+            return ""
+        }
+    }
+    
+    func setData(data: String) {
+        dataLabel.text = data + " >"
     }
     
     // MARK: - Private functions
     
     private func addViews() {
         
-        addSubview(picturePickerButton)
+        addSubview(pickerButton)
         addSubview(pickerLabel)
         addSubview(dataLabel)
     }
@@ -70,10 +82,10 @@ class NewToolPickerView: UIView {
         
         NSLayoutConstraint.activate([
             
-            picturePickerButton.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            picturePickerButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-            picturePickerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            picturePickerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            pickerButton.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            pickerButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            pickerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            pickerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             
             pickerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             pickerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -91,14 +103,6 @@ class NewToolPickerView: UIView {
         layer.borderWidth = 1
         layer.masksToBounds = true
         
-        picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
-        
         pickerLabel.text = pickerLabelText
-        
-        dataLabel.text = setDataLabelText()
-    }
-    
-    @objc private func setPhoto() {
-        
     }
 }

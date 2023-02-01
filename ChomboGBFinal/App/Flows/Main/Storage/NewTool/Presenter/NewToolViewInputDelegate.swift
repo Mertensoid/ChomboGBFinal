@@ -5,10 +5,17 @@
 //  Created by admin on 31.01.2023.
 //
 
+import UIKit
 import Foundation
 
 protocol NewToolViewInputDelegate: AnyObject {
-    func setupInitialState()
-    func setupData(with mockData: ([MockTool]))
-    func displayData(index: Int)
+
+    func getCategory() -> MockCategory
+    func getBrand() -> String
+    func getModel() -> String
+    func getSerial() -> String
+    func getCondition() -> MockCondition
+    func showCategory(category: MockCategory)
+    func showDate(date: String)
+    func showCondition(condition: MockCondition)
 }
