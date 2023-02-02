@@ -52,6 +52,7 @@
 		843130B9298BCACB006EC00F /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130B8298BCACB006EC00F /* ProfileHeaderView.swift */; };
 		843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BA298BCAEC006EC00F /* ProfileAvatarView.swift */; };
 		843130BD298BD95F006EC00F /* ProfileTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BC298BD95F006EC00F /* ProfileTitleView.swift */; };
+		843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -126,6 +127,7 @@
 		843130B8298BCACB006EC00F /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		843130BA298BCAEC006EC00F /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
 		843130BC298BD95F006EC00F /* ProfileTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleView.swift; sourceTree = "<group>"; };
+		843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMetricsTitleView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				843130B8298BCACB006EC00F /* ProfileHeaderView.swift */,
 				843130BA298BCAEC006EC00F /* ProfileAvatarView.swift */,
 				843130BC298BD95F006EC00F /* ProfileTitleView.swift */,
+				843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */,
 				8431305D298292B3006EC00F /* ProfileViewController.swift */,
 			);
 			path = View;
@@ -863,6 +866,7 @@
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
+				843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */,
 				843130B22989408E006EC00F /* MockTool.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,

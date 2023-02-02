@@ -11,6 +11,13 @@ class ProfileHeaderView: UIView {
     
     // MARK: - Public properties
     
+    let leftHeaderButton: UIButton = {
+        let leftHeaderButton = UIButton()
+        leftHeaderButton.activateConstraints()
+        leftHeaderButton.tintColor = ColorConstants.baseWhite
+        leftHeaderButton.setTitle("Logout", for: .normal)
+        return leftHeaderButton
+    }()
     var rightHeaderButton: UIButton = {
         let rightHeaderButton = UIButton()
         rightHeaderButton.activateConstraints()
@@ -32,13 +39,6 @@ class ProfileHeaderView: UIView {
         headerTitle.textColor = ColorConstants.baseWhite
         headerTitle.text = "Profile"
         return headerTitle
-    }()
-    private let leftHeaderButton: UIButton = {
-        let leftHeaderButton = UIButton()
-        leftHeaderButton.activateConstraints()
-        leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
-        return leftHeaderButton
     }()
     
     // MARK: - Construction

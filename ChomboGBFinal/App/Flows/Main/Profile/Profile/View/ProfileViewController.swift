@@ -57,6 +57,21 @@ final class ProfileViewController: UIViewController {
         locationTitleView.activateConstraints()
         return locationTitleView
     }()
+    private let metricsTitleView: ProfileMetricsTitleView = {
+        let metricsTitleView = ProfileMetricsTitleView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), textLabelText: "Metrics")
+        metricsTitleView.activateConstraints()
+        return metricsTitleView
+    }()
+    private let editProfileButton: UIButton = {
+        let editProfileButton = UIButton()
+        editProfileButton.activateConstraints()
+        editProfileButton.setTitle("Edit profile", for: .normal)
+        editProfileButton.backgroundColor = ColorConstants.darkYellow
+        editProfileButton.layer.cornerRadius = 25
+        editProfileButton.setOpacity()
+        editProfileButton.makeTapWithButtonShadow()
+        return editProfileButton
+    }()
     
     // MARK: - Lifecycle
     
@@ -77,6 +92,8 @@ final class ProfileViewController: UIViewController {
         view.addSubview(postLabel)
         view.addSubview(emailTitleView)
         view.addSubview(locationTitleView)
+        view.addSubview(metricsTitleView)
+        view.addSubview(editProfileButton)
     }
     
     private func configureConstraints() {
@@ -108,6 +125,15 @@ final class ProfileViewController: UIViewController {
             locationTitleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             locationTitleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             locationTitleView.heightAnchor.constraint(equalToConstant: 70),
+            
+            metricsTitleView.topAnchor.constraint(equalTo: locationTitleView.bottomAnchor, constant: 10),
+            metricsTitleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            metricsTitleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            editProfileButton.topAnchor.constraint(equalTo: metricsTitleView.bottomAnchor, constant: 10),
+            editProfileButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            editProfileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            editProfileButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -116,6 +142,26 @@ final class ProfileViewController: UIViewController {
         view.backgroundColor = ColorConstants.baseWhite
         emailTitleView.setDataText(data: "ma*******@yandex.ru")
         locationTitleView.setDataText(data: "2066 Crist Dr, Los Altos, California")
+        
+        metricsTitleView.setInUseDataText(data: "34")
+        metricsTitleView.setInProgressDataText(data: "5")
+        metricsTitleView.setDoneDataText(data: "73")
+        metricsTitleView.setActivityDataText(data: "70%")
+        
+        headerView.leftHeaderButton.addTarget(self, action: #selector(logoutButtonPressed(_:)), for: .touchUpInside)
+        
+        headerView.rightHeaderButton.addTarget(self, action: #selector(goToSettingsScreen(_:)), for: .touchUpInside)
+        
+        editProfileButton.addTarget(self, action: #selector(goToSettingsScreen(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func goToSettingsScreen(_ sender: UIButton) {
+        let newToolVC = SettingsViewController()
+        navigationController?.pushViewController(newToolVC, animated: true)
+    }
+    
+    @objc private func logoutButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }
 
