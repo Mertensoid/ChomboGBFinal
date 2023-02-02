@@ -16,6 +16,11 @@ final class ProfileViewController: UIViewController {
         headerView.activateConstraints()
         return headerView
     }()
+    private let avatarView: ProfileAvatarView = {
+        let avatarView = ProfileAvatarView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        avatarView.activateConstraints()
+        return avatarView
+    }()
     
     // MARK: - Lifecycle
     
@@ -31,6 +36,7 @@ final class ProfileViewController: UIViewController {
     private func addViews() {
         
         view.addSubview(headerView)
+        view.addSubview(avatarView)
     }
     
     private func configureConstraints() {
@@ -41,6 +47,11 @@ final class ProfileViewController: UIViewController {
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 220),
+            
+            avatarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            avatarView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            avatarView.heightAnchor.constraint(equalToConstant: 150),
+            avatarView.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
     

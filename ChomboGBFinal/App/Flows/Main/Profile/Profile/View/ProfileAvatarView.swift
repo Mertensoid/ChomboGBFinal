@@ -13,14 +13,17 @@ class ProfileAvatarView: UIView {
     
     private let backGroundView: UIView = {
         let backGroundView = UIView()
+        backGroundView.activateConstraints()
         backGroundView.backgroundColor = ColorConstants.baseWhite
         backGroundView.layer.cornerRadius = 75
         return backGroundView
     }()
     private let avatarView: UIImageView = {
         let avatarView = UIImageView()
+        avatarView.activateConstraints()
         avatarView.image = UIImage(named: "magister_284x284px")
         avatarView.layer.cornerRadius = 71
+        avatarView.layer.masksToBounds = true
         return avatarView
     }()
     
@@ -29,6 +32,8 @@ class ProfileAvatarView: UIView {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        addViews()
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {
