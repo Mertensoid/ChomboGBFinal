@@ -177,10 +177,16 @@ final class LoginViewController: UIViewController {
     }
     
     func joinButtonPressed() {
-        
+        let mainTabBar = MainTabBarController()
+        mainTabBar.modalPresentationStyle = .fullScreen
+        present(mainTabBar, animated: true)
+        //navigationController?.pushViewController(mainTabBar, animated: true)
     }
     
     func registrationButtonPressed() {
-        
+        let registrationVC = RegistrationViewController()
+        registrationVC.modalPresentationStyle = .fullScreen
+        present(registrationVC, animated: true)
+        //navigationController?.pushViewController(registrationVC, animated: true)
     }
 }
