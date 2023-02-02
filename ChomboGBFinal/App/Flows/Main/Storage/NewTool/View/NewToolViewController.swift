@@ -11,6 +11,7 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     // MARK: - Public properties
     
+    var presenter: NewToolViewOutputDelegate?
     var categoryToolBar: UIToolbar = {
         let toolBar = UIToolbar(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = UIBarStyle(rawValue: 0)!
@@ -106,8 +107,6 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         addButton.makeTapWithButtonShadow()
         return addButton
     }()
-    
-    private var presenter: NewToolViewOutputDelegate?
 
     // MARK: - Lifecycle
     
@@ -124,8 +123,6 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         addViews()
         configureConstraints()
         configureViews()
-        
-        presenter = NewToolPresenter(view: self)
     }
     
     // MARK: - Public functions
