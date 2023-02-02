@@ -21,6 +21,32 @@ final class ProfileViewController: UIViewController {
         avatarView.activateConstraints()
         return avatarView
     }()
+    private let nameLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.activateConstraints()
+        nameLabel.font = UIFont(name: "Helvetica-Bold", size: 24)
+        nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 1
+        nameLabel.minimumScaleFactor = 0.5
+        nameLabel.text = "Matsuk Maxim"
+        nameLabel.textColor = ColorConstants.baseBlack
+        nameLabel.backgroundColor = ColorConstants.baseWhite
+        nameLabel.adjustsFontSizeToFitWidth = true
+        return nameLabel
+    }()
+    private let postLabel: UILabel = {
+        let postLabel = UILabel()
+        postLabel.activateConstraints()
+        postLabel.font = UIFont(name: "Helvetica", size: 16)
+        postLabel.textAlignment = .center
+        postLabel.numberOfLines = 1
+        postLabel.minimumScaleFactor = 0.5
+        postLabel.text = "CEO of Chombo corp."
+        postLabel.textColor = ColorConstants.baseBlack
+        postLabel.backgroundColor = ColorConstants.baseWhite
+        postLabel.adjustsFontSizeToFitWidth = true
+        return postLabel
+    }()
     
     // MARK: - Lifecycle
     
@@ -37,6 +63,8 @@ final class ProfileViewController: UIViewController {
         
         view.addSubview(headerView)
         view.addSubview(avatarView)
+        view.addSubview(nameLabel)
+        view.addSubview(postLabel)
     }
     
     private func configureConstraints() {
@@ -51,7 +79,13 @@ final class ProfileViewController: UIViewController {
             avatarView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             avatarView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             avatarView.heightAnchor.constraint(equalToConstant: 150),
-            avatarView.widthAnchor.constraint(equalToConstant: 150)
+            avatarView.widthAnchor.constraint(equalToConstant: 150),
+            
+            nameLabel.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            postLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            postLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
