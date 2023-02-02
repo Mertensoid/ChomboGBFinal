@@ -47,6 +47,16 @@ final class ProfileViewController: UIViewController {
         postLabel.adjustsFontSizeToFitWidth = true
         return postLabel
     }()
+    private let emailTitleView: ProfileTitleView = {
+        let emailTitleView = ProfileTitleView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), textLabelText: "E-mail")
+        emailTitleView.activateConstraints()
+        return emailTitleView
+    }()
+    private let locationTitleView: ProfileTitleView = {
+        let locationTitleView = ProfileTitleView(frame: CGRect(x: 0, y: 0, width: 1, height: 1), textLabelText: "Workspace location")
+        locationTitleView.activateConstraints()
+        return locationTitleView
+    }()
     
     // MARK: - Lifecycle
     
@@ -65,6 +75,8 @@ final class ProfileViewController: UIViewController {
         view.addSubview(avatarView)
         view.addSubview(nameLabel)
         view.addSubview(postLabel)
+        view.addSubview(emailTitleView)
+        view.addSubview(locationTitleView)
     }
     
     private func configureConstraints() {
@@ -86,12 +98,24 @@ final class ProfileViewController: UIViewController {
             
             postLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             postLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            emailTitleView.topAnchor.constraint(equalTo: postLabel.bottomAnchor, constant: 10),
+            emailTitleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            emailTitleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            emailTitleView.heightAnchor.constraint(equalToConstant: 70),
+            
+            locationTitleView.topAnchor.constraint(equalTo: emailTitleView.bottomAnchor, constant: 10),
+            locationTitleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            locationTitleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            locationTitleView.heightAnchor.constraint(equalToConstant: 70),
         ])
     }
     
     private func configureViews() {
         
         view.backgroundColor = ColorConstants.baseWhite
+        emailTitleView.setDataText(data: "ma*******@yandex.ru")
+        locationTitleView.setDataText(data: "2066 Crist Dr, Los Altos, California")
     }
 }
 
