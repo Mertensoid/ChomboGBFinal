@@ -55,6 +55,8 @@
 		843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */; };
 		843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C0298D0DF9006EC00F /* LoginViewInputDelegate.swift */; };
 		843130C3298D0E0F006EC00F /* LoginViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C2298D0E0F006EC00F /* LoginViewOutputDelegate.swift */; };
+		843130C5298D322A006EC00F /* ToolDetailsViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C4298D322A006EC00F /* ToolDetailsViewInputProtocol.swift */; };
+		843130C7298D3246006EC00F /* ToolDetailsViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C6298D3246006EC00F /* ToolDetailsViewOutputProtocol.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -132,6 +134,8 @@
 		843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMetricsTitleView.swift; sourceTree = "<group>"; };
 		843130C0298D0DF9006EC00F /* LoginViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewInputDelegate.swift; sourceTree = "<group>"; };
 		843130C2298D0E0F006EC00F /* LoginViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewOutputDelegate.swift; sourceTree = "<group>"; };
+		843130C4298D322A006EC00F /* ToolDetailsViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsViewInputProtocol.swift; sourceTree = "<group>"; };
+		843130C6298D3246006EC00F /* ToolDetailsViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsViewOutputProtocol.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				8431309429829673006EC00F /* ToolDetailsPresenter.swift */,
+				843130C4298D322A006EC00F /* ToolDetailsViewInputProtocol.swift */,
+				843130C6298D3246006EC00F /* ToolDetailsViewOutputProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -875,6 +881,7 @@
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */,
+				843130C5298D322A006EC00F /* ToolDetailsViewInputProtocol.swift in Sources */,
 				843130B22989408E006EC00F /* MockTool.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
@@ -884,6 +891,7 @@
 				84313099298298CB006EC00F /* TabBarConstants.swift in Sources */,
 				845485D22980125D004657A3 /* LoginPresenter.swift in Sources */,
 				84313089298295AA006EC00F /* SettingsPresenter.swift in Sources */,
+				843130C7298D3246006EC00F /* ToolDetailsViewOutputProtocol.swift in Sources */,
 				843130AF29890A3C006EC00F /* UIView + ext.swift in Sources */,
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
 				8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */,
