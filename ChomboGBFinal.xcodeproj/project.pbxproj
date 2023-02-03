@@ -275,8 +275,8 @@
 			children = (
 				843130C8298D36DC006EC00F /* ToolDetailsHeaderView.swift */,
 				843130CB298D37A9006EC00F /* ToolDetailsPhotoView.swift */,
-				8431309129829659006EC00F /* ToolDetailsViewController.swift */,
 				843130CD298D393C006EC00F /* ToolDetailsBasicInformationView.swift */,
+				8431309129829659006EC00F /* ToolDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -12,18 +12,18 @@ class ToolDetailsPhotoView: UIView {
     // MARK: - Private properties
     
     private let backGroundView: UIView = {
-        let backGroundView = UIView()
-        backGroundView.activateConstraints()
-        backGroundView.backgroundColor = ColorConstants.baseWhite
-        backGroundView.layer.cornerRadius = 8
-        return backGroundView
+        let view = UIView()
+        view.activateConstraints()
+        view.backgroundColor = ColorConstants.baseWhite
+        view.layer.cornerRadius = 8
+        return view
     }()
-    private let avatarView: UIImageView = {
-        let avatarView = UIImageView()
-        avatarView.activateConstraints()
-        avatarView.layer.cornerRadius = 8
-        avatarView.layer.masksToBounds = true
-        return avatarView
+    private let photoView: UIImageView = {
+        let view = UIImageView()
+        view.activateConstraints()
+        view.layer.cornerRadius = 8
+        view.layer.masksToBounds = true
+        return view
     }()
     
     // MARK: - Construction
@@ -43,7 +43,7 @@ class ToolDetailsPhotoView: UIView {
     // MARK: - Public functions
     
     func setToolPhoto(image: UIImage) {
-        avatarView.image = image
+        photoView.image = image
     }
     
     // MARK: - Private functions
@@ -51,7 +51,7 @@ class ToolDetailsPhotoView: UIView {
     private func addViews() {
         
         addSubview(backGroundView)
-        addSubview(avatarView)
+        addSubview(photoView)
     }
     
     private func configureConstraints() {
@@ -63,10 +63,10 @@ class ToolDetailsPhotoView: UIView {
             backGroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backGroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            avatarView.topAnchor.constraint(equalTo: backGroundView.topAnchor, constant: 4),
-            avatarView.bottomAnchor.constraint(equalTo: backGroundView.bottomAnchor, constant: -4),
-            avatarView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 4),
-            avatarView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -4)
+            photoView.topAnchor.constraint(equalTo: backGroundView.topAnchor, constant: 4),
+            photoView.bottomAnchor.constraint(equalTo: backGroundView.bottomAnchor, constant: -4),
+            photoView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 4),
+            photoView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -4)
         ])
     }
 }

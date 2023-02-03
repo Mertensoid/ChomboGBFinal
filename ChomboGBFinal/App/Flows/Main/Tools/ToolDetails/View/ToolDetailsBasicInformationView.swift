@@ -13,12 +13,8 @@ final class ToolDetailsBasicInformationView: UIView {
 
     private let backgroundView: UIView = {
         let view = UIView()
+        view.activateConstraints()
         view.backgroundColor = ColorConstants.darkYellow
-        view.layer.shadowColor = ColorConstants.opacityBlack.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 3)
-        view.layer.shadowOpacity = 1.0
-        view.layer.shadowRadius = 3.0
-        view.layer.masksToBounds = false
         return view
     }()
     private let categoryTitleLabel: UILabel = {
@@ -153,7 +149,7 @@ final class ToolDetailsBasicInformationView: UIView {
     
     // MARK: - Construction
     
-    init(frame: CGRect, textLabelText: String) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         addViews()
@@ -212,61 +208,70 @@ final class ToolDetailsBasicInformationView: UIView {
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            categoryTitleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 5),
-            categoryTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
+            categoryTitleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 10),
+            categoryTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             
-            categoryDataLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 5),
-            categoryDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -5),
+            categoryDataLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 10),
+            categoryDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             
-            divider1.topAnchor.constraint(equalTo: categoryTitleLabel.bottomAnchor, constant: 5),
-            divider1.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
-            divider1.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: 5),
+            divider1.topAnchor.constraint(equalTo: categoryTitleLabel.bottomAnchor, constant: 10),
+            divider1.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            divider1.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            divider1.heightAnchor.constraint(equalToConstant: 1),
             
-            brandTitleLabel.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 5),
-            brandTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
+            brandTitleLabel.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 10),
+            brandTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             
-            brandDataLabel.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 5),
-            brandDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -5),
+            brandDataLabel.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 10),
+            brandDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             
-            divider2.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor, constant: 5),
-            divider2.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
-            divider2.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: 5),
+            divider2.topAnchor.constraint(equalTo: brandTitleLabel.bottomAnchor, constant: 10),
+            divider2.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            divider2.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            divider2.heightAnchor.constraint(equalToConstant: 1),
             
-            modelTitleLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 5),
-            modelTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
+            modelTitleLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 10),
+            modelTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             
-            modelDataLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 5),
-            modelDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -5),
+            modelDataLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 10),
+            modelDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             
-            divider3.topAnchor.constraint(equalTo: modelTitleLabel.bottomAnchor, constant: 5),
-            divider3.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
-            divider3.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: 5),
+            divider3.topAnchor.constraint(equalTo: modelTitleLabel.bottomAnchor, constant: 10),
+            divider3.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            divider3.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            divider3.heightAnchor.constraint(equalToConstant: 1),
             
-            serialTitleLabel.topAnchor.constraint(equalTo: divider3.bottomAnchor, constant: 5),
-            serialTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
+            serialTitleLabel.topAnchor.constraint(equalTo: divider3.bottomAnchor, constant: 10),
+            serialTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             
-            serialDataLabel.topAnchor.constraint(equalTo: divider3.bottomAnchor, constant: 5),
-            serialDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -5),
+            serialDataLabel.topAnchor.constraint(equalTo: divider3.bottomAnchor, constant: 10),
+            serialDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             
-            divider4.topAnchor.constraint(equalTo: serialTitleLabel.bottomAnchor, constant: 5),
-            divider4.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
-            divider4.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: 5),
+            divider4.topAnchor.constraint(equalTo: serialTitleLabel.bottomAnchor, constant: 10),
+            divider4.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            divider4.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            divider4.heightAnchor.constraint(equalToConstant: 1),
             
-            productionDateTitleLabel.topAnchor.constraint(equalTo: divider4.bottomAnchor, constant: 5),
-            productionDateTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 5),
+            productionDateTitleLabel.topAnchor.constraint(equalTo: divider4.bottomAnchor, constant: 10),
+            productionDateTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             
-            productionDateDataLabel.topAnchor.constraint(equalTo: divider4.bottomAnchor, constant: 5),
-            productionDateDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -5),
-            productionDateTitleLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -5)
+            productionDateDataLabel.topAnchor.constraint(equalTo: divider4.bottomAnchor, constant: 10),
+            productionDateDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            productionDateTitleLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -10)
         ])
     }
     
     private func configureViews() {
         
-        backgroundColor = ColorConstants.backgroundGray
-        layer.cornerRadius = 10
-        layer.borderColor = ColorConstants.borderGray.cgColor
-        layer.borderWidth = 1
-        layer.masksToBounds = true
+        backgroundColor = ColorConstants.baseWhite
+        backgroundView.layer.cornerRadius = 10
+        backgroundView.layer.masksToBounds = true
+        
+//        layer.cornerRadius = 10
+//        layer.shadowColor = ColorConstants.opacityBlack.cgColor
+//        layer.shadowOffset = CGSize(width: 0, height: 3)
+//        layer.shadowOpacity = 1.0
+//        layer.shadowRadius = 3.0
+//        layer.masksToBounds = false
     }
 }
