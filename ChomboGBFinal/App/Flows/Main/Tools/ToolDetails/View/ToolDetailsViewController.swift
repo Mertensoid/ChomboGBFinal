@@ -46,7 +46,21 @@ class ToolDetailsViewController: UIViewController {
         label.backgroundColor = ColorConstants.baseWhite
         label.textColor = ColorConstants.checkBoxTitleGray
         label.numberOfLines = 0
-        label.text = "The basic information about the item is set when creating the card and can be changed by the system administrator"
+        label.text = "The basic information about the tool is set when creating the card and can be changed by the system administrator"
+        return label
+    }()
+    private let locationView: ToolDetailsLocationView = {
+        let view = ToolDetailsLocationView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        view.activateConstraints()
+        return view
+    }()
+    private let locationSubtitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.backgroundColor = ColorConstants.baseWhite
+        label.textColor = ColorConstants.checkBoxTitleGray
+        label.numberOfLines = 0
+        label.text = "Information about the current location of the tool is updated after the actual movement"
         return label
     }()
     
@@ -71,6 +85,8 @@ class ToolDetailsViewController: UIViewController {
         view.addSubview(receiveButton)
         view.addSubview(basicInformationView)
         view.addSubview(basicInformationSubtitle)
+        view.addSubview(locationView)
+        view.addSubview(locationSubtitle)
     }
     
     private func configureConstraints() {
@@ -99,6 +115,14 @@ class ToolDetailsViewController: UIViewController {
             basicInformationSubtitle.topAnchor.constraint(equalTo: basicInformationView.bottomAnchor, constant: 10),
             basicInformationSubtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             basicInformationSubtitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            locationView.topAnchor.constraint(equalTo: basicInformationSubtitle.bottomAnchor, constant: 10),
+            locationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            locationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            locationSubtitle.topAnchor.constraint(equalTo: locationView.bottomAnchor, constant: 10),
+            locationSubtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            locationSubtitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ])
     }
     
@@ -106,6 +130,16 @@ class ToolDetailsViewController: UIViewController {
         
         view.backgroundColor = ColorConstants.baseWhite
         photoView.setToolPhoto(image: UIImage(named: "magister_284x284px") ?? UIImage())
+        
+        basicInformationView.setCategoryData(data: "Mock category")
+        basicInformationView.setBrandData(data: "Mock brand")
+        basicInformationView.setModelData(data: "Mock model")
+        basicInformationView.setSerialData(data: "Mock serial")
+        basicInformationView.setProductionDateData(data: "DD.MM.YYYY")
+        
+        locationView.setStatusData(data: "Mock status")
+        locationView.setOwnerData(data: "Mock owner")
+        locationView.setTransferDateData(data: "DD.MM.YYYY")
     }
 }
 

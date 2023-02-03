@@ -266,12 +266,5 @@ final class ToolDetailsBasicInformationView: UIView {
         backgroundColor = ColorConstants.baseWhite
         backgroundView.layer.cornerRadius = 10
         backgroundView.layer.masksToBounds = true
-        
-//        layer.cornerRadius = 10
-//        layer.shadowColor = ColorConstants.opacityBlack.cgColor
-//        layer.shadowOffset = CGSize(width: 0, height: 3)
-//        layer.shadowOpacity = 1.0
-//        layer.shadowRadius = 3.0
-//        layer.masksToBounds = false
     }
 }
