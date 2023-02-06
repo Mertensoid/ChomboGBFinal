@@ -9,8 +9,12 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
-    // MARK: - Private properties
+    // MARK: - Public properties
     
+    var presenter: LoginPresenter?
+    
+    // MARK: - Private properties
+
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.activateConstraints()
@@ -63,13 +67,12 @@ final class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.keyboardWasShown),
             name: UIResponder.keyboardWillShowNotification,
             object: nil)
-        // Второе — когда она пропадает
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.keyboardWillBeHidden(notification:)),
@@ -130,18 +133,37 @@ final class LoginViewController: UIViewController {
     }
 }
 
-//перенести в presenter
+extension LoginViewController: LoginViewInputDelegate {
+    
+    func showLogin(login: String) {
+        loginTextField.text = login
+    }
+    
+    func getLogin() -> String {
+        return loginTextField.text ?? ""
+    }
+    
+    func getPassword() -> String {
+        return passwordTextField.text ?? ""
+    }
+    
+    func clearLoginTextField() {
+        loginTextField.text = ""
+    }
+    
+    func clearPasswordTextField() {
+        passwordTextField.text = ""
+    }
+}
+
 @objc extension LoginViewController {
     
-    // Когда клавиатура появляется
-    func keyboardWasShown(notification: Notification) {
+    private func keyboardWasShown(notification: Notification) {
 
-        // Получаем размер клавиатуры
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
 
-        // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
         self.scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
         UIView.animate(withDuration: 1) {
@@ -156,9 +178,8 @@ final class LoginViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
 
-    //Когда клавиатура исчезает
-    func keyboardWillBeHidden(notification: Notification) {
-        // Устанавливаем отступ внизу UIScrollView, равный 0
+    private func keyboardWillBeHidden(notification: Notification) {
+        
         let contentInsets = UIEdgeInsets.zero
         self.scrollView.contentInset = contentInsets
         UIView.animate(withDuration: 1) {
@@ -172,21 +193,15 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    func hideKeyboard() {
+    private func hideKeyboard() {
         view.endEditing(true)
     }
     
-    func joinButtonPressed() {
-        let mainTabBar = MainTabBarController()
-        mainTabBar.modalPresentationStyle = .fullScreen
-        present(mainTabBar, animated: true)
-        //navigationController?.pushViewController(mainTabBar, animated: true)
+    private func joinButtonPressed() {
+        presenter?.checkAccountData()
     }
     
-    func registrationButtonPressed() {
-        let registrationVC = RegistrationViewController()
-        registrationVC.modalPresentationStyle = .fullScreen
-        present(registrationVC, animated: true)
-        //navigationController?.pushViewController(registrationVC, animated: true)
+    @objc private func registrationButtonPressed() {
+        presenter?.showRegistrationScreen()
     }
 }

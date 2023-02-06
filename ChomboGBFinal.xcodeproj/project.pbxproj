@@ -53,6 +53,8 @@
 		843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BA298BCAEC006EC00F /* ProfileAvatarView.swift */; };
 		843130BD298BD95F006EC00F /* ProfileTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BC298BD95F006EC00F /* ProfileTitleView.swift */; };
 		843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */; };
+		843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C0298D0DF9006EC00F /* LoginViewInputDelegate.swift */; };
+		843130C3298D0E0F006EC00F /* LoginViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130C2298D0E0F006EC00F /* LoginViewOutputDelegate.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -128,6 +130,8 @@
 		843130BA298BCAEC006EC00F /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
 		843130BC298BD95F006EC00F /* ProfileTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleView.swift; sourceTree = "<group>"; };
 		843130BE298BE2CD006EC00F /* ProfileMetricsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMetricsTitleView.swift; sourceTree = "<group>"; };
+		843130C0298D0DF9006EC00F /* LoginViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewInputDelegate.swift; sourceTree = "<group>"; };
+		843130C2298D0E0F006EC00F /* LoginViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewOutputDelegate.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				845485D12980125D004657A3 /* LoginPresenter.swift */,
+				843130C0298D0DF9006EC00F /* LoginViewInputDelegate.swift */,
+				843130C2298D0E0F006EC00F /* LoginViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -853,6 +859,7 @@
 				843130A92983D2FA006EC00F /* NewToolPickerView.swift in Sources */,
 				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
 				8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */,
+				843130C3298D0E0F006EC00F /* LoginViewOutputDelegate.swift in Sources */,
 				843130B9298BCACB006EC00F /* ProfileHeaderView.swift in Sources */,
 				843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */,
 				8431306A29829345006EC00F /* CatalogViewController.swift in Sources */,
@@ -863,6 +870,7 @@
 				843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
+				843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */,
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
