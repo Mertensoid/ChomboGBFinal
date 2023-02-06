@@ -46,6 +46,9 @@
 		843130A92983D2FA006EC00F /* NewToolPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130A82983D2FA006EC00F /* NewToolPickerView.swift */; };
 		843130AB2983DC70006EC00F /* NewToolTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130AA2983DC70006EC00F /* NewToolTextView.swift */; };
 		843130AF29890A3C006EC00F /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130AE29890A3C006EC00F /* UIView + ext.swift */; };
+		843130B22989408E006EC00F /* MockTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130B12989408E006EC00F /* MockTool.swift */; };
+		843130B42989492D006EC00F /* NewToolViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130B32989492D006EC00F /* NewToolViewInputDelegate.swift */; };
+		843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130B529894946006EC00F /* NewToolViewOutputDelegate.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -114,6 +117,9 @@
 		843130A82983D2FA006EC00F /* NewToolPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolPickerView.swift; sourceTree = "<group>"; };
 		843130AA2983DC70006EC00F /* NewToolTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolTextView.swift; sourceTree = "<group>"; };
 		843130AE29890A3C006EC00F /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		843130B12989408E006EC00F /* MockTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTool.swift; sourceTree = "<group>"; };
+		843130B32989492D006EC00F /* NewToolViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolViewInputDelegate.swift; sourceTree = "<group>"; };
+		843130B529894946006EC00F /* NewToolViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToolViewOutputDelegate.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -246,6 +252,14 @@
 				8431309129829659006EC00F /* ToolDetailsViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		843130B029894063006EC00F /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				843130B12989408E006EC00F /* MockTool.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		845485AD298006AE004657A3 /* Constants */ = {
@@ -490,6 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				8431307129829384006EC00F /* NewToolPresenter.swift */,
+				843130B32989492D006EC00F /* NewToolViewInputDelegate.swift */,
+				843130B529894946006EC00F /* NewToolViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -599,6 +615,7 @@
 		84FEA2ED2976BC1A00E82BBE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				843130B029894063006EC00F /* MockData */,
 				845485AD298006AE004657A3 /* Constants */,
 			);
 			path = Entity;
@@ -829,10 +846,12 @@
 				8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */,
 				8431307029829376006EC00F /* NewToolViewController.swift in Sources */,
 				845485D029801244004657A3 /* LoginViewController.swift in Sources */,
+				843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
+				843130B22989408E006EC00F /* MockTool.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
@@ -852,6 +871,7 @@
 				8431307429829395006EC00F /* NewToolBuilder.swift in Sources */,
 				8431309B2982A2E4006EC00F /* ToolsListHeaderView.swift in Sources */,
 				843130662982930A006EC00F /* ToolsListPresenter.swift in Sources */,
+				843130B42989492D006EC00F /* NewToolViewInputDelegate.swift in Sources */,
 				84313076298293B5006EC00F /* TransactionsViewController.swift in Sources */,
 				84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */,
 				84313064298292F5006EC00F /* ToolsListViewController.swift in Sources */,

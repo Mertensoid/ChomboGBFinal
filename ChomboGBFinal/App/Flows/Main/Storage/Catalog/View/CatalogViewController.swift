@@ -86,7 +86,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @objc func goToNewToolScreen(_ sender: UIButton) {
-        let newToolVC = NewToolViewController()
+        let newToolVC = NewToolBuilder.createNewToolScreen()
         navigationController?.pushViewController(newToolVC, animated: true)
     }
 }
