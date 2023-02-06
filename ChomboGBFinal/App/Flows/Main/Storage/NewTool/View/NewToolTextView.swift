@@ -11,9 +11,31 @@ final class NewToolTextView: UIView {
     
     // MARK: - Private properties
 
-    private let textLabel = UILabel()
-    private let textField = UITextField()
-    private let underline = UIView()
+    private let textLabel: UILabel = {
+        let textLabel = UILabel()
+        textLabel.activateConstraints()
+        textLabel.textColor = ColorConstants.baseBlack
+        textLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
+        textLabel.numberOfLines = 1
+        textLabel.minimumScaleFactor = 0.5
+        textLabel.adjustsFontSizeToFitWidth = true
+        return textLabel
+    }()
+    private let textField: UITextField = {
+        let textField = UITextField()
+        textField.activateConstraints()
+        textField.font = UIFont(name: "Helvetica", size: 16)
+        textField.textColor = ColorConstants.baseBlack
+        textField.borderStyle = .none
+        textField.backgroundColor = .none
+        return textField
+    }()
+    private let underline: UIView = {
+        let underline = UIView()
+        underline.activateConstraints()
+        underline.backgroundColor = ColorConstants.darkYellow
+        return underline
+    }()
     
     // MARK: - Construction
     
@@ -63,76 +85,6 @@ final class NewToolTextView: UIView {
         layer.borderWidth = 1
         layer.masksToBounds = true
         
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.textColor = ColorConstants.baseBlack
-        textLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
-        textLabel.numberOfLines = 1
-        textLabel.minimumScaleFactor = 0.5
-        textLabel.adjustsFontSizeToFitWidth = true
         textLabel.text = textLabelText
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont(name: "Helvetica", size: 16)
-        textField.textColor = ColorConstants.baseBlack
-        textField.borderStyle = .none
-        textField.backgroundColor = .none
-        
-        underline.translatesAutoresizingMaskIntoConstraints = false
-        underline.backgroundColor = ColorConstants.darkYellow
     }
 }
-
-//перенести в presenter
-//@objc extension LoginViewController {
-//
-//    // Когда клавиатура появляется
-//    func keyboardWasShown(notification: Notification) {
-//
-//        // Получаем размер клавиатуры
-//        let info = notification.userInfo! as NSDictionary
-//        let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
-//        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
-//
-//        // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
-//        self.scrollView.contentInset = contentInsets
-//        scrollView.scrollIndicatorInsets = contentInsets
-//        UIView.animate(withDuration: 1) {
-//            self.scrollView.constraints
-//                .first(where: { $0.identifier == "keyboardShown" })?
-//                .priority = .required
-//            self.scrollView.constraints
-//                .first(where: { $0.identifier == "keyboardHide" })?
-//                .priority = .defaultHigh
-//            self.view.layoutIfNeeded()
-//        }
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-//    }
-//
-//    //Когда клавиатура исчезает
-//    func keyboardWillBeHidden(notification: Notification) {
-//        // Устанавливаем отступ внизу UIScrollView, равный 0
-//        let contentInsets = UIEdgeInsets.zero
-//        self.scrollView.contentInset = contentInsets
-//        UIView.animate(withDuration: 1) {
-//            self.scrollView.constraints
-//                .first(where: { $0.identifier == "keyboardShown" })?
-//                .priority = .defaultHigh
-//            self.scrollView.constraints
-//                .first(where: { $0.identifier == "keyboardHide" })?
-//                .priority = .required
-//            self.view.layoutIfNeeded()
-//        }
-//    }
-//
-//    func hideKeyboard() {
-//        view.endEditing(true)
-//    }
-//
-//    func joinButtonPressed() {
-//
-//    }
-//
-//    func registrationButtonPressed() {
-//
-//    }
-//}

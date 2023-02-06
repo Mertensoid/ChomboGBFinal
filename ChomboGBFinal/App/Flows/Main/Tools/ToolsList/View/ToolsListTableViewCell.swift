@@ -11,11 +11,36 @@ final class ToolsListTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     
-    private let mainCellView = UIView()
-    private let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
-    private let productNameTitle = UILabel()
-    private let mainPropertyTitle = UILabel()
-    private let secondaryPropertyTitle = UILabel()
+    private let mainCellView: UIView = {
+        let mainCellView = UIView()
+        mainCellView.activateConstraints()
+        mainCellView.backgroundColor = ColorConstants.baseWhite
+        return mainCellView
+    }()
+    private let image: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
+        image.activateConstraints()
+        image.tintColor = ColorConstants.baseBlack
+        return image
+    }()
+    private let productNameTitle: UILabel = {
+        let productNameTitle = UILabel()
+        productNameTitle.activateConstraints()
+        productNameTitle.font = UIFont(name: "Helvetica-Bold", size: 16)
+        return productNameTitle
+    }()
+    private let mainPropertyTitle: UILabel = {
+        let mainPropertyTitle = UILabel()
+        mainPropertyTitle.activateConstraints()
+        mainPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
+        return mainPropertyTitle
+    }()
+    private let secondaryPropertyTitle: UILabel = {
+        let secondaryPropertyTitle = UILabel()
+        secondaryPropertyTitle.activateConstraints()
+        secondaryPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
+        return secondaryPropertyTitle
+    }()
     
     // MARK: - Construction
     
@@ -23,7 +48,6 @@ final class ToolsListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         configureConstraints()
-        configureViews()
     }
     
     required init?(coder: NSCoder) {
@@ -72,24 +96,6 @@ final class ToolsListTableViewCell: UITableViewCell {
             secondaryPropertyTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
             secondaryPropertyTitle.topAnchor.constraint(equalTo: mainPropertyTitle.bottomAnchor, constant: 5)
         ])
-    }
-    
-    private func configureViews() {
-        
-        mainCellView.translatesAutoresizingMaskIntoConstraints = false
-        mainCellView.backgroundColor = ColorConstants.baseWhite
-
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.tintColor = ColorConstants.baseBlack
-        
-        productNameTitle.translatesAutoresizingMaskIntoConstraints = false
-        productNameTitle.font = UIFont(name: "Helvetica-Bold", size: 16)
-        
-        mainPropertyTitle.translatesAutoresizingMaskIntoConstraints = false
-        mainPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
-        
-        secondaryPropertyTitle.translatesAutoresizingMaskIntoConstraints = false
-        secondaryPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
     }
 }
 

@@ -11,8 +11,25 @@ class ToolsListHeaderView: UIView {
     
     // MARK: - Private properties
     
-    private let headerTitle = UILabel()
-    private let leftHeaderButton = UIButton()
+    private let headerTitle: UILabel = {
+        let headerTitle = UILabel()
+        headerTitle.activateConstraints()
+        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
+        headerTitle.textAlignment = .center
+        headerTitle.numberOfLines = 1
+        headerTitle.minimumScaleFactor = 0.5
+        headerTitle.adjustsFontSizeToFitWidth = true
+        headerTitle.textColor = ColorConstants.baseWhite
+        headerTitle.text = "Tools"
+        return headerTitle
+    }()
+    private let leftHeaderButton: UIButton = {
+        let leftHeaderButton = UIButton()
+        leftHeaderButton.activateConstraints()
+        leftHeaderButton.tintColor = ColorConstants.baseWhite
+        leftHeaderButton.setTitle("Logout", for: .normal)
+        return leftHeaderButton
+    }()
     
     // MARK: - Construction
     
@@ -50,18 +67,5 @@ class ToolsListHeaderView: UIView {
     private func configureViews() {
         
         backgroundColor = ColorConstants.darkYellow
-        
-        headerTitle.translatesAutoresizingMaskIntoConstraints = false
-        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
-        headerTitle.textAlignment = .center
-        headerTitle.numberOfLines = 1
-        headerTitle.minimumScaleFactor = 0.5
-        headerTitle.adjustsFontSizeToFitWidth = true
-        headerTitle.textColor = ColorConstants.baseWhite
-        headerTitle.text = "Tools"
-        
-        leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
-        leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
     }
 }

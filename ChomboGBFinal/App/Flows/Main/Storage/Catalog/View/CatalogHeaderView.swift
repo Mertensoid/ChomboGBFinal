@@ -11,12 +11,35 @@ class CatalogHeaderView: UIView {
     
     // MARK: - Public properties
     
-    var rightHeaderButton = UIButton()
+    var rightHeaderButton: UIButton = {
+        let rightHeaderButton = UIButton()
+        rightHeaderButton.activateConstraints()
+        rightHeaderButton.tintColor = ColorConstants.baseWhite
+        rightHeaderButton.setTitle("New", for: .normal)
+        return rightHeaderButton
+    }()
     
     // MARK: - Private properties
     
-    private let headerTitle = UILabel()
-    private let leftHeaderButton = UIButton()
+    private let headerTitle: UILabel = {
+        let headerTitle = UILabel()
+        headerTitle.activateConstraints()
+        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
+        headerTitle.textAlignment = .center
+        headerTitle.numberOfLines = 1
+        headerTitle.minimumScaleFactor = 0.5
+        headerTitle.adjustsFontSizeToFitWidth = true
+        headerTitle.textColor = ColorConstants.baseWhite
+        headerTitle.text = "Tools"
+        return headerTitle
+    }()
+    private let leftHeaderButton: UIButton = {
+        let leftHeaderButton = UIButton()
+        leftHeaderButton.activateConstraints()
+        leftHeaderButton.tintColor = ColorConstants.baseWhite
+        leftHeaderButton.setTitle("Logout", for: .normal)
+        return leftHeaderButton
+    }()
     
     // MARK: - Construction
     
@@ -59,25 +82,5 @@ class CatalogHeaderView: UIView {
     private func configureViews() {
         
         backgroundColor = ColorConstants.darkYellow
-        
-        headerTitle.translatesAutoresizingMaskIntoConstraints = false
-        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
-        headerTitle.textAlignment = .center
-        headerTitle.numberOfLines = 1
-        headerTitle.minimumScaleFactor = 0.5
-        headerTitle.adjustsFontSizeToFitWidth = true
-        headerTitle.textColor = ColorConstants.baseWhite
-        headerTitle.text = "Tools"
-        
-        leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
-        leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
-        
-        rightHeaderButton.translatesAutoresizingMaskIntoConstraints = false
-        rightHeaderButton.tintColor = ColorConstants.baseWhite
-        rightHeaderButton.setTitle("New", for: .normal)
-        
     }
-    
-    
 }

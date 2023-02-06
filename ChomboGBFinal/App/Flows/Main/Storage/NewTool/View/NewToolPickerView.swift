@@ -11,9 +11,31 @@ class NewToolPickerView: UIView {
     
     // MARK: - Private properties
     
-    private let picturePickerButton = UIButton()
-    private let pickerLabel = UILabel()
-    private let dataLabel = UILabel()
+    private let picturePickerButton: UIButton = {
+        let picturePickerButton = UIButton()
+        picturePickerButton.activateConstraints()
+        return picturePickerButton
+    }()
+    private let pickerLabel: UILabel = {
+        let pickerLabel = UILabel()
+        pickerLabel.activateConstraints()
+        pickerLabel.textColor = ColorConstants.baseBlack
+        pickerLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
+        pickerLabel.numberOfLines = 1
+        pickerLabel.minimumScaleFactor = 0.5
+        pickerLabel.adjustsFontSizeToFitWidth = true
+        return pickerLabel
+    }()
+    private let dataLabel: UILabel = {
+        let dataLabel = UILabel()
+        dataLabel.activateConstraints()
+        dataLabel.textColor = ColorConstants.darkYellow
+        dataLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
+        dataLabel.numberOfLines = 1
+        dataLabel.minimumScaleFactor = 0.5
+        dataLabel.adjustsFontSizeToFitWidth = true
+        return dataLabel
+    }()
     
     // MARK: - Construction
     
@@ -69,23 +91,10 @@ class NewToolPickerView: UIView {
         layer.borderWidth = 1
         layer.masksToBounds = true
         
-        picturePickerButton.translatesAutoresizingMaskIntoConstraints = false
         picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
         
-        pickerLabel.translatesAutoresizingMaskIntoConstraints = false
-        pickerLabel.textColor = ColorConstants.baseBlack
-        pickerLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
-        pickerLabel.numberOfLines = 1
-        pickerLabel.minimumScaleFactor = 0.5
-        pickerLabel.adjustsFontSizeToFitWidth = true
         pickerLabel.text = pickerLabelText
         
-        dataLabel.translatesAutoresizingMaskIntoConstraints = false
-        dataLabel.textColor = ColorConstants.darkYellow
-        dataLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
-        dataLabel.numberOfLines = 1
-        dataLabel.minimumScaleFactor = 0.5
-        dataLabel.adjustsFontSizeToFitWidth = true
         dataLabel.text = setDataLabelText()
     }
     

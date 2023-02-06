@@ -11,11 +11,28 @@ class NewToolHeaderView: UIView {
     
     // MARK: - Public properties
     
-    var leftHeaderButton = UIButton()
+    var leftHeaderButton: UIButton = {
+        let leftHeaderButton = UIButton()
+        leftHeaderButton.activateConstraints()
+        leftHeaderButton.tintColor = ColorConstants.baseWhite
+        leftHeaderButton.setTitle("Back", for: .normal)
+        return leftHeaderButton
+    }()
     
     // MARK: - Private properties
     
-    private let headerTitle = UILabel()
+    private let headerTitle: UILabel = {
+        let headerTitle = UILabel()
+        headerTitle.activateConstraints()
+        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
+        headerTitle.textAlignment = .center
+        headerTitle.numberOfLines = 1
+        headerTitle.minimumScaleFactor = 0.5
+        headerTitle.adjustsFontSizeToFitWidth = true
+        headerTitle.textColor = ColorConstants.baseWhite
+        headerTitle.text = "New tool"
+        return headerTitle
+    }()
     
     // MARK: - Construction
     
@@ -53,18 +70,5 @@ class NewToolHeaderView: UIView {
     private func configureViews() {
         
         backgroundColor = ColorConstants.darkYellow
-        
-        headerTitle.translatesAutoresizingMaskIntoConstraints = false
-        headerTitle.font = UIFont(name: "Helvetica-Bold", size: 24)
-        headerTitle.textAlignment = .center
-        headerTitle.numberOfLines = 1
-        headerTitle.minimumScaleFactor = 0.5
-        headerTitle.adjustsFontSizeToFitWidth = true
-        headerTitle.textColor = ColorConstants.baseWhite
-        headerTitle.text = "New tool"
-        
-        leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
-        leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Back", for: .normal)
     }
 }

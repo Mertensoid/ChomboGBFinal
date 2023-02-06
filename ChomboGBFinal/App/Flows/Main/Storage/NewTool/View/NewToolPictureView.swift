@@ -11,7 +11,14 @@ class NewToolPictureView: UIView {
     
     // MARK: - Private properties
     
-    private let picturePickerButton = UIButton()
+    private let picturePickerButton: UIButton = {
+        let picturePickerButton = UIButton()
+        picturePickerButton.activateConstraints()
+        picturePickerButton.tintColor = ColorConstants.baseBlack
+        picturePickerButton.setImage(UIImage(systemName: "photo"), for: .normal)
+        picturePickerButton.imageView?.contentMode = .scaleAspectFill
+        return picturePickerButton
+    }()
     
     // MARK: - Construction
     
@@ -52,11 +59,7 @@ class NewToolPictureView: UIView {
         layer.borderWidth = 1
         layer.masksToBounds = true
         
-        picturePickerButton.translatesAutoresizingMaskIntoConstraints = false
-        picturePickerButton.tintColor = ColorConstants.baseBlack
-        picturePickerButton.setImage(UIImage(systemName: "photo"), for: .normal)
         picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
-        picturePickerButton.imageView?.contentMode = .scaleAspectFill
     }
     
     @objc private func setPhoto() {
