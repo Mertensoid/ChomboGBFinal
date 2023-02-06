@@ -15,6 +15,7 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     // MARK: - Private properties
     
     weak private var view: NewToolViewInputDelegate?
+    private let firestoreService = CloudFirestore()
     
     // MARK: - Construction
     
@@ -58,20 +59,21 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     }
     
     func saveNewTool() {
-        let mockTool = MockTool(
-            id: 123,
-            category: view?.getCategory() ?? MockCategory.miscellaneous,
-            brand: view?.getBrand() ?? "",
-            model: view?.getModel() ?? "",
-            serial: view?.getSerial() ?? "",
-            productionDate: Date(),
-            status: MockStatus.free,
-            owner: MockUser(userID: 1, userName: "Vasya Pupkin", accountType: .admin),
-            condition: view?.getCondition() ?? MockCondition.broken,
-            location: MockLocation(
-                latitude: 31.0005434,
-                longitude: 65.4643721),
-            picture: UIImage(systemName: "hammer") ?? UIImage())
-        print(mockTool.productionDate)
+//        let mockTool = MockTool(
+//            id: 123,
+//            category: view?.getCategory() ?? MockCategory.miscellaneous,
+//            brand: view?.getBrand() ?? "",
+//            model: view?.getModel() ?? "",
+//            serial: view?.getSerial() ?? "",
+//            productionDate: Date(),
+//            status: MockStatus.free,
+//            owner: MockUser(userID: 1, userName: "Vasya Pupkin", accountType: .admin),
+//            condition: view?.getCondition() ?? MockCondition.broken,
+//            location: MockLocation(
+//                latitude: 31.0005434,
+//                longitude: 65.4643721),
+//            picture: UIImage(systemName: "hammer") ?? UIImage())
+//        print(mockTool.productionDate)
+        firestoreService.dataToSave(view?.getBrand() ?? "", view?.getModel() ?? "", view?.getSerial() ?? "")
     }
 }

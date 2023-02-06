@@ -37,6 +37,7 @@ final class NewToolTextView: UIView {
         return underline
     }()
     
+    
     // MARK: - Construction
     
     init(frame: CGRect, textLabelText: String) {

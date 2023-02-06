@@ -22,6 +22,8 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
         return tableView
     }()
     
+    private let firestoreService = CloudFirestore()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -33,6 +35,11 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
         configureViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     // MARK: - Functions
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,12 +47,14 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return firestoreService.tools.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogTableViewCell()
-        cell.configureData(name: "Название", picture: "wrench.adjustable", mainProperty: "Свойство 1", secondaryProperty: "Свойство 2")
+    
+        cell.configureData(name: firestoreService.tools[indexPath.item].brand, picture: "wrench.adjustable", mainProperty: firestoreService.tools[indexPath.item].model, secondaryProperty: firestoreService.tools[indexPath.item].serial)
+        
         return cell
     }
     

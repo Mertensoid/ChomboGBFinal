@@ -11,6 +11,7 @@
 		4E14B88329830DC30054C30C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88229830DC30054C30C /* FirebaseAuth */; };
 		4E14B88529830DC30054C30C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88429830DC30054C30C /* FirebaseFirestore */; };
 		4E14B88729830DC30054C30C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88629830DC30054C30C /* FirebaseFirestoreSwift */; };
+		4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA8C063298D9B4D0065572D /* CloudFirestore.swift */; };
 		8431305A29828375006EC00F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305929828375006EC00F /* MainTabBarController.swift */; };
 		8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305D298292B3006EC00F /* ProfileViewController.swift */; };
 		84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305F298292C4006EC00F /* ProfilePresenter.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		4E14B87F29830D030054C30C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4EA8C063298D9B4D0065572D /* CloudFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFirestore.swift; sourceTree = "<group>"; };
 		8431305929828375006EC00F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8431305D298292B3006EC00F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8431305F298292C4006EC00F /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA8C062298D9B300065572D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4EA8C063298D9B4D0065572D /* CloudFirestore.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		843130812982954D006EC00F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +732,7 @@
 		84FEA2F72976BC9800E82BBE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4EA8C062298D9B300065572D /* Firebase */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -895,6 +906,7 @@
 				843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */,
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
+				4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */,
 				843130B22989408E006EC00F /* MockTool.swift in Sources */,
