@@ -67,6 +67,9 @@
 		84FEA2D32976B9F100E82BBE /* ChomboGBFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2D22976B9F100E82BBE /* ChomboGBFinalTests.swift */; };
 		84FEA2DD2976B9F100E82BBE /* ChomboGBFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2DC2976B9F100E82BBE /* ChomboGBFinalUITests.swift */; };
 		84FEA2DF2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2DE2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift */; };
+		8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74A298908B6005EB3AB /* MapViewController.swift */; };
+		8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */; };
+		8591C74F298908E4005EB3AB /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74E298908E4005EB3AB /* Places.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,9 @@
 		84FEA2D82976B9F100E82BBE /* ChomboGBFinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChomboGBFinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2DC2976B9F100E82BBE /* ChomboGBFinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomboGBFinalUITests.swift; sourceTree = "<group>"; };
 		84FEA2DE2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomboGBFinalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8591C74A298908B6005EB3AB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMarkersView.swift; sourceTree = "<group>"; };
+		8591C74E298908E4005EB3AB /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +712,7 @@
 		84FEA2F62976BC9100E82BBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8591C74929890832005EB3AB /* MapKitNavigation */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -715,6 +722,16 @@
 			children = (
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8591C74929890832005EB3AB /* MapKitNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				8591C74A298908B6005EB3AB /* MapViewController.swift */,
+				8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */,
+				8591C74E298908E4005EB3AB /* Places.swift */,
+			);
+			path = MapKitNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -870,6 +887,7 @@
 				843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
+				8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */,
 				843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */,
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
@@ -899,9 +917,11 @@
 				84313076298293B5006EC00F /* TransactionsViewController.swift in Sources */,
 				84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */,
 				84313064298292F5006EC00F /* ToolsListViewController.swift in Sources */,
+				8591C74F298908E4005EB3AB /* Places.swift in Sources */,
 				84313062298292D2006EC00F /* ProfileBuilder.swift in Sources */,
 				843130872982959D006EC00F /* SettingsViewController.swift in Sources */,
 				845485AF298006DD004657A3 /* ColorConstants.swift in Sources */,
+				8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */,
 				8431308B298295B6006EC00F /* SettingsBuilder.swift in Sources */,
 				843130AB2983DC70006EC00F /* NewToolTextView.swift in Sources */,
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
