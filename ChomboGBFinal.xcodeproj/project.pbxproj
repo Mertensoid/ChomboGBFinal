@@ -57,6 +57,7 @@
 		84FEA2D32976B9F100E82BBE /* ChomboGBFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2D22976B9F100E82BBE /* ChomboGBFinalTests.swift */; };
 		84FEA2DD2976B9F100E82BBE /* ChomboGBFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2DC2976B9F100E82BBE /* ChomboGBFinalUITests.swift */; };
 		84FEA2DF2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2DE2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift */; };
+		8536ECD92990E05D008F2B7F /* Places.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 8536ECD82990E05C008F2B7F /* Places.geojson */; };
 		8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74A298908B6005EB3AB /* MapViewController.swift */; };
 		8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */; };
 		8591C74F298908E4005EB3AB /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74E298908E4005EB3AB /* Places.swift */; };
@@ -131,6 +132,7 @@
 		84FEA2D82976B9F100E82BBE /* ChomboGBFinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChomboGBFinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2DC2976B9F100E82BBE /* ChomboGBFinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomboGBFinalUITests.swift; sourceTree = "<group>"; };
 		84FEA2DE2976B9F100E82BBE /* ChomboGBFinalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChomboGBFinalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8536ECD82990E05C008F2B7F /* Places.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Places.geojson; sourceTree = "<group>"; };
 		8591C74A298908B6005EB3AB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMarkersView.swift; sourceTree = "<group>"; };
 		8591C74E298908E4005EB3AB /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				8591C74A298908B6005EB3AB /* MapViewController.swift */,
 				8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */,
 				8591C74E298908E4005EB3AB /* Places.swift */,
+				8536ECD82990E05C008F2B7F /* Places.geojson */,
 			);
 			path = MapKitNavigation;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 			files = (
 				84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */,
 				4E14B88029830D030054C30C /* GoogleService-Info.plist in Resources */,
+				8536ECD92990E05D008F2B7F /* Places.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
