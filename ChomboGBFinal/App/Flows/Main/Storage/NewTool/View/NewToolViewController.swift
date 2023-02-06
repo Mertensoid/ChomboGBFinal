@@ -21,6 +21,9 @@ final class NewToolViewController: UIViewController {
     private let conditionPickerView = NewToolPickerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100), pickerLabelText: "Condition")
     private let addButton = UIButton()
     
+    private let firestoreService = CloudFirestore()
+    
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -124,6 +127,6 @@ final class NewToolViewController: UIViewController {
     }
     
     @objc private func addButtonPressed() {
-        
+        firestoreService.dataToSave(brandTextView.textField.text ?? "", modelTextView.textField.text ?? "", serialTextView.textField.text ?? "")
     }
 }

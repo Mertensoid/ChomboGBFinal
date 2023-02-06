@@ -12,8 +12,9 @@ final class NewToolTextView: UIView {
     // MARK: - Private properties
 
     private let textLabel = UILabel()
-    private let textField = UITextField()
+    let textField = UITextField()
     private let underline = UIView()
+    
     
     // MARK: - Construction
     
