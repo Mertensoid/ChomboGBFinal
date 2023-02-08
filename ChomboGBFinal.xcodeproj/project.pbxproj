@@ -61,6 +61,7 @@
 		843130CC298D37A9006EC00F /* ToolDetailsPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130CB298D37A9006EC00F /* ToolDetailsPhotoView.swift */; };
 		843130CE298D393C006EC00F /* ToolDetailsBasicInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130CD298D393C006EC00F /* ToolDetailsBasicInformationView.swift */; };
 		843130D0298D53EF006EC00F /* ToolDetailsLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130CF298D53EF006EC00F /* ToolDetailsLocationView.swift */; };
+		843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843130D22993D4FC006EC00F /* ToolDetailsTechInfoView.swift */; };
 		845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485A9297FF819004657A3 /* UIColor + ext.swift */; };
 		845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AB297FFE0E004657A3 /* UIButton + ext.swift */; };
 		845485AF298006DD004657A3 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485AE298006DD004657A3 /* ColorConstants.swift */; };
@@ -144,6 +145,7 @@
 		843130CB298D37A9006EC00F /* ToolDetailsPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsPhotoView.swift; sourceTree = "<group>"; };
 		843130CD298D393C006EC00F /* ToolDetailsBasicInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsBasicInformationView.swift; sourceTree = "<group>"; };
 		843130CF298D53EF006EC00F /* ToolDetailsLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsLocationView.swift; sourceTree = "<group>"; };
+		843130D22993D4FC006EC00F /* ToolDetailsTechInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolDetailsTechInfoView.swift; sourceTree = "<group>"; };
 		845485A9297FF819004657A3 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		845485AB297FFE0E004657A3 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		845485AE298006DD004657A3 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				843130CB298D37A9006EC00F /* ToolDetailsPhotoView.swift */,
 				843130CD298D393C006EC00F /* ToolDetailsBasicInformationView.swift */,
 				843130CF298D53EF006EC00F /* ToolDetailsLocationView.swift */,
+				843130D22993D4FC006EC00F /* ToolDetailsTechInfoView.swift */,
 				8431309129829659006EC00F /* ToolDetailsViewController.swift */,
 			);
 			path = View;
@@ -891,6 +894,7 @@
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
 				843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */,
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
+				843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130BF298BE2CD006EC00F /* ProfileMetricsTitleView.swift in Sources */,
