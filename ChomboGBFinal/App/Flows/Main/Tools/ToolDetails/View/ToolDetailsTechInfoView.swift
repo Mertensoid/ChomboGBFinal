@@ -78,7 +78,7 @@ final class ToolDetailsTechInfoView: UIView {
             
             conditionTitleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 10),
             conditionTitleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
-            conditionTitleLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -10)
+            conditionTitleLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -10),
             
             conditionDataLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 10),
             conditionDataLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),

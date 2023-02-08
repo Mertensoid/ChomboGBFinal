@@ -35,6 +35,11 @@ class ToolDetailsViewController: UIViewController {
         button.makeTapWithButtonShadow()
         return button
     }()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.activateConstraints()
+        return scrollView
+    }()
     private let basicInformationView: ToolDetailsBasicInformationView = {
         let view = ToolDetailsBasicInformationView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         view.activateConstraints()
@@ -63,6 +68,20 @@ class ToolDetailsViewController: UIViewController {
         label.text = "Information about the current location of the tool is updated after the actual movement"
         return label
     }()
+    private let techInfoView: ToolDetailsTechInfoView = {
+        let view = ToolDetailsTechInfoView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        view.activateConstraints()
+        return view
+    }()
+    private let techInfoSubtitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.backgroundColor = ColorConstants.baseWhite
+        label.textColor = ColorConstants.checkBoxTitleGray
+        label.numberOfLines = 0
+        label.text = "Technical information is edited during the maintenance process by the system administrator"
+        return label
+    }()
     
     // MARK: - Lifecycle
 
@@ -83,10 +102,13 @@ class ToolDetailsViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(photoView)
         view.addSubview(receiveButton)
-        view.addSubview(basicInformationView)
-        view.addSubview(basicInformationSubtitle)
-        view.addSubview(locationView)
-        view.addSubview(locationSubtitle)
+        view.addSubview(scrollView)
+        scrollView.addSubview(basicInformationView)
+        scrollView.addSubview(basicInformationSubtitle)
+        scrollView.addSubview(locationView)
+        scrollView.addSubview(locationSubtitle)
+        scrollView.addSubview(techInfoView)
+        scrollView.addSubview(techInfoSubtitle)
     }
     
     private func configureConstraints() {
@@ -108,7 +130,12 @@ class ToolDetailsViewController: UIViewController {
             receiveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             receiveButton.heightAnchor.constraint(equalToConstant: 50),
             
-            basicInformationView.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 10),
+            scrollView.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            
+            basicInformationView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             basicInformationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             basicInformationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
@@ -123,6 +150,15 @@ class ToolDetailsViewController: UIViewController {
             locationSubtitle.topAnchor.constraint(equalTo: locationView.bottomAnchor, constant: 10),
             locationSubtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             locationSubtitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            techInfoView.topAnchor.constraint(equalTo: locationSubtitle.bottomAnchor, constant: 10),
+            techInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            techInfoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            techInfoSubtitle.topAnchor.constraint(equalTo: techInfoView.bottomAnchor, constant: 10),
+            techInfoSubtitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            techInfoSubtitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            techInfoSubtitle.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0)
         ])
     }
     
@@ -140,6 +176,8 @@ class ToolDetailsViewController: UIViewController {
         locationView.setStatusData(data: "Mock status")
         locationView.setOwnerData(data: "Mock owner")
         locationView.setTransferDateData(data: "DD.MM.YYYY")
+        
+        techInfoView.setConditionData(data: "Mock condition")
     }
 }
 
