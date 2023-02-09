@@ -11,15 +11,15 @@ class ToolDetailsPresenter {
     
     // MARK: - Private properties
     
-    weak private var view: ToolDetailsViewController?
+    weak private var delegate: ToolDetailsViewInputDelegate?
     
     // MARK: - Construction
     
-    required init(view: ToolDetailsViewController?) {
-        self.view = view
+    required init(delegate: ToolDetailsViewInputDelegate?) {
+        self.delegate = delegate
     }
 }
 
-extension ToolDetailsPresenter: ToolDetailsViewOutputProtocol {
+extension ToolDetailsPresenter: ToolDetailsViewOutputDelegate {
     
 }
