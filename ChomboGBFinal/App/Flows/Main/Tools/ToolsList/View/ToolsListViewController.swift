@@ -9,6 +9,10 @@ import UIKit
 
 final class ToolsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Propeties
+    
+    weak var presenter: ToolsListViewOutputDelegate?
+    
     // MARK: - Private properties
     
     private let headerView: ToolsListHeaderView = {
@@ -40,12 +44,18 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return presenter?.getToolsQuantity() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ToolsListTableViewCell()
-        cell.configureData(name: "Марка Модель", picture: "wrench.adjustable", category: "Ручной инструмент", toolSerial: "HFY-1013234", condition: "Неисправно")
+        cell.configureData(
+            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
+            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
+            category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
+            toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
+            condition: presenter?.getToolCondition(toolIndex: indexPath.row) ?? ""
+        )
         return cell
     }
     
@@ -82,6 +92,17 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     
     private func configureViews() {
         tableView.separatorStyle = .none
+        
+        headerView.leftHeaderButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc func logoutButtonPressed() {
+        self.dismiss(animated: true)
     }
 }
 
+extension ToolsListViewController: ToolsListViewInputDelegate {
+    func tableViewReloadData() {
+        self.tableView.reloadData()
+    }
+}

@@ -11,7 +11,7 @@ class ToolDetailsViewController: UIViewController {
 
     // MARK: - Public properties
     
-    var presenter: ToolDetailsPresenter?
+    var presenter: ToolDetailsViewOutputDelegate?
     
     // MARK: - Private Properties
     
@@ -181,6 +181,6 @@ class ToolDetailsViewController: UIViewController {
     }
 }
 
-extension ToolDetailsViewController: ToolDetailsViewInputProtocol {
+extension ToolDetailsViewController: ToolDetailsViewInputDelegate {
     
 }

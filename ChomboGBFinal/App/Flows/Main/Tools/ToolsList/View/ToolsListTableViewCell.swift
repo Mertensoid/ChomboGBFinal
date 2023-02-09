@@ -87,9 +87,9 @@ final class ToolsListTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     
-    func configureData(name: String, picture: String, category: String, toolSerial: String, condition: String) {
+    func configureData(name: String, picture: UIImage, category: String, toolSerial: String, condition: String) {
         toolNameTitle.text = name
-        image.image = UIImage(systemName: picture)
+        image.image = picture
         toolCategoryTitle.text = category
         toolSerialTitle.text = toolSerial
         toolConditionTitle.text = condition

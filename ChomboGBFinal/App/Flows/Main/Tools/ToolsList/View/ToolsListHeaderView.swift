@@ -9,6 +9,16 @@ import UIKit
 
 class ToolsListHeaderView: UIView {
     
+    // MARK: - Properties
+    
+    let leftHeaderButton: UIButton = {
+        let leftHeaderButton = UIButton()
+        leftHeaderButton.activateConstraints()
+        leftHeaderButton.tintColor = ColorConstants.baseWhite
+        leftHeaderButton.setTitle("Logout", for: .normal)
+        return leftHeaderButton
+    }()
+    
     // MARK: - Private properties
     
     private let headerTitle: UILabel = {
@@ -22,13 +32,6 @@ class ToolsListHeaderView: UIView {
         headerTitle.textColor = ColorConstants.baseWhite
         headerTitle.text = "Tools"
         return headerTitle
-    }()
-    private let leftHeaderButton: UIButton = {
-        let leftHeaderButton = UIButton()
-        leftHeaderButton.activateConstraints()
-        leftHeaderButton.tintColor = ColorConstants.baseWhite
-        leftHeaderButton.setTitle("Logout", for: .normal)
-        return leftHeaderButton
     }()
     
     // MARK: - Construction
