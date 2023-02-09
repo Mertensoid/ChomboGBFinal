@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = ToolDetailsBuilder.createToolDetailsScreen()// LoginBuilder.createLoginScreen()
+            window.rootViewController = LoginBuilder.createLoginScreen()
             self.window = window
             window.makeKeyAndVisible()
         }

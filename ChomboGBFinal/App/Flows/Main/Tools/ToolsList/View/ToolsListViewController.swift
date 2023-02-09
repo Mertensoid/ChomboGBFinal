@@ -30,6 +30,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
         tableView.dataSource = self
         addViews()
         configureConstraints()
+        configureViews()
     }
     
     // MARK: - Functions
@@ -44,7 +45,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ToolsListTableViewCell()
-        cell.configureData(name: "Название", picture: "wrench.adjustable", mainProperty: "Свойство 1", secondaryProperty: "Свойство 2")
+        cell.configureData(name: "Марка Модель", picture: "wrench.adjustable", category: "Ручной инструмент", toolSerial: "HFY-1013234", condition: "Неисправно")
         return cell
     }
     
@@ -54,7 +55,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UITableView.automaticDimension
     }
     
     // MARK: - Private functions
@@ -77,6 +78,10 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    private func configureViews() {
+        tableView.separatorStyle = .none
     }
 }
 
