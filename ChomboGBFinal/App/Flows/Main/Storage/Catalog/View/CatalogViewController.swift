@@ -47,13 +47,21 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return firestoreService.tools.count
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogTableViewCell()
     
-        cell.configureData(name: firestoreService.tools[indexPath.item].brand, picture: "wrench.adjustable", mainProperty: firestoreService.tools[indexPath.item].model, secondaryProperty: firestoreService.tools[indexPath.item].serial)
+        cell.configureData(
+            name: "Bosch Master",
+            picture: UIImage(named: "123") ?? UIImage(),
+            category: "Электроинструмент",
+            toolSerial: "NJF155-767", 
+            condition: "Working",
+            status: "Free",
+            owner: "Storage"
+        )
         
         return cell
     }
@@ -64,7 +72,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UITableView.automaticDimension
     }
     
     // MARK: - Private functions
