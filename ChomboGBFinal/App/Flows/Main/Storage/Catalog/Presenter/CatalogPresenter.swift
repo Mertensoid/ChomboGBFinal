@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class CatalogPresenter {
+    
+    // MARK: - Private properties
+    
+    private weak var delegate: CatalogViewInputDelegate?
+    
+    init(delegate: CatalogViewInputDelegate) {
+        self.delegate = delegate
+    }
+}
+
+extension CatalogPresenter: CatalogViewOutputDelegate {
+    
+}

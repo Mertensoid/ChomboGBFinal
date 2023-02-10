@@ -9,6 +9,10 @@ import UIKit
 
 final class CatalogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+    
+    weak var presenter: CatalogViewOutputDelegate?
+    
     // MARK: - Private properties
     
     private let headerView: CatalogHeaderView = {
@@ -106,4 +110,8 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
         let newToolVC = NewToolBuilder.createNewToolScreen()
         navigationController?.pushViewController(newToolVC, animated: true)
     }
+}
+
+extension CatalogViewController: CatalogViewInputDelegate {
+    
 }
