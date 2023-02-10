@@ -15,6 +15,10 @@ final class CatalogTableViewCell: UITableViewCell {
         let view = UIView()
         view.activateConstraints()
         view.backgroundColor = ColorConstants.backgroundGray
+        view.layer.cornerRadius = 10
+        view.layer.borderColor = ColorConstants.borderGray.cgColor
+        view.layer.borderWidth = 1
+        view.layer.masksToBounds = true
         return view
     }()
     private let image: UIImageView = {
@@ -28,7 +32,7 @@ final class CatalogTableViewCell: UITableViewCell {
     private let toolNameTitle: UILabel = {
         let label = UILabel()
         label.activateConstraints()
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.numberOfLines = 0
         label.font = UIFont(name: "Helvetica-Bold", size: 16)
         label.textColor = ColorConstants.baseBlack
@@ -43,7 +47,7 @@ final class CatalogTableViewCell: UITableViewCell {
     private let toolCategoryTitle: UILabel = {
         let label = UILabel()
         label.activateConstraints()
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.numberOfLines = 1
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
@@ -54,70 +58,26 @@ final class CatalogTableViewCell: UITableViewCell {
     private let toolSerialTitle: UILabel = {
         let label = UILabel()
         label.activateConstraints()
-        label.textAlignment = .right
-        label.numberOfLines = 1
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: "Helvetica", size: 16)
-        label.textColor = ColorConstants.checkBoxTitleGray
-        return label
-    }()
-    private let toolConditionTitle: UILabel = {
-        let label = UILabel()
-        label.activateConstraints()
-        label.textAlignment = .right
-        label.numberOfLines = 1
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: "Helvetica", size: 16)
-        label.textColor = ColorConstants.checkBoxTitleGray
-        return label
-    }()
-    private let divider2: UIView = {
-        let divider = UIView()
-        divider.activateConstraints()
-        divider.backgroundColor = ColorConstants.darkYellow
-        return divider
-    }()
-    private let toolStatusTitle: UILabel = {
-        let label = UILabel()
-        label.activateConstraints()
         label.textAlignment = .left
         label.numberOfLines = 1
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont(name: "Helvetica", size: 16)
         label.textColor = ColorConstants.checkBoxTitleGray
-        label.text = "Current status"
         return label
     }()
-    private let toolStatusDataTitle: UILabel = {
-        let label = UILabel()
-        label.activateConstraints()
-        label.textAlignment = .right
-        label.numberOfLines = 1
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: "Helvetica-Bold", size: 16)
-        label.textColor = ColorConstants.checkBoxTitleGray
-        return label
+    private let toolConditionIndicator: UIView = {
+        let view = UIView()
+        view.activateConstraints()
+        view.layer.cornerRadius = 10
+        view.layer.borderColor = ColorConstants.borderGray.cgColor
+        view.layer.borderWidth = 1
+        return view
     }()
     private let toolOwnerTitle: UILabel = {
         let label = UILabel()
         label.activateConstraints()
         label.textAlignment = .left
-        label.numberOfLines = 1
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: "Helvetica", size: 16)
-        label.textColor = ColorConstants.checkBoxTitleGray
-        label.text = "Current owner"
-        return label
-    }()
-    private let toolOwnerDataTitle: UILabel = {
-        let label = UILabel()
-        label.activateConstraints()
-        label.textAlignment = .right
         label.numberOfLines = 1
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
@@ -147,8 +107,8 @@ final class CatalogTableViewCell: UITableViewCell {
         image.image = picture
         toolCategoryTitle.text = category
         toolSerialTitle.text = toolSerial
-        
-        toolOwnerDataTitle.text = owner
+        toolConditionIndicator.backgroundColor = color
+        toolOwnerTitle.text = owner
     }
     
     // MARK: - Private functions
@@ -161,12 +121,8 @@ final class CatalogTableViewCell: UITableViewCell {
         mainCellView.addSubview(divider1)
         mainCellView.addSubview(toolCategoryTitle)
         mainCellView.addSubview(toolSerialTitle)
-        mainCellView.addSubview(toolConditionTitle)
-        mainCellView.addSubview(divider2)
-        mainCellView.addSubview(toolStatusTitle)
-        mainCellView.addSubview(toolStatusDataTitle)
+        mainCellView.addSubview(toolConditionIndicator)
         mainCellView.addSubview(toolOwnerTitle)
-        mainCellView.addSubview(toolOwnerDataTitle)
     }
     
     private func configureConstraints() {
@@ -181,7 +137,7 @@ final class CatalogTableViewCell: UITableViewCell {
             image.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 10),
             image.heightAnchor.constraint(equalToConstant: 100),
             image.widthAnchor.constraint(equalToConstant: 100),
-            //image.bottomAnchor.constraint(lessThanOrEqualTo: divider2.topAnchor, constant: -10),
+            image.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
             
             toolNameTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
             toolNameTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
@@ -200,38 +156,20 @@ final class CatalogTableViewCell: UITableViewCell {
             toolSerialTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
             toolSerialTitle.topAnchor.constraint(equalTo: toolCategoryTitle.bottomAnchor, constant: 5),
             
-            toolConditionTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
-            toolConditionTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
-            toolConditionTitle.topAnchor.constraint(equalTo: toolSerialTitle.bottomAnchor, constant: 5),
-            //toolConditionTitle.bottomAnchor.constraint(lessThanOrEqualTo: divider2.topAnchor, constant: -10),
+            toolConditionIndicator.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            toolConditionIndicator.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
+            toolConditionIndicator.heightAnchor.constraint(equalToConstant: 20),
+            toolConditionIndicator.widthAnchor.constraint(equalToConstant: 20),
             
-            divider2.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
-            divider2.leadingAnchor.constraint(equalTo: mainCellView.leadingAnchor, constant: 10),
-            divider2.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
-            divider2.heightAnchor.constraint(equalToConstant: 1),
-            
-            toolStatusTitle.leadingAnchor.constraint(equalTo: image.leadingAnchor),
-            toolStatusTitle.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 5),
-            
-            toolStatusDataTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
-            toolStatusDataTitle.topAnchor.constraint(equalTo: toolStatusTitle.topAnchor),
-            
-            toolOwnerTitle.leadingAnchor.constraint(equalTo: toolStatusTitle.leadingAnchor),
-            toolOwnerTitle.topAnchor.constraint(equalTo: toolStatusTitle.bottomAnchor, constant: 5),
-            toolOwnerTitle.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
-            
-            toolOwnerDataTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
-            toolOwnerDataTitle.topAnchor.constraint(equalTo: toolOwnerTitle.topAnchor),
+            toolOwnerTitle.trailingAnchor.constraint(equalTo: toolConditionIndicator.leadingAnchor, constant: -10),
+            toolOwnerTitle.centerYAnchor.constraint(equalTo: toolConditionIndicator.centerYAnchor),
         ])
     }
     
     private func configureViews() {
         selectionStyle = .none
         
-        mainCellView.layer.cornerRadius = 10
-        mainCellView.layer.borderColor = ColorConstants.borderGray.cgColor
-        mainCellView.layer.borderWidth = 1
-        mainCellView.layer.masksToBounds = true
+        
     }
 }
 

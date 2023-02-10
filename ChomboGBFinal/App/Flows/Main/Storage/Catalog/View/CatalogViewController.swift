@@ -37,7 +37,6 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
         addViews()
         configureConstraints()
         configureViews()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,7 +106,6 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @objc func goToNewToolScreen(_ sender: UIButton) {
-        print(presenter?.getToolName(toolIndex: 1))
         let newToolVC = NewToolBuilder.createNewToolScreen()
         navigationController?.pushViewController(newToolVC, animated: true)
     }
