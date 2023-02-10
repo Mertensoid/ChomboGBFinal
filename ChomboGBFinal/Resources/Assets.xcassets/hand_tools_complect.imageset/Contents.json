@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hand_tools_complect.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
