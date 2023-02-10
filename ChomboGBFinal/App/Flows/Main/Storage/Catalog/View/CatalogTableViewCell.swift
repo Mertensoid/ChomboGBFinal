@@ -20,6 +20,8 @@ final class CatalogTableViewCell: UITableViewCell {
     private let image: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
         image.activateConstraints()
+        image.contentMode = .scaleAspectFill
+        image.layer.masksToBounds = true
         image.tintColor = ColorConstants.baseBlack
         return image
     }()
@@ -140,13 +142,12 @@ final class CatalogTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     
-    func configureData(name: String, picture: UIImage, category: String, toolSerial: String, condition: String, status: String, owner: String) {
+    func configureData(name: String, picture: UIImage, category: String, toolSerial: String, color: UIColor, owner: String) {
         toolNameTitle.text = name
         image.image = picture
         toolCategoryTitle.text = category
         toolSerialTitle.text = toolSerial
-        toolConditionTitle.text = condition
-        toolStatusDataTitle.text = status
+        
         toolOwnerDataTitle.text = owner
     }
     

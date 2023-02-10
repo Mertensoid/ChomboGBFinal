@@ -9,8 +9,6 @@ import UIKit
 import Foundation
 
 class NewToolPresenter: NewToolViewOutputDelegate {
-    
-    
 
     // MARK: - Private properties
     

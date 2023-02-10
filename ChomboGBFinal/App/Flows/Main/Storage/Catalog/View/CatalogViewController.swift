@@ -11,7 +11,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Properties
     
-    weak var presenter: CatalogViewOutputDelegate?
+    var presenter: CatalogViewOutputDelegate?
     
     // MARK: - Private properties
     
@@ -37,6 +37,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
         addViews()
         configureConstraints()
         configureViews()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,20 +52,19 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 120
+        return presenter?.getToolsQuantity() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogTableViewCell()
-    
+
         cell.configureData(
-            name: "Bosch Master",
-            picture: UIImage(named: "123") ?? UIImage(),
-            category: "Электроинструмент",
-            toolSerial: "NJF155-767", 
-            condition: "Working",
-            status: "Free",
-            owner: "Storage"
+            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
+            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
+            category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
+            toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
+            color: presenter?.getIndicatorColor(toolIndex: indexPath.row) ?? ColorConstants.lightYellow,
+            owner: presenter?.getToolOwner(toolIndex: indexPath.row) ?? ""
         )
         
         return cell
@@ -102,16 +102,19 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func configureViews() {
-        
+        tableView.separatorStyle = .none
         headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
     }
     
     @objc func goToNewToolScreen(_ sender: UIButton) {
+        print(presenter?.getToolName(toolIndex: 1))
         let newToolVC = NewToolBuilder.createNewToolScreen()
         navigationController?.pushViewController(newToolVC, animated: true)
     }
 }
 
 extension CatalogViewController: CatalogViewInputDelegate {
-    
+    func tableViewReloadData() {
+        self.tableView.reloadData()
+    }
 }
