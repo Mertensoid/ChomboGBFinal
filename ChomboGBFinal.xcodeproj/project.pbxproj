@@ -86,6 +86,8 @@
 		8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74A298908B6005EB3AB /* MapViewController.swift */; };
 		8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */; };
 		8591C74F298908E4005EB3AB /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74E298908E4005EB3AB /* Places.swift */; };
+		85AEC3A9299A15CA005034E3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3A8299A15CA005034E3 /* BackButton.swift */; };
+		85AEC3AB299A31F0005034E3 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,8 @@
 		8591C74A298908B6005EB3AB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMarkersView.swift; sourceTree = "<group>"; };
 		8591C74E298908E4005EB3AB /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		85AEC3A8299A15CA005034E3 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +821,8 @@
 				8591C74A298908B6005EB3AB /* MapViewController.swift */,
 				8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */,
 				8591C74E298908E4005EB3AB /* Places.swift */,
+				85AEC3A8299A15CA005034E3 /* BackButton.swift */,
+				85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */,
 				8536ECD82990E05C008F2B7F /* Places.geojson */,
 			);
 			path = MapKitNavigation;
@@ -996,6 +1002,7 @@
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
+				85AEC3A9299A15CA005034E3 /* BackButton.swift in Sources */,
 				8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */,
 				843130682982931C006EC00F /* ToolsListBuilder.swift in Sources */,
 				84313099298298CB006EC00F /* TabBarConstants.swift in Sources */,
@@ -1030,6 +1037,7 @@
 				843130E329950C7F006EC00F /* Category.swift in Sources */,
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
+				85AEC3AB299A31F0005034E3 /* CurrentLocationButton.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

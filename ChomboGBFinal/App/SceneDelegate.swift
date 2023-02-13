@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = LoginBuilder.createLoginScreen()
+            window.rootViewController = MapViewController()
             self.window = window
             window.makeKeyAndVisible()
         }
