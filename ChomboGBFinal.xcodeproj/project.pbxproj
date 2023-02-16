@@ -78,6 +78,8 @@
 		845485D529801273004657A3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485D429801273004657A3 /* LoginBuilder.swift */; };
 		846F835C29962F3100F968A4 /* CatalogViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F835B29962F3100F968A4 /* CatalogViewInputDelegate.swift */; };
 		846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */; };
+		84B71EC1299E279D00A11952 /* RegistrationViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC0299E279D00A11952 /* RegistrationViewInputDelegate.swift */; };
+		84B71EC3299E27B100A11952 /* RegistrationViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC2299E27B100A11952 /* RegistrationViewOutputDelegate.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -176,6 +178,8 @@
 		845485D429801273004657A3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		846F835B29962F3100F968A4 /* CatalogViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewInputDelegate.swift; sourceTree = "<group>"; };
 		846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewOutputDelegate.swift; sourceTree = "<group>"; };
+		84B71EC0299E279D00A11952 /* RegistrationViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInputDelegate.swift; sourceTree = "<group>"; };
+		84B71EC2299E27B100A11952 /* RegistrationViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 			isa = PBXGroup;
 			children = (
 				8431307D2982948C006EC00F /* RegistrationPresenter.swift */,
+				84B71EC0299E279D00A11952 /* RegistrationViewInputDelegate.swift */,
+				84B71EC2299E27B100A11952 /* RegistrationViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1000,6 +1006,7 @@
 				843130C5298D322A006EC00F /* ToolDetailsViewInputDelegate.swift in Sources */,
 				843130B22989408E006EC00F /* MockTool.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
+				84B71EC3299E27B100A11952 /* RegistrationViewOutputDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
@@ -1039,6 +1046,7 @@
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
+				84B71EC1299E279D00A11952 /* RegistrationViewInputDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,6 +1207,9 @@
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1208,7 +1219,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.ChomboGBFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.Chombo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1226,6 +1237,9 @@
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1235,7 +1249,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.ChomboGBFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.Chombo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

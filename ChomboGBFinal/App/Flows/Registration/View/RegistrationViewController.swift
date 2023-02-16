@@ -9,6 +9,10 @@ import UIKit
 
 final class RegistrationViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    weak var presenter: RegistrationViewOutputDelegate?
+    
     // MARK: - Private properties
     
     private let scrollView: UIScrollView = {
@@ -225,4 +229,8 @@ final class RegistrationViewController: UIViewController {
     func registrationButtonPressed() {
         self.dismiss(animated: true)
     }
+}
+
+extension RegistrationViewController: RegistrationViewInputDelegate {
+    
 }
