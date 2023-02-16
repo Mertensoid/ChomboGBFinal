@@ -9,6 +9,10 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    var presenter: ProfileViewOutputDelegate?
+    
     // MARK: - Private properties
     
     private let headerView: ProfileHeaderView = {
@@ -165,3 +169,6 @@ final class ProfileViewController: UIViewController {
     }
 }
 
+extension ProfileViewController: ProfileViewInputDelegate {
+    
+}

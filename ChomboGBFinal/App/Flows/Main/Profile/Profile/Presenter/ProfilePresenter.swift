@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ProfilePresenter {
+    weak var delegate: ProfileViewInputDelegate?
+}
+
+extension ProfilePresenter: ProfileViewOutputDelegate {
+    
+}
