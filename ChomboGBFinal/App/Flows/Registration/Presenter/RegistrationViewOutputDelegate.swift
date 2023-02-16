@@ -8,5 +8,6 @@
 import Foundation
 
 protocol RegistrationViewOutputDelegate: AnyObject {
-    
+    func registration()
+    func closeRegistrationScreen()
 }

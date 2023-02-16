@@ -8,7 +8,7 @@
 import UIKit
 
 class MockNetworkService {
-    func auth(login: String, password: String) -> User {
+    func auth(login: String, password: String) -> User? {
         print("Провереяем данные")
         print("Данные верны")
         return User(uid: "123456", email: "test@email.ru", displayName: "Имя Фамилия", phoneNumber: "+1234567890", photoUrl: URL(string: "http://testURL"))

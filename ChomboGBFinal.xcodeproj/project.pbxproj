@@ -83,6 +83,7 @@
 		84B71EC5299E41BA00A11952 /* ProfileViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC4299E41BA00A11952 /* ProfileViewInputDelegate.swift */; };
 		84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */; };
 		84B71ECA299E510500A11952 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC9299E510500A11952 /* MockNetworkService.swift */; };
+		84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECB299E580000A11952 /* UserSingleton.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -186,6 +187,7 @@
 		84B71EC4299E41BA00A11952 /* ProfileViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewInputDelegate.swift; sourceTree = "<group>"; };
 		84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84B71EC9299E510500A11952 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		84B71ECB299E580000A11952 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				843130E429950D53006EC00F /* User.swift */,
+				84B71ECB299E580000A11952 /* UserSingleton.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
+				84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */,
 				4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130DF29950C58006EC00F /* Status.swift in Sources */,

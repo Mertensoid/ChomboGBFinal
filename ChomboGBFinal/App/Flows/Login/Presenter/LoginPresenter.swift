@@ -12,18 +12,29 @@ class LoginPresenter {
     // MARK: - Properties
     
     weak var delegate: LoginViewInputDelegate?
+    
+    // MARK: - Private properties
+    
+    private let networkService = MockNetworkService()
 }
 
 extension LoginPresenter: LoginViewOutputDelegate {
     
     func checkAccountData() {
         print("Account checking")
-        delegate?.clearLoginTextField()
-        delegate?.clearPasswordTextField()
-        let mainTabBar = MainTabBarController()
-        mainTabBar.modalPresentationStyle = .fullScreen
-        if let delegate = delegate as? LoginViewController {
-            delegate.present(mainTabBar, animated: true)
+        
+        if let currentUser = networkService.auth(login: delegate?.getLogin() ?? "", password: delegate?.getPassword() ?? "") {
+            delegate?.clearLoginTextField()
+            delegate?.clearPasswordTextField()
+            UserSingleton.shared.user = currentUser
+            let mainTabBar = MainTabBarController()
+            mainTabBar.modalPresentationStyle = .fullScreen
+            if let delegate = delegate as? LoginViewController {
+                delegate.present(mainTabBar, animated: true)
+            }
+        } else {
+            print("Ошибка авторизации")
+            print("Показываем предупреждение о неправильных данных")
         }
     }
     
