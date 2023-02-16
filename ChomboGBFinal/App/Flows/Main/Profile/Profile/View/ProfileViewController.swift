@@ -32,7 +32,6 @@ final class ProfileViewController: UIViewController {
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 1
         nameLabel.minimumScaleFactor = 0.5
-        nameLabel.text = "Matsuk Maxim"
         nameLabel.textColor = ColorConstants.baseBlack
         nameLabel.backgroundColor = ColorConstants.baseWhite
         nameLabel.adjustsFontSizeToFitWidth = true
@@ -45,7 +44,6 @@ final class ProfileViewController: UIViewController {
         postLabel.textAlignment = .center
         postLabel.numberOfLines = 1
         postLabel.minimumScaleFactor = 0.5
-        postLabel.text = "CEO of Chombo corp."
         postLabel.textColor = ColorConstants.baseBlack
         postLabel.backgroundColor = ColorConstants.baseWhite
         postLabel.adjustsFontSizeToFitWidth = true
@@ -84,6 +82,10 @@ final class ProfileViewController: UIViewController {
         addViews()
         configureConstraints()
         configureViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.updateUserInformation()
     }
     
     //MARK: - Private functions
@@ -144,13 +146,6 @@ final class ProfileViewController: UIViewController {
     private func configureViews() {
         
         view.backgroundColor = ColorConstants.baseWhite
-        emailTitleView.setDataText(data: "ma*******@yandex.ru")
-        locationTitleView.setDataText(data: "2066 Crist Dr, Los Altos, California")
-        
-        metricsTitleView.setInUseDataText(data: "34")
-        metricsTitleView.setInProgressDataText(data: "5")
-        metricsTitleView.setDoneDataText(data: "73")
-        metricsTitleView.setActivityDataText(data: "70%")
         
         headerView.leftHeaderButton.addTarget(self, action: #selector(logoutButtonPressed(_:)), for: .touchUpInside)
         
@@ -170,5 +165,26 @@ final class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileViewInputDelegate {
+    func showName(name: String) {
+        nameLabel.text = name
+    }
     
+    func showPost(post: String) {
+        postLabel.text = post
+    }
+    
+    func showEmail(email: String) {
+        emailTitleView.setDataText(data: email)
+    }
+    
+    func showWorkspaceLocation(location: String) {
+        locationTitleView.setDataText(data: location)
+    }
+    
+    func showMetrics() {
+        metricsTitleView.setInUseDataText(data: "0")
+        metricsTitleView.setInProgressDataText(data: "0")
+        metricsTitleView.setDoneDataText(data: "0")
+        metricsTitleView.setActivityDataText(data: "0%")
+    }
 }
