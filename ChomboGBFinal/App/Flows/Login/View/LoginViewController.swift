@@ -11,7 +11,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Public properties
     
-    weak var presenter: LoginPresenter?
+    var presenter: LoginViewOutputDelegate?
     
     // MARK: - Private properties
 

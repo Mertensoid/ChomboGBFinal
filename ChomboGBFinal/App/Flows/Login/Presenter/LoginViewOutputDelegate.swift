@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LoginViewOutputDelegate {
+protocol LoginViewOutputDelegate: AnyObject {
     func checkAccountData()
     func showRegistrationScreen()
 }

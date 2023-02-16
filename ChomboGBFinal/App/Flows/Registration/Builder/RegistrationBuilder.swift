@@ -10,7 +10,8 @@ import UIKit
 class RegistrationBuilder {
     static func createRegistrationScreen() -> UIViewController {
         let view = RegistrationViewController()
-        let presenter = RegistrationPresenter(delegate: view)
+        let presenter = RegistrationPresenter()
+        presenter.delegate = view
         view.presenter = presenter
         return view
     }

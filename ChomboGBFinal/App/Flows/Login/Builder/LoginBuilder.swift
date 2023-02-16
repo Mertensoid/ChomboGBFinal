@@ -10,7 +10,8 @@ import Foundation
 class LoginBuilder {
     static func createLoginScreen() -> LoginViewController {
         let view = LoginViewController()
-        let presenter = LoginPresenter(view: view)
+        let presenter = LoginPresenter()
+        presenter.delegate = view
         view.presenter = presenter
         return view
     }

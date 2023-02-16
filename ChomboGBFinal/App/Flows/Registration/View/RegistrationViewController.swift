@@ -11,7 +11,7 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var presenter: RegistrationViewOutputDelegate?
+    var presenter: RegistrationViewOutputDelegate?
     
     // MARK: - Private properties
     
