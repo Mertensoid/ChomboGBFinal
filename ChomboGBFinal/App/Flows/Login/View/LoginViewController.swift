@@ -201,7 +201,7 @@ extension LoginViewController: LoginViewInputDelegate {
         presenter?.checkAccountData()
     }
     
-    @objc private func registrationButtonPressed() {
+    private func registrationButtonPressed() {
         presenter?.showRegistrationScreen()
     }
 }
