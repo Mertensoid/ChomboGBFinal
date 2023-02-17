@@ -10,7 +10,8 @@ import UIKit
 class CatalogBuilder {
     static func createCatalogScreen() -> UIViewController {
         let view = CatalogViewController()
-        let presenter = CatalogPresenter(delegate: view)
+        let presenter = CatalogPresenter()
+        presenter.delegate = view
         view.presenter = presenter
         return view
     }

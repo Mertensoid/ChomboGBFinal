@@ -9,15 +9,9 @@ import Foundation
 
 class ToolDetailsPresenter {
     
-    // MARK: - Private properties
+    // MARK: - Properties
     
-    weak private var delegate: ToolDetailsViewInputDelegate?
-    
-    // MARK: - Construction
-    
-    required init(delegate: ToolDetailsViewInputDelegate?) {
-        self.delegate = delegate
-    }
+    weak var delegate: ToolDetailsViewInputDelegate?
 }
 
 extension ToolDetailsPresenter: ToolDetailsViewOutputDelegate {

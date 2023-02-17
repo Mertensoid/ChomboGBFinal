@@ -9,9 +9,12 @@ import UIKit
 
 class CatalogPresenter {
     
+    // MARK: - Properties
+    
+    weak var delegate: CatalogViewInputDelegate?
+    
     // MARK: - Private properties
     
-    private weak var delegate: CatalogViewInputDelegate?
     private var catalog: [Tool] = [] {
         didSet {
             delegate?.tableViewReloadData()
@@ -20,8 +23,7 @@ class CatalogPresenter {
     
     // MARK: - Construction
     
-    init(delegate: CatalogViewInputDelegate) {
-        self.delegate = delegate
+    init() {
         catalog = Tool.catalog
     }
 }
