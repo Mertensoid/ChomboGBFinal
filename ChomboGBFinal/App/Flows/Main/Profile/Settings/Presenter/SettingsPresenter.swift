@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class SettingsPresenter {
+    
+    // MARK: - Properties
+    
+    weak var delegate: SettingsViewInputDelegate?
+}
+
+extension SettingsPresenter: SettingsViewOutputDelegate {
+    
+}
