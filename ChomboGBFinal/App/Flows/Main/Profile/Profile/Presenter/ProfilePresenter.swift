@@ -12,8 +12,17 @@ class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfileViewOutputDelegate {
+    func logout() {
+        if let delegate = delegate as? ProfileViewController {
+            delegate.dismiss(animated: true)
+        }
+    }
+    
     func showEditProfileScreen() {
-        
+        if let delegate = delegate as? ProfileViewController {
+            let newToolVC = SettingsViewController()
+            delegate.navigationController?.pushViewController(newToolVC, animated: true)
+        }
     }
     
     func updateUserInformation() {

@@ -25,6 +25,11 @@ final class ProfileViewController: UIViewController {
         avatarView.activateConstraints()
         return avatarView
     }()
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.activateConstraints()
+        return view
+    }()
     private let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.activateConstraints()
@@ -94,11 +99,12 @@ final class ProfileViewController: UIViewController {
         
         view.addSubview(headerView)
         view.addSubview(avatarView)
-        view.addSubview(nameLabel)
-        view.addSubview(postLabel)
-        view.addSubview(emailTitleView)
-        view.addSubview(locationTitleView)
-        view.addSubview(metricsTitleView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(postLabel)
+        scrollView.addSubview(emailTitleView)
+        scrollView.addSubview(locationTitleView)
+        scrollView.addSubview(metricsTitleView)
         view.addSubview(editProfileButton)
     }
     
@@ -116,7 +122,11 @@ final class ProfileViewController: UIViewController {
             avatarView.heightAnchor.constraint(equalToConstant: 150),
             avatarView.widthAnchor.constraint(equalToConstant: 150),
             
-            nameLabel.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
+            scrollView.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            nameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor),
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             postLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
@@ -135,11 +145,13 @@ final class ProfileViewController: UIViewController {
             metricsTitleView.topAnchor.constraint(equalTo: locationTitleView.bottomAnchor, constant: 10),
             metricsTitleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             metricsTitleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            metricsTitleView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            editProfileButton.topAnchor.constraint(equalTo: metricsTitleView.bottomAnchor, constant: 10),
+            editProfileButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 10),
             editProfileButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             editProfileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            editProfileButton.heightAnchor.constraint(equalToConstant: 50)
+            editProfileButton.heightAnchor.constraint(equalToConstant: 50),
+            editProfileButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
@@ -155,12 +167,11 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc private func goToSettingsScreen(_ sender: UIButton) {
-        let newToolVC = SettingsViewController()
-        navigationController?.pushViewController(newToolVC, animated: true)
+        presenter?.showEditProfileScreen()
     }
     
     @objc private func logoutButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        presenter?.logout()
     }
 }
 
