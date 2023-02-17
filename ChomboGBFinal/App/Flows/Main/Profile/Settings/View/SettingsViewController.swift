@@ -13,6 +13,14 @@ class SettingsViewController: UIViewController {
     
     var presenter: SettingsViewOutputDelegate?
     
+    // MARK: - Private properties
+    
+    private let headerView: SettingsHeaderView = {
+        let headerView = SettingsHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        headerView.activateConstraints()
+        return headerView
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
