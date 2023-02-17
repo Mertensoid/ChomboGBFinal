@@ -88,6 +88,7 @@
 		84B71ED0299F7A6600A11952 /* SettingsViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */; };
 		84B71ED2299F7D3200A11952 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */; };
 		84B71ED4299F7DA700A11952 /* SettingsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED3299F7DA700A11952 /* SettingsTextView.swift */; };
+		84B71ED6299F83A800A11952 /* SettingsPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED5299F83A800A11952 /* SettingsPictureView.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -196,6 +197,7 @@
 		84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		84B71ED3299F7DA700A11952 /* SettingsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextView.swift; sourceTree = "<group>"; };
+		84B71ED5299F83A800A11952 /* SettingsPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPictureView.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */,
+				84B71ED5299F83A800A11952 /* SettingsPictureView.swift */,
 				84B71ED3299F7DA700A11952 /* SettingsTextView.swift */,
 				843130862982959D006EC00F /* SettingsViewController.swift */,
 			);
@@ -1078,6 +1081,7 @@
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
+				84B71ED6299F83A800A11952 /* SettingsPictureView.swift in Sources */,
 				84B71EC1299E279D00A11952 /* RegistrationViewInputDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
