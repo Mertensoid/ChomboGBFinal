@@ -5,7 +5,7 @@
 //  Created by admin on 26.01.2023.
 //
 
-import Foundation
+import UIKit
 
 class SettingsPresenter {
     
@@ -15,5 +15,10 @@ class SettingsPresenter {
 }
 
 extension SettingsPresenter: SettingsViewOutputDelegate {
-    
+    func choosePhoto() {
+        delegate?.setNewAvatar(picture: UIImage(named: "magister_284x284px") ?? UIImage())
+    }
+    func saveNewData() {
+        
+    }
 }

@@ -5,8 +5,8 @@
 //  Created by admin on 17.02.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol SettingsViewInputDelegate: AnyObject {
-    
+    func setNewAvatar(picture: UIImage)
 }

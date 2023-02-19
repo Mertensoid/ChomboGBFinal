@@ -20,7 +20,7 @@ extension ProfilePresenter: ProfileViewOutputDelegate {
     
     func showEditProfileScreen() {
         if let delegate = delegate as? ProfileViewController {
-            let newToolVC = SettingsViewController()
+            let newToolVC = SettingsBuilder.createSettingsScreen()
             delegate.navigationController?.pushViewController(newToolVC, animated: true)
         }
     }
