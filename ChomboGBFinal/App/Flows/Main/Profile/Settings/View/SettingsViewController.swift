@@ -200,6 +200,66 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: SettingsViewInputDelegate {
+    func setCurrentAvatar(picture: UIImage) {
+        avatarView.avatarView.setImage(picture, for: .normal)
+    }
+    
+    func setCurrentFirstName(firstName: String) {
+        firstNameTextView.setPlaceholder(text: firstName)
+    }
+    
+    func setCurrentSecondName(secondName: String) {
+        secondNameTextView.setPlaceholder(text: secondName)
+    }
+    
+    func setCurrentMiddleName(middleName: String) {
+        middleNameTextView.setPlaceholder(text: middleName)
+    }
+    
+    func setCurrentPost(post: String) {
+        postTextView.setPlaceholder(text: post)
+    }
+    
+    func setCurrentLocation(location: String) {
+        locationTextView.setPlaceholder(text: location)
+    }
+    
+    func setCurrentPhone(phone: String) {
+        phoneTextView.setPlaceholder(text: phone)
+    }
+    
+    func getNewAvatar() -> UIImage {
+        return avatarView.avatarView.imageView?.image ?? UIImage()
+    }
+    
+    func getNewFirstName() -> String {
+        return firstNameTextView.getData()
+    }
+    
+    func getNewSecondName() -> String {
+        return secondNameTextView.getData()
+    }
+    
+    func getNewMiddleName() -> String {
+        return middleNameTextView.getData()
+    }
+    
+    func getNewPassword() -> String {
+        return newPasswordTextView.getData()
+    }
+    
+    func getNewPost() -> String {
+        return postTextView.getData()
+    }
+    
+    func getNewLocation() -> String {
+        return locationTextView.getData()
+    }
+    
+    func getNewPhone() -> String {
+        return phoneTextView.getData()
+    }
+    
     func setNewAvatar(picture: UIImage) {
         avatarView.avatarView.setImage(picture, for: .normal)
     }

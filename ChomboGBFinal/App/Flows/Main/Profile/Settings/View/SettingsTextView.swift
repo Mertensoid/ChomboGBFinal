@@ -62,6 +62,10 @@ final class SettingsTextView: UIView {
         }
     }
     
+    func setPlaceholder(text: String) {
+        textField.placeholder = text
+    }
+    
     // MARK: - Private functions
     
     private func addViews() {

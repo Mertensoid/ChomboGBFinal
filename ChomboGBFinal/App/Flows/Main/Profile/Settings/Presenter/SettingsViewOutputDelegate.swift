@@ -8,6 +8,7 @@
 import Foundation
 
 protocol SettingsViewOutputDelegate: AnyObject {
+    func getCurrentData()
     func choosePhoto()
     func saveNewData()
 }

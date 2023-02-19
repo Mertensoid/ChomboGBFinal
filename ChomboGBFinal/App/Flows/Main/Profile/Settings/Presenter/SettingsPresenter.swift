@@ -12,9 +12,18 @@ class SettingsPresenter {
     // MARK: - Properties
     
     weak var delegate: SettingsViewInputDelegate?
+    
+    // MARK: - Private Properies
+    
+    private var networkService = MockNetworkService()
+    
 }
 
 extension SettingsPresenter: SettingsViewOutputDelegate {
+    func getCurrentData() {
+        
+    }
+    
     func choosePhoto() {
         delegate?.setNewAvatar(picture: UIImage(named: "magister_284x284px") ?? UIImage())
     }
