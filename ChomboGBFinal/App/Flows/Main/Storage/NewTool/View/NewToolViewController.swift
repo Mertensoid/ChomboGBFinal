@@ -140,28 +140,28 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         case categoryPicker:
             switch row {
             case 0:
-                return MockCategory.handTools.rawValue
+                return Category.handTools.rawValue
             case 1:
-                return MockCategory.electroTools.rawValue
+                return Category.electroTools.rawValue
             case 2:
-                return MockCategory.gasolineTools.rawValue
+                return Category.gasolineTools.rawValue
             case 3:
-                return MockCategory.miscellaneous.rawValue
+                return Category.miscellaneous.rawValue
             default:
-                return MockCategory.miscellaneous.rawValue
+                return Category.miscellaneous.rawValue
             }
         case conditionPicker:
             switch row {
             case 0:
-                return MockCondition.excellent.rawValue
+                return Condition.broken.rawValue
             case 1:
-                return MockCondition.good.rawValue
+                return Condition.working.rawValue
             case 2:
-                return MockCondition.normal.rawValue
+                return Condition.outdated.rawValue
             case 3:
-                return MockCondition.broken.rawValue
+                return Condition.incomplete.rawValue
             default:
-                return MockCondition.broken.rawValue
+                return Condition.new.rawValue
             }
         default:
             return ""
@@ -315,6 +315,62 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
 }
 
 extension NewToolViewController: NewToolViewInputDelegate {
+    
+    func getCategory() -> Category {
+        switch categoryPickerView.getData() {
+        case "Hand tools":
+            return Category.handTools
+        case "Electro tools":
+            return Category.electroTools
+        case "Gasoline tools":
+            return Category.gasolineTools
+        default:
+            return Category.miscellaneous
+        }
+    }
+    
+    func getCondition() -> Condition {
+        switch conditionPickerView.getData() {
+        case "Broken":
+            return Condition.broken
+        case "Working":
+            return Condition.working
+        case "Outdated":
+            return Condition.outdated
+        case "Incomplete":
+            return Condition.incomplete
+        default:
+            return Condition.new
+        }
+    }
+    
+    func getStatus() -> Status {
+        switch conditionPickerView.getData() {
+        case "Broken":
+            return Status.broken
+        case "Transaction":
+            return Status.inProgress
+        case "In use":
+            return Status.inUse
+        case "Service":
+            return Status.inService
+        default:
+            return Status.free
+        }
+    }
+    
+    func showCategory(category: Category) {
+        self.categoryPickerView.setData(data: category.rawValue)
+    }
+    
+    func showCondition(condition: Condition) {
+        self.conditionPickerView.setData(data: condition.rawValue)
+    }
+    
+    func showStatus(status: Status) {
+        self.conditionPickerView.setData(data: status.rawValue)
+    }
+    
 
     func showCategory(category: MockCategory) {
         self.categoryPickerView.setData(data: category.rawValue)

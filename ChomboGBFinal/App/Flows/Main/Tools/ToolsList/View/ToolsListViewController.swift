@@ -51,7 +51,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
         let cell = ToolsListTableViewCell()
         cell.configureData(
             name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
-            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
+//            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
             category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
             toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
             condition: presenter?.getToolCondition(toolIndex: indexPath.row) ?? ""

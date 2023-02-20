@@ -47,7 +47,7 @@ extension ToolsListPresenter: ToolsListViewOutputDelegate {
         return userTools[toolIndex].condition.rawValue
     }
     
-    func getToolImage(toolIndex: Int) -> UIImage {
-        return userTools[toolIndex].picture
-    }
+//    func getToolImage(toolIndex: Int) -> UIImage {
+//        return userTools[toolIndex].picture
+//    }
 }

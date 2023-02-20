@@ -10,12 +10,14 @@ import Foundation
 
 protocol NewToolViewInputDelegate: AnyObject {
 
-    func getCategory() -> MockCategory
+    func getCategory() -> Category
     func getBrand() -> String
     func getModel() -> String
     func getSerial() -> String
-    func getCondition() -> MockCondition
-    func showCategory(category: MockCategory)
+    func getCondition() -> Condition
+    func getStatus() -> Status
+    func showCategory(category: Category)
     func showDate(date: String)
-    func showCondition(condition: MockCondition)
+    func showCondition(condition: Condition)
+    func showStatus(status: Status)
 }

@@ -28,13 +28,13 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     func setCategory(row: Int) {
         switch row {
         case 0:
-            view?.showCategory(category: MockCategory.handTools)
+            view?.showCategory(category: Category.handTools)
         case 1:
-            view?.showCategory(category: MockCategory.electroTools)
+            view?.showCategory(category: Category.electroTools)
         case 2:
-            view?.showCategory(category: MockCategory.gasolineTools)
+            view?.showCategory(category: Category.gasolineTools)
         default:
-            view?.showCategory(category: MockCategory.miscellaneous)
+            view?.showCategory(category: Category.miscellaneous)
         }
     }
     
@@ -48,32 +48,39 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     func setCondition(row: Int) {
         switch row {
         case 0:
-            view?.showCondition(condition: .excellent)
+            view?.showCondition(condition: .new)
         case 1:
-            view?.showCondition(condition: .good)
+            view?.showCondition(condition: .working)
         case 2:
-            view?.showCondition(condition: .normal)
+            view?.showCondition(condition: .outdated)
+        case 3:
+            view?.showCondition(condition: .incomplete)
         default:
             view?.showCondition(condition: .broken)
         }
     }
     
+    func setStatus(row: Int) {
+        switch row {
+        case 0:
+            view?.showStatus(status: .inService)
+        case 1:
+            view?.showStatus(status: .free)
+        case 2:
+            view?.showStatus(status: .inProgress)
+        case 3:
+            view?.showStatus(status: .inUse)
+        default:
+            view?.showStatus(status: .broken)
+        }
+    }
+    
     func saveNewTool() {
-//        let mockTool = MockTool(
-//            id: 123,
-//            category: view?.getCategory() ?? MockCategory.miscellaneous,
-//            brand: view?.getBrand() ?? "",
-//            model: view?.getModel() ?? "",
-//            serial: view?.getSerial() ?? "",
-//            productionDate: Date(),
-//            status: MockStatus.free,
-//            owner: MockUser(userID: 1, userName: "Vasya Pupkin", accountType: .admin),
-//            condition: view?.getCondition() ?? MockCondition.broken,
-//            location: MockLocation(
-//                latitude: 31.0005434,
-//                longitude: 65.4643721),
-//            picture: UIImage(systemName: "hammer") ?? UIImage())
-//        print(mockTool.productionDate)
-        firestoreService.dataToSave(view?.getBrand() ?? "", view?.getModel() ?? "", view?.getSerial() ?? "")
+        
+        let mockUser = User(uid: "1234", email: "test@test.com", displayName: "test user", phoneNumber: "+79991112233", photoUrl: nil)
+        
+        let tool = Tool(category: view?.getCategory() ?? .miscellaneous, brand: view?.getBrand() ?? "", model: view?.getModel() ?? "", serial: view?.getSerial(), productionDate: Date(), status: view?.getStatus() ?? .free, owner: mockUser, condition: view?.getCondition() ?? .new)
+        
+        firestoreService.dataToSaveWithModel(tool)
     }
 }

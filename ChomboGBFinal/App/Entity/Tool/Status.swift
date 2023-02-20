@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Status: String {
+enum Status: String, Codable {
     case free = "Free"
     case inProgress = "Transaction"
     case inUse = "In use"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Condition: String {
+enum Condition: String, Codable {
     case new = "New"
     case working = "Working"
     case outdated = "Outdated"
