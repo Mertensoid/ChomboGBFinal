@@ -70,8 +70,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let toolDetailsVC = ToolDetailsViewController()
-        navigationController?.pushViewController(toolDetailsVC, animated: true)
+        presenter?.showDetailsScreen()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,11 +102,18 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     private func configureViews() {
         tableView.separatorStyle = .none
         headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
+        headerView.leftHeaderButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        
+    }
+}
+
+@objc extension CatalogViewController {
+    func goToNewToolScreen(_ sender: UIButton) {
+        presenter?.showNewToolScreen()
     }
     
-    @objc func goToNewToolScreen(_ sender: UIButton) {
-        let newToolVC = NewToolBuilder.createNewToolScreen()
-        navigationController?.pushViewController(newToolVC, animated: true)
+    func backButtonPressed(_ sender: UIButton) {
+        presenter?.logout()
     }
 }
 

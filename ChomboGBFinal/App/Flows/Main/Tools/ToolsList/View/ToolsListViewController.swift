@@ -60,8 +60,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let toolDetailsVC = ToolDetailsViewController()
-        navigationController?.pushViewController(toolDetailsVC, animated: true)
+        presenter?.showDetailsScreen()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

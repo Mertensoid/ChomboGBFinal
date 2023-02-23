@@ -27,7 +27,16 @@ extension SettingsPresenter: SettingsViewOutputDelegate {
     func choosePhoto() {
         delegate?.setNewAvatar(picture: UIImage(named: "magister_284x284px") ?? UIImage())
     }
+    
     func saveNewData() {
-        
+        if let delegate = delegate as? SettingsViewController {
+            delegate.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func closeSettingsScreen() {
+        if let delegate = delegate as? SettingsViewController {
+            delegate.navigationController?.popViewController(animated: true)
+        }
     }
 }

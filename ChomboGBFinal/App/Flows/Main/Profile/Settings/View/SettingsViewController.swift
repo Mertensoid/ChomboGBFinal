@@ -145,7 +145,6 @@ class SettingsViewController: UIViewController {
             avatarView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
             avatarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             avatarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            //avatarView.heightAnchor.constraint(equalToConstant: 165),
             
             firstNameTextView.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
             firstNameTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
@@ -196,6 +195,7 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = ColorConstants.baseWhite
         avatarView.avatarView.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        headerView.leftHeaderButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
     }
 }
 
@@ -273,6 +273,10 @@ extension SettingsViewController: SettingsViewInputDelegate {
     
     private func saveButtonPressed() {
         presenter?.saveNewData()
+    }
+    
+    private func backButtonPressed() {
+        presenter?.closeSettingsScreen()
     }
     
     private func keyboardWasShown(notification: Notification) {

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ToolDetailsViewOutputDelegate: AnyObject {
-    
+    func closeDetailsScreen()
 }
