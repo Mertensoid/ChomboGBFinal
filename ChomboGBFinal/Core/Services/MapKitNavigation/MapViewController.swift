@@ -8,35 +8,42 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreLocationUI
+
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     
-    var mapView : MKMapView = {
+    private var mapView : MKMapView = {
         let map = MKMapView()
         map.overrideUserInterfaceStyle = .dark
         return map
     }()
     
+    private let backButton = BackButton()
+    private let currentLocationButton = CurrentLocationButton()
     let locationManager = CLLocationManager()
     
     var places: [Places] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setBackButton()
+        setCurrentLocationButton()
+       
         setMapConstraints()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
         mapView.delegate = self
-        
         mapView.register(PlacesMarkersView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        //         создание аннотаций
+        
+        
+       
         loadInitialData()
         mapView.addAnnotations(places)
         
@@ -61,20 +68,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: regionMaxSize), animated: true)
         
         mapView.setRegion(region, animated: true)
-        
-        
-        //        let pin = MKPointAnnotation()
-        //        pin.coordinate = coordinate
-        //        pin.subtitle = "current location"
-        //
-        //        pin.title = "You are Here"
-        //        mapView.addAnnotation(pin)
-        
+        mapView.showsUserLocation = true
+    }
+    func setBackButton(){
+        mapView.addSubview(backButton.backButton)
+        backButton.viewDidLayoutSubviews()
+        backButton.backButton.addTarget(backButton.self, action: #selector(backButton.didTapButton), for: .touchUpInside)
+    }
+    
+    func setCurrentLocationButton(){
+        mapView.addSubview(currentLocationButton.currentLocationButton)
+        currentLocationButton.viewDidLayoutSubviews()
+        currentLocationButton.currentLocationButton.addTarget(currentLocationButton.self, action: #selector(currentLocationButton.didTapButton), for: .touchUpInside)
     }
     
     func setMapConstraints() {
         view.addSubview(mapView)
-        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -113,13 +122,32 @@ extension MKMapView {
 }
 
 extension MapViewController {
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let places = view.annotation as? Places else {
-            return
-        }
-        // выбар транспорта для построения маршрута
-        let launchOption = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
-        places.mapItem?.openInMaps(launchOptions: launchOption)
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            print("Not determined")
+        case .restricted:
+            print("Restricted")
+        case .denied:
+            print("Denied")
+        case .authorizedAlways:
+            print("Authorized Always")
+        case .authorizedWhenInUse:
+            print("Authorized When in Use")
+        @unknown default:
+            print("Unknown status")
+            
+        }
+    }
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            guard let places = view.annotation as? Places else {
+                return
+            }
+            // выбар транспорта для построения маршрута
+            let launchOption = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+            
+            places.mapItem?.openInMaps(launchOptions: launchOption)
     }
 }
