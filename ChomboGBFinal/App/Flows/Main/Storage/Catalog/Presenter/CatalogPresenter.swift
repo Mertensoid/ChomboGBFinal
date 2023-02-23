@@ -29,7 +29,6 @@ class CatalogPresenter {
 }
 
 extension CatalogPresenter: CatalogViewOutputDelegate {
-    
     func getToolsQuantity() -> Int {
         return catalog.count
     }
@@ -62,5 +61,22 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
     
     func getToolOwner(toolIndex: Int) -> String {
         return catalog[toolIndex].owner.displayName ?? ""
+    }
+    func showNewToolScreen() {
+        let newToolVC = NewToolBuilder.createNewToolScreen()
+        if let delegate = delegate as? CatalogViewController {
+            delegate.navigationController?.pushViewController(newToolVC, animated: true)
+        }
+    }
+    func showDetailsScreen() {
+        let toolDetailsVC = ToolDetailsBuilder.createToolDetailsScreen()
+        if let delegate = delegate as? CatalogViewController {
+            delegate.navigationController?.pushViewController(toolDetailsVC, animated: true)
+        }
+    }
+    func logout() {
+        if let delegate = delegate as? CatalogViewController {
+            delegate.dismiss(animated: true)
+        }
     }
 }

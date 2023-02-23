@@ -86,6 +86,9 @@
 		84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECB299E580000A11952 /* UserSingleton.swift */; };
 		84B71ECE299F7A4F00A11952 /* SettingsViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECD299F7A4F00A11952 /* SettingsViewInputDelegate.swift */; };
 		84B71ED0299F7A6600A11952 /* SettingsViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */; };
+		84B71ED2299F7D3200A11952 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */; };
+		84B71ED4299F7DA700A11952 /* SettingsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED3299F7DA700A11952 /* SettingsTextView.swift */; };
+		84B71ED6299F83A800A11952 /* SettingsPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED5299F83A800A11952 /* SettingsPictureView.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -192,6 +195,9 @@
 		84B71ECB299E580000A11952 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		84B71ECD299F7A4F00A11952 /* SettingsViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewInputDelegate.swift; sourceTree = "<group>"; };
 		84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewOutputDelegate.swift; sourceTree = "<group>"; };
+		84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		84B71ED3299F7DA700A11952 /* SettingsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextView.swift; sourceTree = "<group>"; };
+		84B71ED5299F83A800A11952 /* SettingsPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPictureView.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +291,9 @@
 		8431308529829584006EC00F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84B71ED1299F7D3200A11952 /* SettingsHeaderView.swift */,
+				84B71ED5299F83A800A11952 /* SettingsPictureView.swift */,
+				84B71ED3299F7DA700A11952 /* SettingsTextView.swift */,
 				843130862982959D006EC00F /* SettingsViewController.swift */,
 			);
 			path = View;
@@ -1018,6 +1027,7 @@
 				843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
 				84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */,
+				84B71ED2299F7D3200A11952 /* SettingsHeaderView.swift in Sources */,
 				4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130DF29950C58006EC00F /* Status.swift in Sources */,
@@ -1040,6 +1050,7 @@
 				845485D22980125D004657A3 /* LoginPresenter.swift in Sources */,
 				843130CC298D37A9006EC00F /* ToolDetailsPhotoView.swift in Sources */,
 				84313089298295AA006EC00F /* SettingsPresenter.swift in Sources */,
+				84B71ED4299F7DA700A11952 /* SettingsTextView.swift in Sources */,
 				843130C7298D3246006EC00F /* ToolDetailsViewOutputDelegate.swift in Sources */,
 				843130AF29890A3C006EC00F /* UIView + ext.swift in Sources */,
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
@@ -1070,6 +1081,7 @@
 				845485D529801273004657A3 /* LoginBuilder.swift in Sources */,
 				845485AA297FF819004657A3 /* UIColor + ext.swift in Sources */,
 				845485AC297FFE0E004657A3 /* UIButton + ext.swift in Sources */,
+				84B71ED6299F83A800A11952 /* SettingsPictureView.swift in Sources */,
 				84B71EC1299E279D00A11952 /* RegistrationViewInputDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

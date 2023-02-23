@@ -15,5 +15,9 @@ class ToolDetailsPresenter {
 }
 
 extension ToolDetailsPresenter: ToolDetailsViewOutputDelegate {
-    
+    func closeDetailsScreen() {
+        if let delegate = delegate as? ToolDetailsViewController {
+            delegate.navigationController?.popViewController(animated: true)
+        }
+    }
 }

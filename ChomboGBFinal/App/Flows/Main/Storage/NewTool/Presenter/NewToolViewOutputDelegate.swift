@@ -13,4 +13,6 @@ protocol NewToolViewOutputDelegate: AnyObject {
     func setCategory(row: Int)
     func setDate()
     func setCondition(row: Int)
+    
+    func closeNewToolScreen()
 }

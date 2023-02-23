@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class NewToolPresenter: NewToolViewOutputDelegate {
+class NewToolPresenter {
 
     // MARK: - Properties
     
@@ -22,9 +22,9 @@ class NewToolPresenter: NewToolViewOutputDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         return dateFormatter
     }()
-    
-    // MARK: - Public functions
-    
+}
+
+extension NewToolPresenter: NewToolViewOutputDelegate {
     func setCategory(row: Int) {
         switch row {
         case 0:
@@ -58,5 +58,12 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     
     func saveNewTool() {
         firestoreService.dataToSave(delegate?.getBrand() ?? "", delegate?.getModel() ?? "", delegate?.getSerial() ?? "")
+        closeNewToolScreen()
+    }
+    
+    func closeNewToolScreen() {
+        if let delegate = delegate as? NewToolViewController {
+            delegate.navigationController?.popViewController(animated: true)
+        }
     }
 }

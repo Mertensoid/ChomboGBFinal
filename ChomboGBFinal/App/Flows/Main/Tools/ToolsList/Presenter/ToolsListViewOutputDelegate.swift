@@ -14,4 +14,6 @@ protocol ToolsListViewOutputDelegate: AnyObject {
     func getToolSerial(toolIndex: Int) -> String
     func getToolCondition(toolIndex: Int) -> String
     func getToolImage(toolIndex: Int) -> UIImage
+    
+    func showDetailsScreen()
 }

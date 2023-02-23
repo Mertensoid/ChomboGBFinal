@@ -165,6 +165,9 @@ class ToolDetailsViewController: UIViewController {
     private func configureViews() {
         
         view.backgroundColor = ColorConstants.baseWhite
+        
+        headerView.leftHeaderButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        
         photoView.setToolPhoto(image: UIImage(named: "magister_284x284px") ?? UIImage())
         
         basicInformationView.setCategoryData(data: "Mock category")
@@ -178,6 +181,12 @@ class ToolDetailsViewController: UIViewController {
         locationView.setTransferDateData(data: "DD.MM.YYYY")
         
         techInfoView.setConditionData(data: "Mock condition")
+    }
+}
+
+@objc extension ToolDetailsViewController {
+    private func backButtonPressed() {
+        presenter?.closeDetailsScreen()
     }
 }
 

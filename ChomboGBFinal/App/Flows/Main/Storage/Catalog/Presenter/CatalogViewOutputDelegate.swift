@@ -15,4 +15,7 @@ protocol CatalogViewOutputDelegate: AnyObject {
     func getIndicatorColor(toolIndex: Int) -> UIColor
     func getToolImage(toolIndex: Int) -> UIImage
     func getToolOwner(toolIndex: Int) -> String
+    func showNewToolScreen()
+    func showDetailsScreen()
+    func logout()
 }
