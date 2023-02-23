@@ -7,10 +7,11 @@
 
 import Foundation
 
-protocol LoginViewInputDelegate {
+protocol LoginViewInputDelegate: AnyObject {
     func showLogin(login: String)
     func getLogin() -> String
     func getPassword() -> String
     func clearLoginTextField()
     func clearPasswordTextField()
+    
 }

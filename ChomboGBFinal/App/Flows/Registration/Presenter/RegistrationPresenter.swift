@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class RegistrationPresenter {
+    
+    // MARK: - Properties
+    
+    weak var delegate: RegistrationViewInputDelegate?
+}
+
+extension RegistrationPresenter: RegistrationViewOutputDelegate {
+    
+}

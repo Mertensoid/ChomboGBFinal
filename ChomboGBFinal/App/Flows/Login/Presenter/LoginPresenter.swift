@@ -9,33 +9,31 @@ import Foundation
 
 class LoginPresenter {
     
-    // MARK: - Private properties
+    // MARK: - Properties
     
-    weak private var view: LoginViewController?
-    
-    // MARK: - Construction
-    
-    required init(view: LoginViewController) {
-        self.view = view
-    }
+    weak var delegate: LoginViewInputDelegate?
 }
 
 extension LoginPresenter: LoginViewOutputDelegate {
     
     func checkAccountData() {
         print("Account checking")
-        view?.clearLoginTextField()
-        view?.clearPasswordTextField()
+        delegate?.clearLoginTextField()
+        delegate?.clearPasswordTextField()
         let mainTabBar = MainTabBarController()
         mainTabBar.modalPresentationStyle = .fullScreen
-        view?.present(mainTabBar, animated: true)
+        if let delegate = delegate as? LoginViewController {
+            delegate.present(mainTabBar, animated: true)
+        }
     }
     
     func showRegistrationScreen() {
-        view?.clearLoginTextField()
-        view?.clearPasswordTextField()
-        let registrationVC = RegistrationViewController()
+        delegate?.clearLoginTextField()
+        delegate?.clearPasswordTextField()
+        let registrationVC = RegistrationBuilder.createRegistrationScreen()
         registrationVC.modalPresentationStyle = .fullScreen
-        view?.present(registrationVC, animated: true)
+        if let delegate = delegate as? LoginViewController {
+            delegate.present(registrationVC, animated: true)
+        }
     }
 }
