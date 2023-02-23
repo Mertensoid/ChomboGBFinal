@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = MapViewController()
+            window.rootViewController = CamViewController(cameraService: CameraService())
             self.window = window
             window.makeKeyAndVisible()
         }

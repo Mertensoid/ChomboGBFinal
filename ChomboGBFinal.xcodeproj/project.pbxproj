@@ -99,6 +99,12 @@
 		8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74A298908B6005EB3AB /* MapViewController.swift */; };
 		8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */; };
 		8591C74F298908E4005EB3AB /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74E298908E4005EB3AB /* Places.swift */; };
+		85C6BB0D29A3837500027B52 /* LastPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0829A3837500027B52 /* LastPhotoView.swift */; };
+		85C6BB0E29A3837500027B52 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0929A3837500027B52 /* TopBarView.swift */; };
+		85C6BB0F29A3837500027B52 /* CaptureImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0A29A3837500027B52 /* CaptureImageButton.swift */; };
+		85C6BB1029A3837500027B52 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0B29A3837500027B52 /* BottomBarView.swift */; };
+		85C6BB1429A3838700027B52 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB1229A3838700027B52 /* CameraService.swift */; };
+		85C6BB1529A3838700027B52 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB1329A3838700027B52 /* CamViewController.swift */; };
 		85AEC3A9299A15CA005034E3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3A8299A15CA005034E3 /* BackButton.swift */; };
 		85AEC3AB299A31F0005034E3 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */; };
 /* End PBXBuildFile section */
@@ -216,6 +222,12 @@
 		8591C74E298908E4005EB3AB /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		85AEC3A8299A15CA005034E3 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
+		85C6BB0829A3837500027B52 /* LastPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPhotoView.swift; sourceTree = "<group>"; };
+		85C6BB0929A3837500027B52 /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		85C6BB0A29A3837500027B52 /* CaptureImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureImageButton.swift; sourceTree = "<group>"; };
+		85C6BB0B29A3837500027B52 /* BottomBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
+		85C6BB1229A3838700027B52 /* CameraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		85C6BB1329A3838700027B52 /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -840,6 +852,7 @@
 		84FEA2F62976BC9100E82BBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				85C6BB0629A3833700027B52 /* Camera */,
 				8591C74929890832005EB3AB /* MapKitNavigation */,
 			);
 			path = Services;
@@ -865,6 +878,27 @@
 				8536ECD82990E05C008F2B7F /* Places.geojson */,
 			);
 			path = MapKitNavigation;
+			sourceTree = "<group>";
+		};
+		85C6BB0629A3833700027B52 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				85C6BB1229A3838700027B52 /* CameraService.swift */,
+				85C6BB1329A3838700027B52 /* CamViewController.swift */,
+				85C6BB0729A3837500027B52 /* UIElements */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		85C6BB0729A3837500027B52 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				85C6BB0829A3837500027B52 /* LastPhotoView.swift */,
+				85C6BB0929A3837500027B52 /* TopBarView.swift */,
+				85C6BB0A29A3837500027B52 /* CaptureImageButton.swift */,
+				85C6BB0B29A3837500027B52 /* BottomBarView.swift */,
+			);
+			path = UIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1028,6 +1062,8 @@
 				843130E129950C64006EC00F /* Condition.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
 				8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */,
+				85C6BB1429A3838700027B52 /* CameraService.swift in Sources */,
+				85C6BB1529A3838700027B52 /* CamViewController.swift in Sources */,
 				843130C1298D0DF9006EC00F /* LoginViewInputDelegate.swift in Sources */,
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */,
@@ -1045,6 +1081,7 @@
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				84B71EC3299E27B100A11952 /* RegistrationViewOutputDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
+				85C6BB0F29A3837500027B52 /* CaptureImageButton.swift in Sources */,
 				84B71ED0299F7A6600A11952 /* SettingsViewOutputDelegate.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
@@ -1063,9 +1100,12 @@
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
 				8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */,
 				84313078298293CA006EC00F /* TransactionsPresenter.swift in Sources */,
+				85C6BB0E29A3837500027B52 /* TopBarView.swift in Sources */,
 				84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */,
 				843130A32983C431006EC00F /* NewToolHeaderView.swift in Sources */,
+				85C6BB0D29A3837500027B52 /* LastPhotoView.swift in Sources */,
 				8431309529829673006EC00F /* ToolDetailsPresenter.swift in Sources */,
+				85C6BB1029A3837500027B52 /* BottomBarView.swift in Sources */,
 				8431309229829659006EC00F /* ToolDetailsViewController.swift in Sources */,
 				8431307C2982947A006EC00F /* RegistrationViewController.swift in Sources */,
 				8431307429829395006EC00F /* NewToolBuilder.swift in Sources */,
@@ -1248,7 +1288,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3JL4VHZJLR;
+				DEVELOPMENT_TEAM = 323JAZVTZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
@@ -1278,7 +1318,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3JL4VHZJLR;
+				DEVELOPMENT_TEAM = 323JAZVTZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
