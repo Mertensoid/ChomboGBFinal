@@ -12,6 +12,7 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
     // MARK: - Public properties
     
     var presenter: NewToolViewOutputDelegate?
+    var bottomConstraint: NSLayoutConstraint? 
     var categoryToolBar: UIToolbar = {
         let toolBar = UIToolbar(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = UIBarStyle(rawValue: 0)!
@@ -61,6 +62,11 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         let headerView = NewToolHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
         headerView.activateConstraints()
         return headerView
+    }()
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.activateConstraints()
+        return scrollView
     }()
     private let pictureView: NewToolPictureView = {
         let pictureView = NewToolPictureView()
@@ -120,9 +126,25 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         conditionPicker.delegate = self
         conditionPicker.dataSource = self
         
+        bottomConstraint = NSLayoutConstraint(item: addButton, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: -10)
+        
         addViews()
         configureConstraints()
         configureViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWasShown),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWillBeHidden(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
     
     // MARK: - Public functions
@@ -185,13 +207,14 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     private func addViews() {
         view.addSubview(headerView)
-        view.addSubview(pictureView)
-        view.addSubview(categoryPickerView)
-        view.addSubview(brandTextView)
-        view.addSubview(modelTextView)
-        view.addSubview(serialTextView)
-        view.addSubview(datePickerView)
-        view.addSubview(conditionPickerView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(pictureView)
+        scrollView.addSubview(categoryPickerView)
+        scrollView.addSubview(brandTextView)
+        scrollView.addSubview(modelTextView)
+        scrollView.addSubview(serialTextView)
+        scrollView.addSubview(datePickerView)
+        scrollView.addSubview(conditionPickerView)
         view.addSubview(addButton)
     }
     
@@ -203,7 +226,11 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 100),
             
-            pictureView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
+            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            pictureView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             pictureView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             pictureView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             pictureView.heightAnchor.constraint(equalToConstant: 165),
@@ -237,11 +264,13 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
             conditionPickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             conditionPickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             conditionPickerView.heightAnchor.constraint(equalToConstant: 50),
+            conditionPickerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            addButton.topAnchor.constraint(equalTo: conditionPickerView.bottomAnchor, constant: 10),
+            addButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 10),
             addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             addButton.heightAnchor.constraint(equalToConstant: 50),
+            bottomConstraint!
         ])
     }
     
@@ -296,19 +325,19 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @objc private func categoryPickerPressed() {
-        
+        hideKeyboard()
         self.view.addSubview(categoryPicker)
         self.view.addSubview(categoryToolBar)
     }
     
     @objc private func datePickerPressed() {
-        
+        hideKeyboard()
         self.view.addSubview(datePicker)
         self.view.addSubview(dateToolBar)
     }
     
     @objc private func conditionPickerPressed() {
-        
+        hideKeyboard()
         self.view.addSubview(conditionPicker)
         self.view.addSubview(conditionToolBar)
     }
@@ -364,5 +393,44 @@ extension NewToolViewController: NewToolViewInputDelegate {
         default:
             return MockCondition.broken
         }
+    }
+}
+
+@objc extension NewToolViewController {
+    
+    private func keyboardWasShown(notification: Notification) {
+        
+        let info = notification.userInfo! as NSDictionary
+        let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
+        bottomConstraint?.constant = -10 - kbSize.height + (tabBarController?.tabBar.frame.height ?? 0)
+        
+        UIView.animate(withDuration: 1) {
+            self.addButton.constraints
+                .first(where: { $0.identifier == "keyboardShown" })?
+                .priority = .required
+            self.addButton.constraints
+                .first(where: { $0.identifier == "keyboardHide" })?
+                .priority = .defaultHigh
+            self.view.layoutIfNeeded()
+        }
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+    }
+    
+    private func keyboardWillBeHidden(notification: Notification) {
+        
+        bottomConstraint?.constant = -10
+        UIView.animate(withDuration: 1) {
+            self.addButton.constraints
+                .first(where: { $0.identifier == "keyboardShown" })?
+                .priority = .defaultHigh
+            self.addButton.constraints
+                .first(where: { $0.identifier == "keyboardHide" })?
+                .priority = .required
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideKeyboard() {
+        view.endEditing(true)
     }
 }

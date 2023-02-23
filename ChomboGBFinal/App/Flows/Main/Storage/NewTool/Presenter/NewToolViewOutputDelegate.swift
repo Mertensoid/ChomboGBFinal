@@ -9,8 +9,6 @@ import Foundation
 
 protocol NewToolViewOutputDelegate: AnyObject {
     
-    init(delegate: NewToolViewInputDelegate)
-    
     func saveNewTool()
     func setCategory(row: Int)
     func setDate()

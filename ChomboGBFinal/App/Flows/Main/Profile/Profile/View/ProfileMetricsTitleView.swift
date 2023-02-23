@@ -188,10 +188,11 @@ final class ProfileMetricsTitleView: UIView {
             
             activityTitleLabel.topAnchor.constraint(equalTo: doneTitleLabel.bottomAnchor, constant: 10),
             activityTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            activityTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             activityDataLabel.topAnchor.constraint(equalTo: doneDataLabel.bottomAnchor, constant: 10),
             activityDataLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            activityDataLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            
         ])
     }
     

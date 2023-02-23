@@ -12,7 +12,8 @@ class ToolDetailsBuilder {
     static func createToolDetailsScreen() -> ToolDetailsViewController {
         
         let view = ToolDetailsViewController()
-        let presenter = ToolDetailsPresenter(delegate: view)
+        let presenter = ToolDetailsPresenter()
+        presenter.delegate = view
         view.presenter = presenter
         return view
     }

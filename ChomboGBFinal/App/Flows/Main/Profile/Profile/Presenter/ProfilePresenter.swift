@@ -12,5 +12,26 @@ class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfileViewOutputDelegate {
+    func logout() {
+        if let delegate = delegate as? ProfileViewController {
+            delegate.dismiss(animated: true)
+        }
+    }
+    
+    func showEditProfileScreen() {
+        if let delegate = delegate as? ProfileViewController {
+            let newToolVC = SettingsViewController()
+            delegate.navigationController?.pushViewController(newToolVC, animated: true)
+        }
+    }
+    
+    func updateUserInformation() {
+        delegate?.showName(name: "Matsuk Maxim")
+        delegate?.showPost(post: "CEO of Chombo corp.")
+        delegate?.showEmail(email: "ma*******@yandex.ru")
+        delegate?.showWorkspaceLocation(location: "2066 Crist Dr, Los Altos, California")
+        delegate?.showMetrics()
+    }
+    
     
 }

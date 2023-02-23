@@ -133,7 +133,7 @@ class ToolDetailsViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 10),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -25),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
             basicInformationView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             basicInformationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),

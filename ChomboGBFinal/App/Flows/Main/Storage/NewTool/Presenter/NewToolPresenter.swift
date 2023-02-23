@@ -10,16 +10,18 @@ import Foundation
 
 class NewToolPresenter: NewToolViewOutputDelegate {
 
+    // MARK: - Properties
+    
+    weak var delegate: NewToolViewInputDelegate?
+    
     // MARK: - Private properties
     
-    private weak var delegate: NewToolViewInputDelegate?
     private let firestoreService = CloudFirestore()
-    
-    // MARK: - Construction
-    
-    required init(delegate: NewToolViewInputDelegate) {
-        self.delegate = delegate
-    }
+    private let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        return dateFormatter
+    }()
     
     // MARK: - Public functions
     
@@ -37,8 +39,6 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     }
     
     func setDate() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let now = dateFormatter.string(from: Date())
         delegate?.showDate(date: now)
     }
@@ -57,21 +57,6 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     }
     
     func saveNewTool() {
-//        let mockTool = MockTool(
-//            id: 123,
-//            category: view?.getCategory() ?? MockCategory.miscellaneous,
-//            brand: view?.getBrand() ?? "",
-//            model: view?.getModel() ?? "",
-//            serial: view?.getSerial() ?? "",
-//            productionDate: Date(),
-//            status: MockStatus.free,
-//            owner: MockUser(userID: 1, userName: "Vasya Pupkin", accountType: .admin),
-//            condition: view?.getCondition() ?? MockCondition.broken,
-//            location: MockLocation(
-//                latitude: 31.0005434,
-//                longitude: 65.4643721),
-//            picture: UIImage(systemName: "hammer") ?? UIImage())
-//        print(mockTool.productionDate)
         firestoreService.dataToSave(delegate?.getBrand() ?? "", delegate?.getModel() ?? "", delegate?.getSerial() ?? "")
     }
 }

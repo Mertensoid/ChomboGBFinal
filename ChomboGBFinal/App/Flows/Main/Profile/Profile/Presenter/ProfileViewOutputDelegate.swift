@@ -8,5 +8,7 @@
 import Foundation
 
 protocol ProfileViewOutputDelegate: AnyObject {
-    
+    func logout()
+    func updateUserInformation()
+    func showEditProfileScreen()
 }

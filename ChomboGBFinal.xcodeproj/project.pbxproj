@@ -84,6 +84,8 @@
 		84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */; };
 		84B71ECA299E510500A11952 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC9299E510500A11952 /* MockNetworkService.swift */; };
 		84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECB299E580000A11952 /* UserSingleton.swift */; };
+		84B71ECE299F7A4F00A11952 /* SettingsViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECD299F7A4F00A11952 /* SettingsViewInputDelegate.swift */; };
+		84B71ED0299F7A6600A11952 /* SettingsViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -188,6 +190,8 @@
 		84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84B71EC9299E510500A11952 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		84B71ECB299E580000A11952 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		84B71ECD299F7A4F00A11952 /* SettingsViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewInputDelegate.swift; sourceTree = "<group>"; };
+		84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				84313088298295AA006EC00F /* SettingsPresenter.swift */,
+				84B71ECD299F7A4F00A11952 /* SettingsViewInputDelegate.swift */,
+				84B71ECF299F7A6600A11952 /* SettingsViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1019,9 +1025,11 @@
 				843130D72994FE6B006EC00F /* ToolsListViewOutputDelegate.swift in Sources */,
 				843130C5298D322A006EC00F /* ToolDetailsViewInputDelegate.swift in Sources */,
 				843130B22989408E006EC00F /* MockTool.swift in Sources */,
+				84B71ECE299F7A4F00A11952 /* SettingsViewInputDelegate.swift in Sources */,
 				84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */,
 				84B71EC3299E27B100A11952 /* RegistrationViewOutputDelegate.swift in Sources */,
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
+				84B71ED0299F7A6600A11952 /* SettingsViewOutputDelegate.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
 				846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */,

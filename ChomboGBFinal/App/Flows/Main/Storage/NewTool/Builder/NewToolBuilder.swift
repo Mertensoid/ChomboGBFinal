@@ -10,7 +10,8 @@ import UIKit
 class NewToolBuilder {
     static func createNewToolScreen() -> UIViewController {
         let view = NewToolViewController()
-        let presenter = NewToolPresenter(delegate: view)
+        let presenter = NewToolPresenter()
+        presenter.delegate = view
         view.presenter = presenter
         return view
     }
