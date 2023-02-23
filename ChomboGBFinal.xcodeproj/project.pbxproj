@@ -80,6 +80,10 @@
 		846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */; };
 		84B71EC1299E279D00A11952 /* RegistrationViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC0299E279D00A11952 /* RegistrationViewInputDelegate.swift */; };
 		84B71EC3299E27B100A11952 /* RegistrationViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC2299E27B100A11952 /* RegistrationViewOutputDelegate.swift */; };
+		84B71EC5299E41BA00A11952 /* ProfileViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC4299E41BA00A11952 /* ProfileViewInputDelegate.swift */; };
+		84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */; };
+		84B71ECA299E510500A11952 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EC9299E510500A11952 /* MockNetworkService.swift */; };
+		84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ECB299E580000A11952 /* UserSingleton.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -180,6 +184,10 @@
 		846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84B71EC0299E279D00A11952 /* RegistrationViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInputDelegate.swift; sourceTree = "<group>"; };
 		84B71EC2299E27B100A11952 /* RegistrationViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutputDelegate.swift; sourceTree = "<group>"; };
+		84B71EC4299E41BA00A11952 /* ProfileViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewInputDelegate.swift; sourceTree = "<group>"; };
+		84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewOutputDelegate.swift; sourceTree = "<group>"; };
+		84B71EC9299E510500A11952 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		84B71ECB299E580000A11952 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -350,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				843130E429950D53006EC00F /* User.swift */,
+				84B71ECB299E580000A11952 /* UserSingleton.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -538,6 +547,8 @@
 			isa = PBXGroup;
 			children = (
 				8431305F298292C4006EC00F /* ProfilePresenter.swift */,
+				84B71EC4299E41BA00A11952 /* ProfileViewInputDelegate.swift */,
+				84B71EC6299E41D100A11952 /* ProfileViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -819,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA8C062298D9B300065572D /* Firebase */,
+				84B71EC9299E510500A11952 /* MockNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -988,6 +1000,7 @@
 				84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */,
 				8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */,
 				8431307029829376006EC00F /* NewToolViewController.swift in Sources */,
+				84B71ECA299E510500A11952 /* MockNetworkService.swift in Sources */,
 				845485D029801244004657A3 /* LoginViewController.swift in Sources */,
 				843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
@@ -998,6 +1011,7 @@
 				843130BB298BCAEC006EC00F /* ProfileAvatarView.swift in Sources */,
 				843130D32993D4FC006EC00F /* ToolDetailsTechInfoView.swift in Sources */,
 				843130A12983C0A0006EC00F /* CatalogHeaderView.swift in Sources */,
+				84B71ECC299E580000A11952 /* UserSingleton.swift in Sources */,
 				4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */,
 				843130802982949D006EC00F /* RegistrationBuilder.swift in Sources */,
 				843130DF29950C58006EC00F /* Status.swift in Sources */,
@@ -1011,6 +1025,7 @@
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
 				846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */,
+				84B71EC5299E41BA00A11952 /* ProfileViewInputDelegate.swift in Sources */,
 				8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */,
 				843130682982931C006EC00F /* ToolsListBuilder.swift in Sources */,
 				84313099298298CB006EC00F /* TabBarConstants.swift in Sources */,
@@ -1022,6 +1037,7 @@
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
 				8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */,
 				84313078298293CA006EC00F /* TransactionsPresenter.swift in Sources */,
+				84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */,
 				843130A32983C431006EC00F /* NewToolHeaderView.swift in Sources */,
 				8431309529829673006EC00F /* ToolDetailsPresenter.swift in Sources */,
 				8431309229829659006EC00F /* ToolDetailsViewController.swift in Sources */,

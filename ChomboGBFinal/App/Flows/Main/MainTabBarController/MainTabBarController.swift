@@ -27,7 +27,7 @@ final class MainTabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let profileController = ProfileViewController()
+        let profileController = ProfileBuilder.createProfileScreen()
         let toolsController = ToolsListBuilder.createToolsListScreen()
         let storageController = CatalogBuilder.createCatalogScreen()
         let transactionsController = TransactionsViewController()

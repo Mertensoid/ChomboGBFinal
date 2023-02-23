@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class ProfileBuilder {
+    static func createProfileScreen() -> ProfileViewController {
+        let profileView = ProfileViewController()
+        let profilePresenter = ProfilePresenter()
+        profileView.presenter = profilePresenter
+        profilePresenter.delegate = profileView
+        return profileView
+    }
+}

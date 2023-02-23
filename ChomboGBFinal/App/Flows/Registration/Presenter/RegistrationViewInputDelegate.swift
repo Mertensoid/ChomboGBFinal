@@ -8,5 +8,7 @@
 import Foundation
 
 protocol RegistrationViewInputDelegate: AnyObject {
-    
+    func getLogin() -> String
+    func getEmail() -> String
+    func getPassword() -> String
 }

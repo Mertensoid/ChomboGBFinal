@@ -223,14 +223,24 @@ final class RegistrationViewController: UIViewController {
     }
     
     func joinButtonPressed() {
-        self.dismiss(animated: true)
+        presenter?.closeRegistrationScreen()
     }
     
     func registrationButtonPressed() {
-        self.dismiss(animated: true)
+        presenter?.registration()
     }
 }
 
 extension RegistrationViewController: RegistrationViewInputDelegate {
+    func getLogin() -> String {
+        return nameTextField.text ?? ""
+    }
     
+    func getEmail() -> String {
+        return emailTextField.text ?? ""
+    }
+    
+    func getPassword() -> String {
+        return passwordTextField.text ?? ""
+    }
 }
