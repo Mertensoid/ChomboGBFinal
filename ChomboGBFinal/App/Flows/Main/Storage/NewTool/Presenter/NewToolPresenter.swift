@@ -28,13 +28,13 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
     func setCategory(row: Int) {
         switch row {
         case 0:
-            view?.showCategory(category: Category.handTools)
+            delegate?.showCategory(category: Category.handTools)
         case 1:
-            view?.showCategory(category: Category.electroTools)
+            delegate?.showCategory(category: Category.electroTools)
         case 2:
-            view?.showCategory(category: Category.gasolineTools)
+            delegate?.showCategory(category: Category.gasolineTools)
         default:
-            view?.showCategory(category: Category.miscellaneous)
+            delegate?.showCategory(category: Category.miscellaneous)
         }
     }
     
@@ -46,13 +46,13 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
     func setCondition(row: Int) {
         switch row {
         case 0:
-            view?.showCondition(condition: .new)
+            delegate?.showCondition(condition: .new)
         case 1:
-            view?.showCondition(condition: .working)
+            delegate?.showCondition(condition: .working)
         case 2:
-            view?.showCondition(condition: .outdated)
+            delegate?.showCondition(condition: .outdated)
         case 3:
-            view?.showCondition(condition: .incomplete)
+            delegate?.showCondition(condition: .incomplete)
         default:
             delegate?.showCondition(condition: .broken)
         }
@@ -61,15 +61,15 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
     func setStatus(row: Int) {
         switch row {
         case 0:
-            view?.showStatus(status: .inService)
+            delegate?.showStatus(status: .inService)
         case 1:
-            view?.showStatus(status: .free)
+            delegate?.showStatus(status: .free)
         case 2:
-            view?.showStatus(status: .inProgress)
+            delegate?.showStatus(status: .inProgress)
         case 3:
-            view?.showStatus(status: .inUse)
+            delegate?.showStatus(status: .inUse)
         default:
-            view?.showStatus(status: .broken)
+            delegate?.showStatus(status: .broken)
         }
     }
     
@@ -77,7 +77,7 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
         
         let mockUser = User(uid: "1234", email: "test@test.com", displayName: "test user", phoneNumber: "+79991112233", photoUrl: nil)
         
-        let tool = Tool(category: view?.getCategory() ?? .miscellaneous, brand: view?.getBrand() ?? "", model: view?.getModel() ?? "", serial: view?.getSerial(), productionDate: Date(), status: view?.getStatus() ?? .free, owner: mockUser, condition: view?.getCondition() ?? .new)
+        let tool = Tool(category: delegate?.getCategory() ?? .miscellaneous, brand: delegate?.getBrand() ?? "", model: delegate?.getModel() ?? "", serial: delegate?.getSerial(), productionDate: Date(), status: delegate?.getStatus() ?? .free, owner: mockUser, condition: delegate?.getCondition() ?? .new)
         
         firestoreService.dataToSaveWithModel(tool)
     }

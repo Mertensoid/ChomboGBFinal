@@ -49,7 +49,7 @@ extension ToolsListPresenter: ToolsListViewOutputDelegate {
     }
     
     func getToolImage(toolIndex: Int) -> UIImage {
-        return userTools[toolIndex].picture
+        return UIImage()//userTools[toolIndex].picture
     }
     
     func showDetailsScreen() {

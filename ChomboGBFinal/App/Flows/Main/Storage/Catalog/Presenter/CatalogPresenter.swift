@@ -56,7 +56,7 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
     }
     
     func getToolImage(toolIndex: Int) -> UIImage {
-        return catalog[toolIndex].picture
+        return UIImage()//catalog[toolIndex].picture
     }
     
     func getToolOwner(toolIndex: Int) -> String {

@@ -37,7 +37,7 @@ class Tool: Identifiable, Codable {
 extension Tool {
     static let catalog = [
         Tool(
-            id: "1",
+            //id: "1",
             category: Category.handTools,
             brand: "Stanley",
             model: "XT-101 Complex",
@@ -50,11 +50,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.incomplete,
-            picture: UIImage(named: "hand_tools_complect")!
+            condition: Condition.incomplete
+            //picture: UIImage(named: "hand_tools_complect")!
         ),
         Tool(
-            id: "2",
+            //id: "2",
             category: Category.electroTools,
             brand: "Makita",
             model: "PM10",
@@ -67,11 +67,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.working,
-            picture: UIImage(named: "screwdriver")!
+            condition: Condition.working
+            //picture: UIImage(named: "screwdriver")!
         ),
         Tool(
-            id: "3",
+            //id: "3",
             category: Category.electroTools,
             brand: "Интерскол",
             model: "Ударник",
@@ -84,11 +84,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.broken,
-            picture: UIImage(named: "drill")!
+            condition: Condition.broken
+            //picture: UIImage(named: "drill")!
         ),
         Tool(
-            id: "4",
+            //id: "4",
             category: Category.handTools,
             brand: "Navigator",
             model: "200 mm",
@@ -101,11 +101,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.new,
-            picture: UIImage(named: "pliers")!
+            condition: Condition.new
+            //picture: UIImage(named: "pliers")!
         ),
         Tool(
-            id: "5",
+            //id: "5",
             category: Category.pnevmaticTools,
             brand: "Fiac",
             model: "Pnevmo-1000",
@@ -118,11 +118,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.working,
-            picture: UIImage(named: "compressor")!
+            condition: Condition.working
+            //picture: UIImage(named: "compressor")!
         ),
         Tool(
-            id: "6",
+            //id: "6",
             category: Category.safetyTools,
             brand: "Camp",
             model: "Mountain",
@@ -135,11 +135,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.outdated,
-            picture: UIImage(named: "strapping")!
+            condition: Condition.outdated
+            //picture: UIImage(named: "strapping")!
         ),
         Tool(
-            id: "7",
+            //id: "7",
             category: Category.electroTools,
             brand: "Digital",
             model: "Multimeter",
@@ -152,11 +152,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.working,
-            picture: UIImage(named: "tester")!
+            condition: Condition.working
+            //picture: UIImage(named: "tester")!
         ),
         Tool(
-            id: "8",
+            //id: "8",
             category: Category.electroTools,
             brand: "Lukey",
             model: "852D",
@@ -169,11 +169,11 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.broken,
-            picture: UIImage(named: "soldering_station")!
+            condition: Condition.broken
+            //picture: UIImage(named: "soldering_station")!
         ),
         Tool(
-            id: "9",
+            //id: "9",
             category: Category.officeEquipment,
             brand: "Biltema",
             model: "24-213",
@@ -186,8 +186,8 @@ extension Tool {
                 displayName: "Vasya Pupkin",
                 phoneNumber: "+79155555555",
                 photoUrl: nil),
-            condition: Condition.new,
-            picture: UIImage(named: "calculator")!
+            condition: Condition.new
+            //picture: UIImage(named: "calculator")!
         ),
     ]
 }

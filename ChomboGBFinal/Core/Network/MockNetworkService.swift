@@ -34,7 +34,7 @@ class MockNetworkService {
         print("Возвращаем инструмент")
         
         return Tool(
-            id: "123",
+            //id: "123",
             category: Category.miscellaneous,
             brand: "",
             model: "",
@@ -42,8 +42,8 @@ class MockNetworkService {
             productionDate: Date(),
             status: Status.free,
             owner: User(uid: "123456", email: "test@email.ru", displayName: "Имя Фамилия", phoneNumber: "+1234567890", photoUrl: URL(string: "http://testURL")),
-            condition: Condition.broken,
-            picture: UIImage(systemName: "hammer") ?? UIImage()
+            condition: Condition.broken
+            //picture: UIImage(systemName: "hammer") ?? UIImage()
         )
     }
     
