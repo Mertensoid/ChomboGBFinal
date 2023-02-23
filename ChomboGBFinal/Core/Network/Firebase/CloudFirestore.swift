@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 final class CloudFirestore {
@@ -56,6 +57,15 @@ final class CloudFirestore {
             self.tools = snapshot?.documents.compactMap {
                 try? $0.data(as: Tools.self)
             } ?? []
+        }
+    }
+    
+    func dataToSaveWithModel(_ tool: Tool) {
+        do {
+            _ = try Firestore.firestore().collection(path).document(tool.id.uuidString).setData(from: tool)
+            print("Данные добавлены успешно")
+        } catch {
+            fatalError("Ошибка при добавлении данных")
         }
     }
     

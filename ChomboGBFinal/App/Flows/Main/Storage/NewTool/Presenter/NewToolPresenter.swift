@@ -28,13 +28,13 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
     func setCategory(row: Int) {
         switch row {
         case 0:
-            delegate?.showCategory(category: MockCategory.handTools)
+            view?.showCategory(category: Category.handTools)
         case 1:
-            delegate?.showCategory(category: MockCategory.electroTools)
+            view?.showCategory(category: Category.electroTools)
         case 2:
-            delegate?.showCategory(category: MockCategory.gasolineTools)
+            view?.showCategory(category: Category.gasolineTools)
         default:
-            delegate?.showCategory(category: MockCategory.miscellaneous)
+            view?.showCategory(category: Category.miscellaneous)
         }
     }
     
@@ -46,19 +46,40 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
     func setCondition(row: Int) {
         switch row {
         case 0:
-            delegate?.showCondition(condition: .excellent)
+            view?.showCondition(condition: .new)
         case 1:
-            delegate?.showCondition(condition: .good)
+            view?.showCondition(condition: .working)
         case 2:
-            delegate?.showCondition(condition: .normal)
+            view?.showCondition(condition: .outdated)
+        case 3:
+            view?.showCondition(condition: .incomplete)
         default:
             delegate?.showCondition(condition: .broken)
         }
     }
     
+    func setStatus(row: Int) {
+        switch row {
+        case 0:
+            view?.showStatus(status: .inService)
+        case 1:
+            view?.showStatus(status: .free)
+        case 2:
+            view?.showStatus(status: .inProgress)
+        case 3:
+            view?.showStatus(status: .inUse)
+        default:
+            view?.showStatus(status: .broken)
+        }
+    }
+    
     func saveNewTool() {
-        firestoreService.dataToSave(delegate?.getBrand() ?? "", delegate?.getModel() ?? "", delegate?.getSerial() ?? "")
-        closeNewToolScreen()
+        
+        let mockUser = User(uid: "1234", email: "test@test.com", displayName: "test user", phoneNumber: "+79991112233", photoUrl: nil)
+        
+        let tool = Tool(category: view?.getCategory() ?? .miscellaneous, brand: view?.getBrand() ?? "", model: view?.getModel() ?? "", serial: view?.getSerial(), productionDate: Date(), status: view?.getStatus() ?? .free, owner: mockUser, condition: view?.getCondition() ?? .new)
+        
+        firestoreService.dataToSaveWithModel(tool)
     }
     
     func closeNewToolScreen() {

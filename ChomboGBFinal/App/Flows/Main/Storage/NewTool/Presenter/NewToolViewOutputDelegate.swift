@@ -15,4 +15,5 @@ protocol NewToolViewOutputDelegate: AnyObject {
     func setCondition(row: Int)
     
     func closeNewToolScreen()
+    func setStatus(row: Int)
 }

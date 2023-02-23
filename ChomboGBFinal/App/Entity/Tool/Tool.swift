@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-class Tool {
-    var id: String
+class Tool: Identifiable, Codable {
+//    var id: String
+//    @DocumentID var id: String?
+    var id = UUID()
     var category: Category
     var brand: String
     var model: String
@@ -17,11 +21,8 @@ class Tool {
     var status: Status
     var owner: User
     var condition: Condition
-    var picture: UIImage
     
-    init(id: String, category: Category, brand: String, model: String, serial: String?, productionDate: Date,
-         status: Status, owner: User, condition: Condition, picture: UIImage) {
-            self.id = id
+    init(category: Category, brand: String, model: String, serial: String?, productionDate: Date, status: Status, owner: User, condition: Condition) {
             self.category = category
             self.brand = brand
             self.model = model
@@ -30,7 +31,6 @@ class Tool {
             self.status = status
             self.owner = owner
             self.condition = condition
-            self.picture = picture
         }
 }
 
