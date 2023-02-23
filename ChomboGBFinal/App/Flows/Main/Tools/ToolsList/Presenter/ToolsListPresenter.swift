@@ -23,6 +23,7 @@ class ToolsListPresenter {
     
     required init(delegate: ToolsListViewInputDelegate?) {
         self.delegate = delegate
+        userTools = Tool.catalog
     }
 }
 

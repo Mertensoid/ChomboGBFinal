@@ -11,5 +11,8 @@ enum Category: String {
     case handTools = "Hand tools"
     case electroTools = "Electro tools"
     case gasolineTools = "Gasoline tools"
+    case safetyTools = "Safety tools"
+    case pnevmaticTools = "Pnevmatic tools"
+    case officeEquipment = "Office equipment"
     case miscellaneous = "Miscellaneous"
 }

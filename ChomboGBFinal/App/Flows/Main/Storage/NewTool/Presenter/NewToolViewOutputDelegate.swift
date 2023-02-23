@@ -9,7 +9,7 @@ import Foundation
 
 protocol NewToolViewOutputDelegate: AnyObject {
     
-    init(view: NewToolViewInputDelegate)
+    init(delegate: NewToolViewInputDelegate)
     
     func saveNewTool()
     func setCategory(row: Int)

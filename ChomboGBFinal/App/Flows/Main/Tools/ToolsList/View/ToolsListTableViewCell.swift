@@ -20,6 +20,8 @@ final class ToolsListTableViewCell: UITableViewCell {
     private let image: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
         image.activateConstraints()
+        image.contentMode = .scaleAspectFill
+        image.layer.masksToBounds = true
         image.tintColor = ColorConstants.baseBlack
         return image
     }()

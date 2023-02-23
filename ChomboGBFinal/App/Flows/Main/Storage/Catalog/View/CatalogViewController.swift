@@ -9,6 +9,10 @@ import UIKit
 
 final class CatalogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+    
+    var presenter: CatalogViewOutputDelegate?
+    
     // MARK: - Private properties
     
     private let headerView: CatalogHeaderView = {
@@ -47,13 +51,20 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return firestoreService.tools.count
+        return presenter?.getToolsQuantity() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogTableViewCell()
-    
-        cell.configureData(name: firestoreService.tools[indexPath.item].brand, picture: "wrench.adjustable", mainProperty: firestoreService.tools[indexPath.item].model, secondaryProperty: firestoreService.tools[indexPath.item].serial)
+
+        cell.configureData(
+            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
+            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
+            category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
+            toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
+            color: presenter?.getIndicatorColor(toolIndex: indexPath.row) ?? ColorConstants.lightYellow,
+            owner: presenter?.getToolOwner(toolIndex: indexPath.row) ?? ""
+        )
         
         return cell
     }
@@ -64,7 +75,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UITableView.automaticDimension
     }
     
     // MARK: - Private functions
@@ -90,12 +101,18 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func configureViews() {
-        
+        tableView.separatorStyle = .none
         headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
     }
     
     @objc func goToNewToolScreen(_ sender: UIButton) {
         let newToolVC = NewToolBuilder.createNewToolScreen()
         navigationController?.pushViewController(newToolVC, animated: true)
+    }
+}
+
+extension CatalogViewController: CatalogViewInputDelegate {
+    func tableViewReloadData() {
+        self.tableView.reloadData()
     }
 }

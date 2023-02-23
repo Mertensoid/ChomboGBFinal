@@ -11,7 +11,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     
     // MARK: - Propeties
     
-    weak var presenter: ToolsListViewOutputDelegate?
+    var presenter: ToolsListViewOutputDelegate?
     
     // MARK: - Private properties
     
@@ -92,7 +92,6 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     
     private func configureViews() {
         tableView.separatorStyle = .none
-        
         headerView.leftHeaderButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
     }
     

@@ -12,35 +12,80 @@ final class CatalogTableViewCell: UITableViewCell {
     // MARK: - Private properties
     
     private let mainCellView: UIView = {
-        let mainCellView = UIView()
-        mainCellView.activateConstraints()
-        mainCellView.backgroundColor = ColorConstants.baseWhite
-        return mainCellView
+        let view = UIView()
+        view.activateConstraints()
+        view.backgroundColor = ColorConstants.backgroundGray
+        view.layer.cornerRadius = 10
+        view.layer.borderColor = ColorConstants.borderGray.cgColor
+        view.layer.borderWidth = 1
+        view.layer.masksToBounds = true
+        return view
     }()
     private let image: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
         image.activateConstraints()
+        image.contentMode = .scaleAspectFill
+        image.layer.masksToBounds = true
         image.tintColor = ColorConstants.baseBlack
         return image
     }()
-    private let productNameTitle: UILabel = {
-        let productNameTitle = UILabel()
-        productNameTitle.activateConstraints()
-        productNameTitle.font = UIFont(name: "Helvetica-Bold", size: 16)
-        return productNameTitle
+    private let toolNameTitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Helvetica-Bold", size: 16)
+        label.textColor = ColorConstants.baseBlack
+        return label
     }()
-    private let mainPropertyTitle: UILabel = {
-        let mainPropertyTitle = UILabel()
-        mainPropertyTitle.activateConstraints()
-        mainPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
-        return mainPropertyTitle
+    private let divider1: UIView = {
+        let divider = UIView()
+        divider.activateConstraints()
+        divider.backgroundColor = ColorConstants.darkYellow
+        return divider
     }()
-    private let secondaryPropertyTitle: UILabel = {
-        let secondaryPropertyTitle = UILabel()
-        secondaryPropertyTitle.activateConstraints()
-        secondaryPropertyTitle.font = UIFont(name: "Helvetica", size: 16)
-        return secondaryPropertyTitle
+    private let toolCategoryTitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: "Helvetica", size: 16)
+        label.textColor = ColorConstants.checkBoxTitleGray
+        return label
     }()
+    private let toolSerialTitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: "Helvetica", size: 16)
+        label.textColor = ColorConstants.checkBoxTitleGray
+        return label
+    }()
+    private let toolConditionIndicator: UIView = {
+        let view = UIView()
+        view.activateConstraints()
+        view.layer.cornerRadius = 10
+        view.layer.borderColor = ColorConstants.borderGray.cgColor
+        view.layer.borderWidth = 1
+        return view
+    }()
+    private let toolOwnerTitle: UILabel = {
+        let label = UILabel()
+        label.activateConstraints()
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont(name: "Helvetica-Bold", size: 16)
+        label.textColor = ColorConstants.checkBoxTitleGray
+        return label
+    }()
+    
     
     // MARK: - Construction
     
@@ -48,6 +93,7 @@ final class CatalogTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         configureConstraints()
+        configureViews()
     }
     
     required init?(coder: NSCoder) {
@@ -56,11 +102,13 @@ final class CatalogTableViewCell: UITableViewCell {
     
     // MARK: - Functions
     
-    func configureData(name: String, picture: String, mainProperty: String, secondaryProperty: String) {
-        productNameTitle.text = name
-        image.image = UIImage(systemName: picture)
-        mainPropertyTitle.text = mainProperty
-        secondaryPropertyTitle.text = secondaryProperty
+    func configureData(name: String, picture: UIImage, category: String, toolSerial: String, color: UIColor, owner: String) {
+        toolNameTitle.text = name
+        image.image = picture
+        toolCategoryTitle.text = category
+        toolSerialTitle.text = toolSerial
+        toolConditionIndicator.backgroundColor = color
+        toolOwnerTitle.text = owner
     }
     
     // MARK: - Private functions
@@ -69,9 +117,12 @@ final class CatalogTableViewCell: UITableViewCell {
 
         addSubview(mainCellView)
         mainCellView.addSubview(image)
-        mainCellView.addSubview(productNameTitle)
-        mainCellView.addSubview(mainPropertyTitle)
-        mainCellView.addSubview(secondaryPropertyTitle)
+        mainCellView.addSubview(toolNameTitle)
+        mainCellView.addSubview(divider1)
+        mainCellView.addSubview(toolCategoryTitle)
+        mainCellView.addSubview(toolSerialTitle)
+        mainCellView.addSubview(toolConditionIndicator)
+        mainCellView.addSubview(toolOwnerTitle)
     }
     
     private func configureConstraints() {
@@ -79,23 +130,46 @@ final class CatalogTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             mainCellView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             mainCellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            mainCellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            mainCellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            mainCellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            mainCellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            image.leadingAnchor.constraint(equalTo: mainCellView.leadingAnchor, constant: 5),
-            image.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 5),
+            image.leadingAnchor.constraint(equalTo: mainCellView.leadingAnchor, constant: 10),
+            image.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 10),
             image.heightAnchor.constraint(equalToConstant: 100),
             image.widthAnchor.constraint(equalToConstant: 100),
+            image.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
             
-            productNameTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
-            productNameTitle.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 10),
+            toolNameTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
+            toolNameTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            toolNameTitle.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 10),
             
-            mainPropertyTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
-            mainPropertyTitle.topAnchor.constraint(equalTo: productNameTitle.bottomAnchor, constant: 5),
+            divider1.topAnchor.constraint(equalTo: toolNameTitle.bottomAnchor, constant: 5),
+            divider1.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
+            divider1.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            divider1.heightAnchor.constraint(equalToConstant: 1),
             
-            secondaryPropertyTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
-            secondaryPropertyTitle.topAnchor.constraint(equalTo: mainPropertyTitle.bottomAnchor, constant: 5)
+            toolCategoryTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
+            toolCategoryTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            toolCategoryTitle.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 5),
+            
+            toolSerialTitle.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
+            toolSerialTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            toolSerialTitle.topAnchor.constraint(equalTo: toolCategoryTitle.bottomAnchor, constant: 5),
+            
+            toolConditionIndicator.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            toolConditionIndicator.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
+            toolConditionIndicator.heightAnchor.constraint(equalToConstant: 20),
+            toolConditionIndicator.widthAnchor.constraint(equalToConstant: 20),
+            
+            toolOwnerTitle.trailingAnchor.constraint(equalTo: toolConditionIndicator.leadingAnchor, constant: -10),
+            toolOwnerTitle.centerYAnchor.constraint(equalTo: toolConditionIndicator.centerYAnchor),
         ])
+    }
+    
+    private func configureViews() {
+        selectionStyle = .none
+        
+        
     }
 }
 

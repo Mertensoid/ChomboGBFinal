@@ -9,18 +9,16 @@ import UIKit
 import Foundation
 
 class NewToolPresenter: NewToolViewOutputDelegate {
-    
-    
 
     // MARK: - Private properties
     
-    weak private var view: NewToolViewInputDelegate?
+    private weak var delegate: NewToolViewInputDelegate?
     private let firestoreService = CloudFirestore()
     
     // MARK: - Construction
     
-    required init(view: NewToolViewInputDelegate) {
-        self.view = view
+    required init(delegate: NewToolViewInputDelegate) {
+        self.delegate = delegate
     }
     
     // MARK: - Public functions
@@ -28,13 +26,13 @@ class NewToolPresenter: NewToolViewOutputDelegate {
     func setCategory(row: Int) {
         switch row {
         case 0:
-            view?.showCategory(category: MockCategory.handTools)
+            delegate?.showCategory(category: MockCategory.handTools)
         case 1:
-            view?.showCategory(category: MockCategory.electroTools)
+            delegate?.showCategory(category: MockCategory.electroTools)
         case 2:
-            view?.showCategory(category: MockCategory.gasolineTools)
+            delegate?.showCategory(category: MockCategory.gasolineTools)
         default:
-            view?.showCategory(category: MockCategory.miscellaneous)
+            delegate?.showCategory(category: MockCategory.miscellaneous)
         }
     }
     
@@ -42,19 +40,19 @@ class NewToolPresenter: NewToolViewOutputDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let now = dateFormatter.string(from: Date())
-        view?.showDate(date: now)
+        delegate?.showDate(date: now)
     }
     
     func setCondition(row: Int) {
         switch row {
         case 0:
-            view?.showCondition(condition: .excellent)
+            delegate?.showCondition(condition: .excellent)
         case 1:
-            view?.showCondition(condition: .good)
+            delegate?.showCondition(condition: .good)
         case 2:
-            view?.showCondition(condition: .normal)
+            delegate?.showCondition(condition: .normal)
         default:
-            view?.showCondition(condition: .broken)
+            delegate?.showCondition(condition: .broken)
         }
     }
     
@@ -74,6 +72,6 @@ class NewToolPresenter: NewToolViewOutputDelegate {
 //                longitude: 65.4643721),
 //            picture: UIImage(systemName: "hammer") ?? UIImage())
 //        print(mockTool.productionDate)
-        firestoreService.dataToSave(view?.getBrand() ?? "", view?.getModel() ?? "", view?.getSerial() ?? "")
+        firestoreService.dataToSave(delegate?.getBrand() ?? "", delegate?.getModel() ?? "", delegate?.getSerial() ?? "")
     }
 }

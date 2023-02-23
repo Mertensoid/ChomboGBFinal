@@ -29,7 +29,7 @@ final class MainTabBarController: UITabBarController {
         
         let profileController = ProfileViewController()
         let toolsController = ToolsListBuilder.createToolsListScreen()
-        let storageController = CatalogViewController()
+        let storageController = CatalogBuilder.createCatalogScreen()
         let transactionsController = TransactionsViewController()
         
         let profileNavigationController = UINavigationController(rootViewController: profileController)

@@ -76,6 +76,8 @@
 		845485D029801244004657A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485CF29801244004657A3 /* LoginViewController.swift */; };
 		845485D22980125D004657A3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485D12980125D004657A3 /* LoginPresenter.swift */; };
 		845485D529801273004657A3 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845485D429801273004657A3 /* LoginBuilder.swift */; };
+		846F835C29962F3100F968A4 /* CatalogViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F835B29962F3100F968A4 /* CatalogViewInputDelegate.swift */; };
+		846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -172,6 +174,8 @@
 		845485CF29801244004657A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		845485D12980125D004657A3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		845485D429801273004657A3 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		846F835B29962F3100F968A4 /* CatalogViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewInputDelegate.swift; sourceTree = "<group>"; };
+		846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -584,6 +588,8 @@
 			isa = PBXGroup;
 			children = (
 				8431306B29829353006EC00F /* CatalogPresenter.swift */,
+				846F835B29962F3100F968A4 /* CatalogViewInputDelegate.swift */,
+				846F835D29962F4400F968A4 /* CatalogViewOutputDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -968,6 +974,7 @@
 				8431306C29829353006EC00F /* CatalogPresenter.swift in Sources */,
 				8431309F2983C08E006EC00F /* CatalogTableViewCell.swift in Sources */,
 				843130C9298D36DC006EC00F /* ToolDetailsHeaderView.swift in Sources */,
+				846F835C29962F3100F968A4 /* CatalogViewInputDelegate.swift in Sources */,
 				843130C3298D0E0F006EC00F /* LoginViewOutputDelegate.swift in Sources */,
 				843130B9298BCACB006EC00F /* ProfileHeaderView.swift in Sources */,
 				843130A72983C4DD006EC00F /* NewToolPictureView.swift in Sources */,
@@ -996,6 +1003,7 @@
 				8431307E2982948C006EC00F /* RegistrationPresenter.swift in Sources */,
 				8431306E29829369006EC00F /* CatalogBuilder.swift in Sources */,
 				843130E529950D53006EC00F /* User.swift in Sources */,
+				846F835E29962F4400F968A4 /* CatalogViewOutputDelegate.swift in Sources */,
 				8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */,
 				843130682982931C006EC00F /* ToolsListBuilder.swift in Sources */,
 				84313099298298CB006EC00F /* TabBarConstants.swift in Sources */,
