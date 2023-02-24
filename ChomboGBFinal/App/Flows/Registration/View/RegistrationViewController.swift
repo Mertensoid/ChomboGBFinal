@@ -42,6 +42,7 @@ final class RegistrationViewController: UIViewController {
         passwordTextField.placeholder = "Password"
         passwordTextField.backgroundColor = ColorConstants.backgroundGray
         passwordTextField.borderStyle = .roundedRect
+        passwordTextField.isSecureTextEntry = true
         return passwordTextField
     }()
     private let checkBox: UIButton = {

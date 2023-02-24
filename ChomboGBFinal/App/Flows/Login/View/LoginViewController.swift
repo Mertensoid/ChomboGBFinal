@@ -34,6 +34,7 @@ final class LoginViewController: UIViewController {
         passwordTextField.placeholder = "Password"
         passwordTextField.backgroundColor = ColorConstants.backgroundGray
         passwordTextField.borderStyle = .roundedRect
+        passwordTextField.isSecureTextEntry = true
         return passwordTextField
     }()
     private let joinButton: UIButton = {
