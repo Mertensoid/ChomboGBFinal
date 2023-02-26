@@ -12,11 +12,11 @@ class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfileViewOutputDelegate {
-    func logout() {
-        if let delegate = delegate as? ProfileViewController {
-            delegate.dismiss(animated: true)
-        }
-    }
+//    func logout() {
+//        if let delegate = delegate as? ProfileViewController {
+//            delegate.dismiss(animated: true)
+//        }
+//    }
     
     func showEditProfileScreen() {
         if let delegate = delegate as? ProfileViewController {
@@ -31,6 +31,14 @@ extension ProfilePresenter: ProfileViewOutputDelegate {
         delegate?.showEmail(email: "ma*******@yandex.ru")
         delegate?.showWorkspaceLocation(location: "2066 Crist Dr, Los Altos, California")
         delegate?.showMetrics()
+    }
+    
+    func logout() {
+        UserDefaults.standard.set(false, forKey: "status")
+        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+        if let delegate = delegate as? ProfileViewController {
+            delegate.dismiss(animated: true)
+        }
     }
     
     

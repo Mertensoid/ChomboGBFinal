@@ -13,6 +13,7 @@
 		4E14B88729830DC30054C30C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88629830DC30054C30C /* FirebaseFirestoreSwift */; };
 		4E97EB1729A7CEA600042698 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4E97EB1629A7CEA600042698 /* FirebaseStorage */; };
 		4E97EB1929A8162D00042698 /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97EB1829A8162D00042698 /* FirebaseStorage.swift */; };
+		4E97EB1B29A81A0800042698 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97EB1A29A81A0800042698 /* FirebaseAuth.swift */; };
 		4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA8C063298D9B4D0065572D /* CloudFirestore.swift */; };
 		8431305A29828375006EC00F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305929828375006EC00F /* MainTabBarController.swift */; };
 		8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305D298292B3006EC00F /* ProfileViewController.swift */; };
@@ -131,6 +132,7 @@
 /* Begin PBXFileReference section */
 		4E14B87F29830D030054C30C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E97EB1829A8162D00042698 /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		4E97EB1A29A81A0800042698 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		4EA8C063298D9B4D0065572D /* CloudFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFirestore.swift; sourceTree = "<group>"; };
 		8431305929828375006EC00F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8431305D298292B3006EC00F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			children = (
 				4EA8C063298D9B4D0065572D /* CloudFirestore.swift */,
 				4E97EB1829A8162D00042698 /* FirebaseStorage.swift */,
+				4E97EB1A29A81A0800042698 /* FirebaseAuth.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -1114,6 +1117,7 @@
 				843130AF29890A3C006EC00F /* UIView + ext.swift in Sources */,
 				8431305A29828375006EC00F /* MainTabBarController.swift in Sources */,
 				8431307A298293DD006EC00F /* TransactionsBuilder.swift in Sources */,
+				4E97EB1B29A81A0800042698 /* FirebaseAuth.swift in Sources */,
 				84313078298293CA006EC00F /* TransactionsPresenter.swift in Sources */,
 				85C6BB0E29A3837500027B52 /* TopBarView.swift in Sources */,
 				84B71EC7299E41D100A11952 /* ProfileViewOutputDelegate.swift in Sources */,
