@@ -11,6 +11,7 @@
 		4E14B88329830DC30054C30C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88229830DC30054C30C /* FirebaseAuth */; };
 		4E14B88529830DC30054C30C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88429830DC30054C30C /* FirebaseFirestore */; };
 		4E14B88729830DC30054C30C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4E14B88629830DC30054C30C /* FirebaseFirestoreSwift */; };
+		4E97EB1729A7CEA600042698 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4E97EB1629A7CEA600042698 /* FirebaseStorage */; };
 		4EA8C064298D9B4D0065572D /* CloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA8C063298D9B4D0065572D /* CloudFirestore.swift */; };
 		8431305A29828375006EC00F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305929828375006EC00F /* MainTabBarController.swift */; };
 		8431305E298292B3006EC00F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431305D298292B3006EC00F /* ProfileViewController.swift */; };
@@ -99,14 +100,14 @@
 		8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74A298908B6005EB3AB /* MapViewController.swift */; };
 		8591C74D298908CD005EB3AB /* PlacesMarkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */; };
 		8591C74F298908E4005EB3AB /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591C74E298908E4005EB3AB /* Places.swift */; };
+		85AEC3A9299A15CA005034E3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3A8299A15CA005034E3 /* BackButton.swift */; };
+		85AEC3AB299A31F0005034E3 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */; };
 		85C6BB0D29A3837500027B52 /* LastPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0829A3837500027B52 /* LastPhotoView.swift */; };
 		85C6BB0E29A3837500027B52 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0929A3837500027B52 /* TopBarView.swift */; };
 		85C6BB0F29A3837500027B52 /* CaptureImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0A29A3837500027B52 /* CaptureImageButton.swift */; };
 		85C6BB1029A3837500027B52 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB0B29A3837500027B52 /* BottomBarView.swift */; };
 		85C6BB1429A3838700027B52 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB1229A3838700027B52 /* CameraService.swift */; };
 		85C6BB1529A3838700027B52 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6BB1329A3838700027B52 /* CamViewController.swift */; };
-		85AEC3A9299A15CA005034E3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3A8299A15CA005034E3 /* BackButton.swift */; };
-		85AEC3AB299A31F0005034E3 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E14B88329830DC30054C30C /* FirebaseAuth in Frameworks */,
+				4E97EB1729A7CEA600042698 /* FirebaseStorage in Frameworks */,
 				4E14B88529830DC30054C30C /* FirebaseFirestore in Frameworks */,
 				4E14B88729830DC30054C30C /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -258,6 +260,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E97EB1529A7CEA600042698 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4EA8C062298D9B300065572D /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +722,7 @@
 				84FEA2D12976B9F100E82BBE /* ChomboGBFinalTests */,
 				84FEA2DB2976B9F100E82BBE /* ChomboGBFinalUITests */,
 				84FEA2B92976B9F000E82BBE /* Products */,
+				4E97EB1529A7CEA600042698 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -921,6 +931,7 @@
 				4E14B88229830DC30054C30C /* FirebaseAuth */,
 				4E14B88429830DC30054C30C /* FirebaseFirestore */,
 				4E14B88629830DC30054C30C /* FirebaseFirestoreSwift */,
+				4E97EB1629A7CEA600042698 /* FirebaseStorage */,
 			);
 			productName = ChomboGBFinal;
 			productReference = 84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */;
@@ -1484,6 +1495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4E14B88129830DC30054C30C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		4E97EB1629A7CEA600042698 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E14B88129830DC30054C30C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

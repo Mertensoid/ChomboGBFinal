@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = CamViewController(cameraService: CameraService())
+//            window.rootViewController = CamViewController(cameraService: CameraService())
+            window.rootViewController = LoginBuilder.createLoginScreen()
             self.window = window
             window.makeKeyAndVisible()
         }

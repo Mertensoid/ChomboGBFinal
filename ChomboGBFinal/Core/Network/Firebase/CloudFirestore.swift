@@ -8,6 +8,8 @@
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
+import UIKit
 
 final class CloudFirestore {
     
@@ -20,7 +22,7 @@ final class CloudFirestore {
     // MARK: - Properties
     
     var docRef: DocumentReference!  //  ссылка на документ
-    var tools: [Tools] = [] // будет содержать все инструменты с БД
+    var tools: [Tool] = [] // будет содержать все инструменты с БД
     
     // MARK: - Private properties
     
@@ -55,7 +57,7 @@ final class CloudFirestore {
                 return
             }
             self.tools = snapshot?.documents.compactMap {
-                try? $0.data(as: Tools.self)
+                try? $0.data(as: Tool.self)
             } ?? []
         }
     }
@@ -69,15 +71,43 @@ final class CloudFirestore {
         }
     }
     
+    func loadImage(inputImage: UIImage) {
+        
+        let randomID = UUID.init().uuidString
+        let uploadRef = Storage.storage().reference(withPath: "toolsImage/\(randomID).jpg")
+        guard let imageData = inputImage.jpegData(compressionQuality: 0.75) else { return }
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let error = error {
+                print("Возникла ошибка: \(error.localizedDescription)")
+                return
+            }
+            print("Загрузка выполнена успешно: \(String(describing: downloadMetadata))")
+        }
+    }
     
+//    func fetchImage() {
+//        let storageRef = Storage.storage().reference(withPath: "toolsImage/testPicture.jpg")
+//        storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self] (data, error) in
+//            if let error = error {
+//                print("Ошибка при получении данных: \(error.localizedDescription)")
+//                return
+//            }
+//            if let data = data {
+//                self?.imageView.image = UIImage(data: data)
+//            }
+//        }
+//    }
     
 }
 
 
 
 
-struct Tools: Codable {
-    var brand: String = ""
-    var model: String = ""
-    var serial: String = ""
-}
+//struct Tools: Codable {
+//    var brand: String = ""
+//    var model: String = ""
+//    var serial: String = ""
+//}
