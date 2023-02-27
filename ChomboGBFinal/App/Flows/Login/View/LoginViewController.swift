@@ -68,7 +68,7 @@ final class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+         
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.keyboardWasShown),
@@ -79,6 +79,13 @@ final class LoginViewController: UIViewController {
             selector: #selector(self.keyboardWillBeHidden(notification:)),
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+        if status {
+            presenter?.goToMainTabBar()
+        }
     }
     
     //MARK: - Private functions

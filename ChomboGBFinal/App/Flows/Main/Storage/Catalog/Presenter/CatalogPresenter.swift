@@ -75,6 +75,8 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
         }
     }
     func logout() {
+        UserDefaults.standard.set(false, forKey: "status")
+        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
         if let delegate = delegate as? CatalogViewController {
             delegate.dismiss(animated: true)
         }
