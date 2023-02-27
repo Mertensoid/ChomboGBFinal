@@ -31,16 +31,22 @@ final class FirebaseStorage {
         }
     }
     
-    func fetchImage(toolID name: UUID) {
+    func fetchImage(toolID name: UUID) -> UIImage {
         let storageRef = Storage.storage().reference(withPath: "toolsImage/\(name).jpg")
+        var testImage: UIImage?
         storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Ошибка при получении данных: \(error.localizedDescription)")
                 return
             }
             if let data = data {
-                let testImage = UIImage(data: data)!
+                testImage = UIImage(data: data)!
             }
+        }
+        if let image = testImage {
+            return image
+        } else {
+            return UIImage()
         }
     }
     

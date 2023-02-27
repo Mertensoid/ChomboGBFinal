@@ -17,6 +17,9 @@ class NewToolPresenter {
     // MARK: - Private properties
     
     private let firestoreService = CloudFirestore()
+    private let firebaseStorage = FirebaseStorage()
+    private var photo: UIImage?
+    
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
@@ -87,7 +90,9 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
         let mockUser = User(uid: "1234", email: "test@test.com", displayName: "test user", phoneNumber: "+79991112233", photoUrl: nil)
         
         let tool = Tool(category: delegate?.getCategory() ?? .miscellaneous, brand: delegate?.getBrand() ?? "", model: delegate?.getModel() ?? "", serial: delegate?.getSerial(), productionDate: Date(), status: delegate?.getStatus() ?? .free, owner: mockUser, condition: delegate?.getCondition() ?? .new)
-        
+        if let photo = photo {
+            firebaseStorage.loadImage(inputImage: photo, toolID: tool.id)
+        }
         firestoreService.dataToSaveWithModel(tool)
     }
     
@@ -100,6 +105,7 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
 
 extension NewToolPresenter: PhotoDelegate {
     func setPhoto(image: UIImage) {
+        photo = image
         delegate?.showPhoto(image: image)
     }
 }
