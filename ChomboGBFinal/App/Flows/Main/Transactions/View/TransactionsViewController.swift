@@ -52,12 +52,18 @@ final class TransactionsViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.getTransactionsQuantity() ?? 0
+        return 10//presenter?.getTransactionsQuantity() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CatalogTableViewCell()
+        let cell = TransactionsTableCell()
 
+        cell.configureData(
+            toolName: "Название",
+            toolImage: UIImage(named: "123") ?? UIImage(),
+            arrowColor: ColorConstants.buttonGreen,
+            owner: "Получатель"
+        )
 //        cell.configureData(
 //            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
 //            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),

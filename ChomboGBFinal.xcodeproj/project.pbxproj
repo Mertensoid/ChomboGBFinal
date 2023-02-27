@@ -95,6 +95,7 @@
 		84B71ED829AC8DB700A11952 /* TransactionsViewOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED729AC8DB700A11952 /* TransactionsViewOutputDelegate.swift */; };
 		84B71EDA29AC8DD000A11952 /* TransactionsViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED929AC8DD000A11952 /* TransactionsViewInputDelegate.swift */; };
 		84B71EDC29AC906400A11952 /* TransactionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EDB29AC906400A11952 /* TransactionsHeaderView.swift */; };
+		84B71EDE29ACA97000A11952 /* TransactionsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EDD29ACA97000A11952 /* TransactionsTableCell.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -217,6 +218,7 @@
 		84B71ED729AC8DB700A11952 /* TransactionsViewOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewOutputDelegate.swift; sourceTree = "<group>"; };
 		84B71ED929AC8DD000A11952 /* TransactionsViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewInputDelegate.swift; sourceTree = "<group>"; };
 		84B71EDB29AC906400A11952 /* TransactionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHeaderView.swift; sourceTree = "<group>"; };
+		84B71EDD29ACA97000A11952 /* TransactionsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableCell.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 			isa = PBXGroup;
 			children = (
 				84B71EDB29AC906400A11952 /* TransactionsHeaderView.swift */,
+				84B71EDD29ACA97000A11952 /* TransactionsTableCell.swift */,
 				84313075298293B5006EC00F /* TransactionsViewController.swift */,
 			);
 			path = View;
@@ -1087,6 +1090,7 @@
 				84B71EDA29AC8DD000A11952 /* TransactionsViewInputDelegate.swift in Sources */,
 				843130B629894946006EC00F /* NewToolViewOutputDelegate.swift in Sources */,
 				8431309729829689006EC00F /* ToolDetailsBuilder.swift in Sources */,
+				84B71EDE29ACA97000A11952 /* TransactionsTableCell.swift in Sources */,
 				843130E129950C64006EC00F /* Condition.swift in Sources */,
 				8431307229829384006EC00F /* NewToolPresenter.swift in Sources */,
 				8591C74B298908B6005EB3AB /* MapViewController.swift in Sources */,
