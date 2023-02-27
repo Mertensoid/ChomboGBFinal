@@ -41,6 +41,7 @@ final class CatalogViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter?.fetchData()
         tableView.reloadData()
     }
     

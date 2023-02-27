@@ -21,11 +21,17 @@ class CatalogPresenter {
         }
     }
     
+    private let firestoreService = CloudFirestore()
+    
     // MARK: - Construction
     
     init() {
-        catalog = Tool.catalog
+        
+        
+        //catalog = Tool.catalog
     }
+    
+    
 }
 
 extension CatalogPresenter: CatalogViewOutputDelegate {
@@ -80,5 +86,8 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
         if let delegate = delegate as? CatalogViewController {
             delegate.dismiss(animated: true)
         }
+    }
+    func fetchData() {
+        catalog = firestoreService.tools
     }
 }

@@ -49,7 +49,6 @@ final class CloudFirestore {
         }
     }
     
-    
     func fetchData() {
         Firestore.firestore().collection(path).addSnapshotListener { (snapshot, error) in
             if let error = error {

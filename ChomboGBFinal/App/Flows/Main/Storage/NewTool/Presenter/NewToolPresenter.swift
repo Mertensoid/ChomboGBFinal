@@ -25,6 +25,7 @@ class NewToolPresenter {
 }
 
 extension NewToolPresenter: NewToolViewOutputDelegate {
+    
     func setCategory(row: Int) {
         switch row {
         case 0:

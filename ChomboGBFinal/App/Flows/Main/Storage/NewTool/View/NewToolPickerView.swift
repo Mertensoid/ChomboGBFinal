@@ -40,6 +40,7 @@ class NewToolPickerView: UIView {
         dataLabel.text = ">"
         return dataLabel
     }()
+    private var pickerDataString: String = ""
     
     // MARK: - Construction
     
@@ -58,15 +59,12 @@ class NewToolPickerView: UIView {
     // MARK: - Functions
     
     func getData() -> String {
-        if let data = dataLabel.text {
-            return data
-        } else {
-            return ""
-        }
+        return pickerDataString
     }
     
     func setData(data: String) {
-        dataLabel.text = data + " >"
+        pickerDataString = data
+        dataLabel.text = pickerDataString + " >"
     }
     
     // MARK: - Private functions

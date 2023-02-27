@@ -18,4 +18,5 @@ protocol CatalogViewOutputDelegate: AnyObject {
     func showNewToolScreen()
     func showDetailsScreen()
     func logout()
+    func fetchData()
 }
