@@ -19,9 +19,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.overrideUserInterfaceStyle = .dark
         return map
     }()
-    
+
     private let backButton = BackButton()
     private let currentLocationButton = CurrentLocationButton()
+    
     let locationManager = CLLocationManager()
     
     var places: [Places] = []
@@ -50,11 +51,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            manager.stopUpdatingLocation()
-            render(location)
-        }
+        guard let location = locations.first else {return}
+        self.locationManager.stopUpdatingLocation()
+        render(location)
+        
+        mapView.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
     }
+    
     private func render(_ location: CLLocation) {
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
@@ -127,7 +130,8 @@ extension MKMapView {
     }
     
     private func currentLocationButtonTapped() {
-        print("Button navigation tapped")
+//        print("Button navigation tapped")
+        locationManager.startUpdatingLocation()
     }
 }
 
