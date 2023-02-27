@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class TransactionsPresenter {
+    
+    // MARK: - Properties
+    
+    weak var delegate: TransactionsViewInputDelegate?
+}
+
+extension TransactionsPresenter: TransactionsViewOutputDelegate {
+    
+}
