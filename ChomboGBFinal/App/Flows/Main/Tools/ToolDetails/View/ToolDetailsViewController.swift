@@ -91,6 +91,7 @@ class ToolDetailsViewController: UIViewController {
         addViews()
         configureConstraints()
         configureViews()
+        presenter?.showCurrentData()
     }
     
     // MARK: - Public functions
@@ -170,19 +171,7 @@ class ToolDetailsViewController: UIViewController {
         
         locationView.locationButton.addTarget(self, action: #selector(showMapScreen), for: .touchUpInside)
         
-        photoView.setToolPhoto(image: UIImage(named: "magister_284x284px") ?? UIImage())
-        
-        basicInformationView.setCategoryData(data: "Mock category")
-        basicInformationView.setBrandData(data: "Mock brand")
-        basicInformationView.setModelData(data: "Mock model")
-        basicInformationView.setSerialData(data: "Mock serial")
-        basicInformationView.setProductionDateData(data: "DD.MM.YYYY")
-        
-        locationView.setStatusData(data: "Mock status")
-        locationView.setOwnerData(data: "Mock owner")
-        locationView.setTransferDateData(data: "DD.MM.YYYY")
-        
-        techInfoView.setConditionData(data: "Mock condition")
+        photoView.setToolPhoto(image: UIImage(named: "123") ?? UIImage())
     }
 }
 
@@ -196,5 +185,38 @@ class ToolDetailsViewController: UIViewController {
 }
 
 extension ToolDetailsViewController: ToolDetailsViewInputDelegate {
+    func showCategory(data: String) {
+        basicInformationView.setCategoryData(data: data)
+    }
     
+    func showBrand(data: String) {
+        basicInformationView.setBrandData(data: data)
+    }
+    
+    func showModel(data: String) {
+        basicInformationView.setModelData(data: data)
+    }
+    
+    func showSerial(data: String) {
+        basicInformationView.setSerialData(data: data)
+    }
+    
+    func showProductionDate(data: String) {
+        basicInformationView.setProductionDateData(data: data)
+    }
+    
+    func showStatus(data: String) {
+        locationView.setStatusData(data: data)
+    }
+    
+    func showOwner(data: String) {
+        locationView.setOwnerData(data: data)
+    }
+    
+    func showTransferDate(data: String) {
+        locationView.setTransferDateData(data: data)
+    }
+    func showCondition(data: String) {
+        techInfoView.setConditionData(data: data)
+    }
 }

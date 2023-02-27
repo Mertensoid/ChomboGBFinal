@@ -25,7 +25,7 @@ final class ToolDetailsTechInfoView: UIView {
         label.numberOfLines = 1
         label.minimumScaleFactor = 0.5
         label.adjustsFontSizeToFitWidth = true
-        label.text = "Category"
+        label.text = "Condition"
         return label
     }()
     private let conditionDataLabel: UILabel = {

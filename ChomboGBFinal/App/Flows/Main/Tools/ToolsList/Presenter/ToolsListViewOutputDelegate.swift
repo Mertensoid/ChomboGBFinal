@@ -15,6 +15,6 @@ protocol ToolsListViewOutputDelegate: AnyObject {
     func getToolCondition(toolIndex: Int) -> String
     func getToolImage(toolIndex: Int) -> UIImage
     
-    func showDetailsScreen()
+    func showDetailsScreen(index: Int)
     func logout()
 }

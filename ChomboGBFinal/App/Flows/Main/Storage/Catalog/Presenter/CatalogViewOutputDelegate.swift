@@ -16,7 +16,7 @@ protocol CatalogViewOutputDelegate: AnyObject {
     func getToolImage(toolIndex: Int) -> UIImage
     func getToolOwner(toolIndex: Int) -> String
     func showNewToolScreen()
-    func showDetailsScreen()
+    func showDetailsScreen(index: Int)
     func logout()
     func fetchData()
 }

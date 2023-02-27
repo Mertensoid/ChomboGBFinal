@@ -75,8 +75,8 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
             delegate.navigationController?.pushViewController(newToolVC, animated: true)
         }
     }
-    func showDetailsScreen() {
-        let toolDetailsVC = ToolDetailsBuilder.createToolDetailsScreen()
+    func showDetailsScreen(index: Int) {
+        let toolDetailsVC = ToolDetailsBuilder.createToolDetailsScreen(tool: catalog[index])
         if let delegate = delegate as? CatalogViewController {
             delegate.navigationController?.pushViewController(toolDetailsVC, animated: true)
         }
