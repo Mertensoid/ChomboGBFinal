@@ -52,8 +52,8 @@ extension ToolsListPresenter: ToolsListViewOutputDelegate {
         return UIImage()//userTools[toolIndex].picture
     }
     
-    func showDetailsScreen() {
-        let toolDetailsVC = ToolDetailsBuilder.createToolDetailsScreen()
+    func showDetailsScreen(index: Int) {
+        let toolDetailsVC = ToolDetailsBuilder.createToolDetailsScreen(tool: userTools[index])
         if let delegate = delegate as? ToolsListViewController {
             delegate.navigationController?.pushViewController(toolDetailsVC, animated: true)
         }

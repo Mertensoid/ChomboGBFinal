@@ -9,10 +9,11 @@ import UIKit
 
 class ToolDetailsBuilder {
     
-    static func createToolDetailsScreen() -> ToolDetailsViewController {
+    static func createToolDetailsScreen(tool: Tool) -> ToolDetailsViewController {
         
         let view = ToolDetailsViewController()
         let presenter = ToolDetailsPresenter()
+        presenter.currentTool = tool
         presenter.delegate = view
         view.presenter = presenter
         return view
