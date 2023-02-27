@@ -293,6 +293,13 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
         conditionToolBar.items = [UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(onDoneConditionButtonTapped))]
 
         addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        
+        pictureView.picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
+    }
+    
+    @objc private func setPhoto() {
+        presenter?.showCamera()
+        //picturePickerButton.setImage(UIImage(named: "test_pic_730x520px"), for: .normal)
     }
     
     @objc private func goToCatalogScreen() {
@@ -344,6 +351,9 @@ final class NewToolViewController: UIViewController, UIPickerViewDelegate, UIPic
 }
 
 extension NewToolViewController: NewToolViewInputDelegate {
+    func showPhoto(image: UIImage) {
+        pictureView.picturePickerButton.setImage(image, for: .normal)
+    }
     
     func getCategory() -> Category {
         switch categoryPickerView.getData() {
@@ -490,3 +500,5 @@ extension NewToolViewController: NewToolViewInputDelegate {
         view.endEditing(true)
     }
 }
+
+

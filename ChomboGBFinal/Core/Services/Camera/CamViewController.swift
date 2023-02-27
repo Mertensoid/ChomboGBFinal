@@ -13,6 +13,7 @@ final class CamViewController: UIViewController {
     private lazy var bottomBar = BottomBarView()
     private lazy var topBar = TopBarView()
     private var cameraService: CameraService
+    var delegate: PhotoDelegate?
 
     init(cameraService: CameraService) {
         self.cameraService = cameraService
@@ -64,6 +65,7 @@ final class CamViewController: UIViewController {
     }
 
     private func setupPreviewLayer() {
+        view.backgroundColor = ColorConstants.baseBlack
         let previewLayer = AVCaptureVideoPreviewLayer(session: cameraService.captureSession) as AVCaptureVideoPreviewLayer
 
         previewLayer.frame = view.bounds
@@ -135,6 +137,7 @@ extension CamViewController {
 extension CamViewController: CameraServiceDelegate {
 
     func setPhoto(image: UIImage) {
-        bottomBar.setUpPhoto(image: image)
+        delegate?.setPhoto(image: image)
+        navigationController?.popViewController(animated: true)
     }
 }
