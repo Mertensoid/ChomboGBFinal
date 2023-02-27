@@ -17,21 +17,7 @@
                 ]
             }
         },
-        {
-            "type": "Feature",
-            "properties": {
-                "location": "Sklad ucheta 2",
-                "discipline": "Sklad",
-                "title": "Sklad Ucheta N2",
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    60.604713023768696,
-                    56.845369941777726
-                ]
-            }
-        },
+        
         
         
         

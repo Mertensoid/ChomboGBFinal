@@ -64,10 +64,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let region = MKCoordinateRegion(center: coordinate, span: span)
         
-        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 100000)
+        let zoomRage = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 10000000)
         mapView.setCameraZoomRange(zoomRage, animated: true)
         
-        let regionMaxSize = MKCoordinateRegion(center: coordinate, latitudinalMeters: 50000, longitudinalMeters: 50000)
+        let regionMaxSize = MKCoordinateRegion(center: coordinate, latitudinalMeters: 5000000, longitudinalMeters: 5000000)
         mapView.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: regionMaxSize), animated: true)
         
         mapView.setRegion(region, animated: true)
@@ -118,7 +118,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 }
 
 extension MKMapView {
-    func centerLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 500) {
+    func centerLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 5000000) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
     }
