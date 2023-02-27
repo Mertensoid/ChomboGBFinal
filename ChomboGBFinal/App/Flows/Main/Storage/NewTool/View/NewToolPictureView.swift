@@ -9,9 +9,9 @@ import UIKit
 
 class NewToolPictureView: UIView {
     
-    // MARK: - Private properties
+    // MARK: - Properties
     
-    private let picturePickerButton: UIButton = {
+    let picturePickerButton: UIButton = {
         let picturePickerButton = UIButton()
         picturePickerButton.activateConstraints()
         picturePickerButton.tintColor = ColorConstants.baseBlack
@@ -59,10 +59,8 @@ class NewToolPictureView: UIView {
         layer.borderWidth = 1
         layer.masksToBounds = true
         
-        picturePickerButton.addTarget(self, action: #selector(setPhoto), for: .touchUpInside)
+        
     }
     
-    @objc private func setPhoto() {
-        picturePickerButton.setImage(UIImage(named: "test_pic_730x520px"), for: .normal)
-    }
+    
 }

@@ -25,6 +25,14 @@ class NewToolPresenter {
 }
 
 extension NewToolPresenter: NewToolViewOutputDelegate {
+    func showCamera() {
+        let cameraVC = CamViewController(cameraService: CameraService())
+        cameraVC.delegate = self
+        if let delegate = delegate as? NewToolViewController {
+            delegate.navigationController?.pushViewController(cameraVC, animated: true)
+        }
+    }
+    
     
     func setCategory(row: Int) {
         switch row {
@@ -87,5 +95,11 @@ extension NewToolPresenter: NewToolViewOutputDelegate {
         if let delegate = delegate as? NewToolViewController {
             delegate.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension NewToolPresenter: PhotoDelegate {
+    func setPhoto(image: UIImage) {
+        delegate?.showPhoto(image: image)
     }
 }

@@ -96,6 +96,7 @@
 		84B71EDA29AC8DD000A11952 /* TransactionsViewInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71ED929AC8DD000A11952 /* TransactionsViewInputDelegate.swift */; };
 		84B71EDC29AC906400A11952 /* TransactionsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EDB29AC906400A11952 /* TransactionsHeaderView.swift */; };
 		84B71EDE29ACA97000A11952 /* TransactionsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EDD29ACA97000A11952 /* TransactionsTableCell.swift */; };
+		84B71EE529ACEFE600A11952 /* PhotoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B71EE429ACEFE600A11952 /* PhotoDelegate.swift */; };
 		84FEA2BC2976B9F000E82BBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */; };
 		84FEA2BE2976B9F000E82BBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */; };
 		84FEA2C52976B9F100E82BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEA2C42976B9F100E82BBE /* Assets.xcassets */; };
@@ -219,6 +220,7 @@
 		84B71ED929AC8DD000A11952 /* TransactionsViewInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewInputDelegate.swift; sourceTree = "<group>"; };
 		84B71EDB29AC906400A11952 /* TransactionsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHeaderView.swift; sourceTree = "<group>"; };
 		84B71EDD29ACA97000A11952 /* TransactionsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableCell.swift; sourceTree = "<group>"; };
+		84B71EE429ACEFE600A11952 /* PhotoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDelegate.swift; sourceTree = "<group>"; };
 		84FEA2B82976B9F000E82BBE /* ChomboGBFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChomboGBFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEA2BB2976B9F000E82BBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FEA2BD2976B9F000E82BBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -946,6 +948,7 @@
 				85C6BB1229A3838700027B52 /* CameraService.swift */,
 				85C6BB1329A3838700027B52 /* CamViewController.swift */,
 				85C6BB0729A3837500027B52 /* UIElements */,
+				84B71EE429ACEFE600A11952 /* PhotoDelegate.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -1116,6 +1119,7 @@
 				8431306A29829345006EC00F /* CatalogViewController.swift in Sources */,
 				84313060298292C4006EC00F /* ProfilePresenter.swift in Sources */,
 				8431309D2982AC63006EC00F /* ToolsListTableViewCell.swift in Sources */,
+				84B71EE529ACEFE600A11952 /* PhotoDelegate.swift in Sources */,
 				8431307029829376006EC00F /* NewToolViewController.swift in Sources */,
 				84B71ECA299E510500A11952 /* MockNetworkService.swift in Sources */,
 				845485D029801244004657A3 /* LoginViewController.swift in Sources */,
@@ -1355,12 +1359,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 323JAZVTZC;
+				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1370,7 +1377,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.Chombo;
+				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.ChomboFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1385,12 +1392,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 323JAZVTZC;
+				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChomboGBFinal/Environments/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1400,7 +1410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.Chombo;
+				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.ChomboFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Foundation
 
 protocol NewToolViewInputDelegate: AnyObject {
 
@@ -20,4 +19,5 @@ protocol NewToolViewInputDelegate: AnyObject {
     func showDate(date: String)
     func showCondition(condition: Condition)
     func showStatus(status: Status)
+    func showPhoto(image: UIImage)
 }
