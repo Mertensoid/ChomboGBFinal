@@ -26,7 +26,6 @@ class CurrentLocationButton: UIViewController {
         return button
     }()
     
-    
     override func viewDidLayoutSubviews () {
         super.viewDidLayoutSubviews ()
         currentLocationButton.frame = CGRect (
@@ -35,8 +34,4 @@ class CurrentLocationButton: UIViewController {
             width: 50,
             height: 50)
     }
-
-    @objc func didTapButton(sender: UIButton!) {
-        print("Button navigation tapped")
-        }
 }

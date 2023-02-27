@@ -26,7 +26,6 @@ class BackButton: UIViewController {
         return button
     }()
     
-    
     override func viewDidLayoutSubviews () {
         super.viewDidLayoutSubviews ()
         backButton.frame = CGRect (
@@ -35,8 +34,4 @@ class BackButton: UIViewController {
             width: 50,
             height: 50)
     }
-
-    @objc func didTapButton(sender: UIButton!) {
-        print("Button back tapped")
-        }
 }

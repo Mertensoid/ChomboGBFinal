@@ -520,6 +520,7 @@
 				845485BB29800EF1004657A3 /* Tools */,
 				845485BC29800F0A004657A3 /* Storage */,
 				845485BD29800F13004657A3 /* Transactions */,
+				84B71EE029ACBC6300A11952 /* Map */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -733,6 +734,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84B71EE029ACBC6300A11952 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				84B71EE129ACBD6800A11952 /* View */,
+				84B71EE229ACBD7000A11952 /* Presenter */,
+				84B71EE329ACBD7700A11952 /* Builder */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		84B71EE129ACBD6800A11952 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */,
+				85AEC3A8299A15CA005034E3 /* BackButton.swift */,
+				8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */,
+				8591C74A298908B6005EB3AB /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B71EE229ACBD7000A11952 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		84B71EE329ACBD7700A11952 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		84FEA2AF2976B9F000E82BBE = {
 			isa = PBXGroup;
 			children = (
@@ -898,11 +934,7 @@
 		8591C74929890832005EB3AB /* MapKitNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				8591C74A298908B6005EB3AB /* MapViewController.swift */,
-				8591C74C298908CD005EB3AB /* PlacesMarkersView.swift */,
 				8591C74E298908E4005EB3AB /* Places.swift */,
-				85AEC3A8299A15CA005034E3 /* BackButton.swift */,
-				85AEC3AA299A31F0005034E3 /* CurrentLocationButton.swift */,
 				8536ECD82990E05C008F2B7F /* Places.geojson */,
 			);
 			path = MapKitNavigation;

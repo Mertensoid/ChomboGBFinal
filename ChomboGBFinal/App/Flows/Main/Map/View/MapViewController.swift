@@ -73,13 +73,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func setBackButton(){
         mapView.addSubview(backButton.backButton)
         backButton.viewDidLayoutSubviews()
-        backButton.backButton.addTarget(backButton.self, action: #selector(backButton.didTapButton), for: .touchUpInside)
+        backButton.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
     
     func setCurrentLocationButton(){
         mapView.addSubview(currentLocationButton.currentLocationButton)
         currentLocationButton.viewDidLayoutSubviews()
-        currentLocationButton.currentLocationButton.addTarget(currentLocationButton.self, action: #selector(currentLocationButton.didTapButton), for: .touchUpInside)
+        currentLocationButton.currentLocationButton.addTarget(self, action: #selector(currentLocationButtonTapped), for: .touchUpInside)
     }
     
     func setMapConstraints() {
@@ -118,6 +118,16 @@ extension MKMapView {
     func centerLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 500) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
+    }
+}
+
+@objc extension MapViewController {
+    private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func currentLocationButtonTapped() {
+        print("Button navigation tapped")
     }
 }
 

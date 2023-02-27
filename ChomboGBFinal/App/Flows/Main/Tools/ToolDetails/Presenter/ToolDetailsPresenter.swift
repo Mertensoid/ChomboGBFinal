@@ -15,6 +15,13 @@ class ToolDetailsPresenter {
 }
 
 extension ToolDetailsPresenter: ToolDetailsViewOutputDelegate {
+    func showMapScreen() {
+        let mapViewController = MapViewController()
+        if let delegate = delegate as? ToolDetailsViewController {
+            delegate.navigationController?.pushViewController(mapViewController, animated: true)
+        }
+    }
+    
     func closeDetailsScreen() {
         if let delegate = delegate as? ToolDetailsViewController {
             delegate.navigationController?.popViewController(animated: true)
