@@ -168,6 +168,8 @@ class ToolDetailsViewController: UIViewController {
         
         headerView.leftHeaderButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
         
+        locationView.locationButton.addTarget(self, action: #selector(showMapScreen), for: .touchUpInside)
+        
         photoView.setToolPhoto(image: UIImage(named: "magister_284x284px") ?? UIImage())
         
         basicInformationView.setCategoryData(data: "Mock category")
@@ -187,6 +189,9 @@ class ToolDetailsViewController: UIViewController {
 @objc extension ToolDetailsViewController {
     private func backButtonPressed() {
         presenter?.closeDetailsScreen()
+    }
+    private func showMapScreen() {
+        presenter?.showMapScreen()
     }
 }
 
