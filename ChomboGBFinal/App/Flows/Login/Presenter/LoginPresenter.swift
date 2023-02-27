@@ -72,7 +72,7 @@ extension LoginPresenter: LoginViewOutputDelegate {
         let mainTabBar = MainTabBarController()
         mainTabBar.modalPresentationStyle = .fullScreen
         if let delegate = self.delegate as? LoginViewController {
-            delegate.present(mainTabBar, animated: true)
+            delegate.present(mainTabBar, animated: false)
         }
     }
 }
