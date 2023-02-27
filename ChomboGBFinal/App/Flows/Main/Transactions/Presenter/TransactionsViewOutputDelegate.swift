@@ -8,5 +8,9 @@
 import Foundation
 
 protocol TransactionsViewOutputDelegate: AnyObject {
-    
+    func getTransactionsQuantity() -> Int
+    func getToolName() -> String
+    func getOwner() -> String
+    func showDetails()
+    func logout()
 }

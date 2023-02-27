@@ -10,4 +10,5 @@ import Foundation
 protocol LoginViewOutputDelegate: AnyObject {
     func checkAccountData()
     func showRegistrationScreen()
+    func goToMainTabBar()
 }

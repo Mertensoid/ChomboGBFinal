@@ -19,15 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             let window = UIWindow(windowScene: windowScene)
-            let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-            
-            if status {
-                window.rootViewController = MainTabBarController()
-            } else {
-                window.rootViewController = LoginBuilder.createLoginScreen()
-            }
-            
-//            window.rootViewController = LoginBuilder.createLoginScreen()
+            window.rootViewController = LoginBuilder.createLoginScreen()
             self.window = window
             window.makeKeyAndVisible()
         }

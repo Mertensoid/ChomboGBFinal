@@ -30,7 +30,7 @@ final class MainTabBarController: UITabBarController {
         let profileController = ProfileBuilder.createProfileScreen()
         let toolsController = ToolsListBuilder.createToolsListScreen()
         let storageController = CatalogBuilder.createCatalogScreen()
-        let transactionsController = TransactionsViewController()
+        let transactionsController = TransactionsBuilder.createTransactionsScreen()
         
         let profileNavigationController = UINavigationController(rootViewController: profileController)
         profileNavigationController.navigationBar.isHidden = true

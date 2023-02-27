@@ -15,11 +15,12 @@ final class TransactionsViewController: UIViewController, UITableViewDelegate, U
     
     // MARK: - Private properties
     
-    private let headerView: CatalogHeaderView = {
-        let headerView = CatalogHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
-        headerView.activateConstraints()
-        return headerView
+    private let headerView: TransactionsHeaderView = {
+        let view = TransactionsHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        view.activateConstraints()
+        return view
     }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.activateConstraints()
@@ -51,26 +52,26 @@ final class TransactionsViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.getToolsQuantity() ?? 0
+        return presenter?.getTransactionsQuantity() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogTableViewCell()
 
-        cell.configureData(
-            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
-            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
-            category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
-            toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
-            color: presenter?.getIndicatorColor(toolIndex: indexPath.row) ?? ColorConstants.lightYellow,
-            owner: presenter?.getToolOwner(toolIndex: indexPath.row) ?? ""
-        )
+//        cell.configureData(
+//            name: presenter?.getToolName(toolIndex: indexPath.row) ?? "",
+//            picture: presenter?.getToolImage(toolIndex: indexPath.row) ?? UIImage(),
+//            category: presenter?.getToolCategory(toolIndex: indexPath.row) ?? "",
+//            toolSerial: presenter?.getToolSerial(toolIndex: indexPath.row) ?? "",
+//            color: presenter?.getIndicatorColor(toolIndex: indexPath.row) ?? ColorConstants.lightYellow,
+//            owner: presenter?.getToolOwner(toolIndex: indexPath.row) ?? ""
+//        )
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showDetailsScreen()
+        presenter?.showDetails()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -101,23 +102,18 @@ final class TransactionsViewController: UIViewController, UITableViewDelegate, U
     
     private func configureViews() {
         tableView.separatorStyle = .none
-        headerView.rightHeaderButton.addTarget(self, action: #selector(goToNewToolScreen(_:)), for: .touchUpInside)
-        headerView.leftHeaderButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        headerView.leftHeaderButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
         
     }
 }
 
 @objc extension TransactionsViewController {
-    func goToNewToolScreen(_ sender: UIButton) {
-        presenter?.showNewToolScreen()
-    }
-    
-    func backButtonPressed(_ sender: UIButton) {
+    func logoutButtonPressed(_ sender: UIButton) {
         presenter?.logout()
     }
 }
 
-extension CatalogViewController: TransactionsViewInputDelegate {
+extension TransactionsViewController: TransactionsViewInputDelegate {
     func tableViewReloadData() {
         self.tableView.reloadData()
     }

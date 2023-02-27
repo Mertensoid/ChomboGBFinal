@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TransactionsViewInputDelegate: AnyObject {
-    
+    func tableViewReloadData()
 }

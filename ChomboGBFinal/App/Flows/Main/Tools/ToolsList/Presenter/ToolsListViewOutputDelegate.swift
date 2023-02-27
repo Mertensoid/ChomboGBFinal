@@ -16,4 +16,5 @@ protocol ToolsListViewOutputDelegate: AnyObject {
     func getToolImage(toolIndex: Int) -> UIImage
     
     func showDetailsScreen()
+    func logout()
 }

@@ -58,4 +58,12 @@ extension ToolsListPresenter: ToolsListViewOutputDelegate {
             delegate.navigationController?.pushViewController(toolDetailsVC, animated: true)
         }
     }
+    
+    func logout() {
+        UserDefaults.standard.set(false, forKey: "status")
+        NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+        if let delegate = delegate as? ToolsListViewController {
+            delegate.dismiss(animated: true)
+        }
+    }
 }

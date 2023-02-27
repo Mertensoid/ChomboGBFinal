@@ -95,6 +95,7 @@ final class ToolsListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @objc func logoutButtonPressed() {
+        presenter?.logout()
         self.dismiss(animated: true)
     }
 }
