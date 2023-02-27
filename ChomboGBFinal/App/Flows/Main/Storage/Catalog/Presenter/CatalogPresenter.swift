@@ -22,6 +22,7 @@ class CatalogPresenter {
     }
     
     private let firestoreService = CloudFirestore()
+    private let firebaseStorage = FirebaseStorage()
     
     // MARK: - Construction
     
@@ -62,7 +63,7 @@ extension CatalogPresenter: CatalogViewOutputDelegate {
     }
     
     func getToolImage(toolIndex: Int) -> UIImage {
-        return UIImage()//catalog[toolIndex].picture
+        return firebaseStorage.fetchImage(toolID: catalog[toolIndex].id)//UIImage()//catalog[toolIndex].picture
     }
     
     func getToolOwner(toolIndex: Int) -> String {
